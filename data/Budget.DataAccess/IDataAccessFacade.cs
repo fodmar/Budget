@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Budget.DataAccess.Query;
+using Budget.Domain;
 
 namespace Budget.DataAccess
 {
     public interface IDataAccessFacade
     {
-        IGetReceiptsByDate GetReceiptsByDate { get; }
+        IQueryable<Receipt> Receipts { get; }
+
+        IQueryByDate QueryByDate { get; }
     }
 }

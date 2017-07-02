@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FakeDatabaseFactory.cs" />
-    <Compile Include="GetReceiptsByDateTests.cs" />
+    <Compile Include="QueryReceiptsByDateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

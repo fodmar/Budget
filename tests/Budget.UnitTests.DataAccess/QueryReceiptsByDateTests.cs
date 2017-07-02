@@ -13,22 +13,22 @@ using Rhino.Mocks;
 namespace Budget.UnitTests.DataAccess
 {
     [TestFixture]
-    class GetReceiptsByDateTests
+    class QueryReceiptsByDateTests
     {
         [Test]
         [TestCaseSource("Generate")]
-        public void GetReceiptsByDateTest(Scenario scenario)
+        public void QueryReceiptsByDateTest(Scenario scenario)
         {
-            GetReceiptsByDate query = new GetReceiptsByDate(scenario.Database);
+            QueryByDate query = new QueryByDate();
 
-            IEnumerable<Receipt> result = query.Run(scenario.From, scenario.To);
+            IEnumerable<Receipt> result = query.Run(scenario.Receipts, scenario.From, scenario.To);
 
             CollectionAssert.AreEquivalent(scenario.Result, result);
         }
 
         public class Scenario
         {
-            public IBudgetDatabase Database { get; set; }
+            public IQueryable<Receipt> Receipts { get; set; }
 
             public DateTime? From { get; set; }
 
@@ -43,12 +43,11 @@ namespace Budget.UnitTests.DataAccess
             Receipt second = new Receipt { Id = 2, Date = DateTime.Now.AddDays(10) };
             Receipt third = new Receipt { Id = 3, Date = DateTime.Now.AddDays(15) };
 
-            IBudgetDatabase database = FakeDatabaseFactory.Create();
-            FakeDatabaseFactory.SetReceipents(database, first, second, third);
+            IQueryable<Receipt> receipts = new Receipt[] { first, second, third }.AsQueryable();
 
             yield return new Scenario
             {
-                Database = database,
+                Receipts = receipts,
                 From = DateTime.Now.AddDays(3),
                 To = DateTime.Now.AddDays(6),
                 Result = new Receipt[] { first }
@@ -56,7 +55,7 @@ namespace Budget.UnitTests.DataAccess
 
             yield return new Scenario
             {
-                Database = database,
+                Receipts = receipts,
                 From = null,
                 To = DateTime.Now.AddDays(11),
                 Result = new Receipt[] { first, second }
@@ -64,7 +63,7 @@ namespace Budget.UnitTests.DataAccess
 
             yield return new Scenario
             {
-                Database = database,
+                Receipts = receipts,
                 From = DateTime.Now.AddDays(6),
                 To = null,
                 Result = new Receipt[] { second, third }
@@ -72,7 +71,7 @@ namespace Budget.UnitTests.DataAccess
 
             yield return new Scenario
             {
-                Database = database,
+                Receipts = receipts,
                 From = null,
                 To = null,
                 Result = new Receipt[] { first, second, third }

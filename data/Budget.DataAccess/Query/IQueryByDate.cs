@@ -7,8 +7,8 @@ using Budget.Domain;
 
 namespace Budget.DataAccess.Query
 {
-    public interface IGetReceiptsByDate
+    public interface IQueryByDate
     {
-        IEnumerable<Receipt> Run(DateTime? from, DateTime? to);
+        IQueryable<Receipt> Run(IQueryable<Receipt> query, DateTime? fromDate, DateTime? toDate);
     }
 }
