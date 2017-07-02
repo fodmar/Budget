@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{D38C59E4-9C2E-478D-8EFE-EF86C8751B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Domain", "shared\Budget.Domain\Budget.Domain.csproj", "{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B0044C27-7A69-44F7-ADBC-D95A3C084DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Database", "data\Budget.Database\Budget.Database.csproj", "{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
+		{D52605EB-CA5E-4FCD-8DA5-A34DDED21219} = {B0044C27-7A69-44F7-ADBC-D95A3C084DF3}
+	EndGlobalSection
+EndGlobal
