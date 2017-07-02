@@ -20,13 +20,9 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase database = new BudgetDatabase())
 	        {
-                IQueryByDate query = new QueryByDate();
-                IDataAccessFacade facade = new DataAccessFacade(database, query);
+                IDataAccessFacade facade = new DataAccessFacade(database);
 
-                IQueryable<Receipt> receipts = facade.Receipts;
-                receipts = facade.QueryByDate.Run(receipts, null, DateTime.Now);
-
-                List<Receipt> result = receipts.ToList();
+                List<Receipt> result = facade.Receipts.ByDateRange(null, DateTime.Now).ToList();
 	        }
         }
     }

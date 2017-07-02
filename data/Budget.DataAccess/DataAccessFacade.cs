@@ -13,10 +13,9 @@ namespace Budget.DataAccess
     {
         private readonly IBudgetDatabase budgetDatabase;
 
-        public DataAccessFacade(IBudgetDatabase budgetDatabase, IQueryByDate getReceiptsByDate)
+        public DataAccessFacade(IBudgetDatabase budgetDatabase)
         {
             this.budgetDatabase = budgetDatabase;
-            this.QueryByDate = getReceiptsByDate;
         }
 
         public IQueryable<Receipt> Receipts
@@ -26,7 +25,5 @@ namespace Budget.DataAccess
                 return this.budgetDatabase.Receipts.AsQueryable();
             }
         }
-
-        public IQueryByDate QueryByDate { get; private set; }
     }
 }

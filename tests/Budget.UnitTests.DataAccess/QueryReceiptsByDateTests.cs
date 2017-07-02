@@ -19,9 +19,7 @@ namespace Budget.UnitTests.DataAccess
         [TestCaseSource("Generate")]
         public void QueryReceiptsByDateTest(Scenario scenario)
         {
-            QueryByDate query = new QueryByDate();
-
-            IEnumerable<Receipt> result = query.Run(scenario.Receipts, scenario.From, scenario.To);
+            IEnumerable<Receipt> result = scenario.Receipts.ByDateRange(scenario.From, scenario.To);
 
             CollectionAssert.AreEquivalent(scenario.Result, result);
         }

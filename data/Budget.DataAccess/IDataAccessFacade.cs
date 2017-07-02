@@ -11,7 +11,5 @@ namespace Budget.DataAccess
     public interface IDataAccessFacade
     {
         IQueryable<Receipt> Receipts { get; }
-
-        IQueryByDate QueryByDate { get; }
     }
 }

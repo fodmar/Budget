@@ -8,9 +8,9 @@ using Budget.Domain;
 
 namespace Budget.DataAccess.Query
 {
-    public class QueryByDate : IQueryByDate
+    public static class QueryByDateRange
     {
-        public IQueryable<Receipt> Run(IQueryable<Receipt> query, DateTime? fromDate, DateTime? toDate)
+        public static IQueryable<Receipt> ByDateRange(this IQueryable<Receipt> query, DateTime? fromDate, DateTime? toDate)
         {
             return query.Where(r => (!fromDate.HasValue || r.Date > fromDate.Value)
                                  && (!toDate.HasValue || r.Date < toDate.Value));
