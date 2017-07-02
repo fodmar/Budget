@@ -8,9 +8,9 @@ using Budget.Domain;
 
 namespace Budget.Database
 {
-    public interface IBudgetDatabase
+    public interface IBudgetDatabase : IDisposable
     {
-        DbSet<Receipt> Receipts { get; set;  }
-        DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
+        IDbSet<Receipt> Receipts { get; set;  }
+        IDbSet<ReceiptEntry> ReceiptsEntries { get; set; }
     }
 }
