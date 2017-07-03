@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\IncludeByProperty.cs" />
     <Compile Include="Query\QueryByDateRange.cs" />
+    <Compile Include="Query\QueryById.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\shared\Budget.Domain\Budget.Domain.csproj">

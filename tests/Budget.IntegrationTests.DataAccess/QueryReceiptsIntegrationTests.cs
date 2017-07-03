@@ -12,10 +12,12 @@ using NUnit.Framework;
 namespace Budget.IntegrationTests.DataAccess
 {
     [TestFixture]
-    public class QueryReceiptsByDateTests
+    [Category("IntegrationTests")]
+    public class QueryReceiptsIntegrationTests
     {
         [Test]
-        public void QueryReceiptsByDateIntegrationTest()
+        [Ignore]
+        public void QueryReceiptsByDateRange()
         {
             using (IBudgetDatabase database = new BudgetDatabase())
 	        {
@@ -23,6 +25,18 @@ namespace Budget.IntegrationTests.DataAccess
 
                 List<Receipt> result = facade.ReceiptsWithEntries.ByDateRange(null, DateTime.Now).ToList();
 	        }
+        }
+
+        [Test]
+        [Ignore]
+        public void QueryReceiptsById()
+        {
+            using (IBudgetDatabase database = new BudgetDatabase())
+            {
+                IDataAccessFacade facade = new DataAccessFacade(database);
+
+                List<Receipt> result = facade.ReceiptsWithEntries.ById(1).ById(2).ToList();
+            }
         }
     }
 }

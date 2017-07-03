@@ -13,6 +13,7 @@ using Rhino.Mocks;
 namespace Budget.UnitTests.DataAccess
 {
     [TestFixture]
+    [Category("UnitTests")]
     class QueryReceiptsByDateTests
     {
         [Test]
