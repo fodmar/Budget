@@ -12,6 +12,6 @@ namespace Budget.Domain
 
         public DateTime Date { get; set; }
 
-        public IEnumerable<ReceiptEntry> Entries { get; set; }
+        public ICollection<ReceiptEntry> Entries { get; set; }
     }
 }

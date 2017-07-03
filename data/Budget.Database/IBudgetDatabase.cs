@@ -10,7 +10,7 @@ namespace Budget.Database
 {
     public interface IBudgetDatabase : IDisposable
     {
-        IDbSet<Receipt> Receipts { get; set;  }
-        IDbSet<ReceiptEntry> ReceiptsEntries { get; set; }
+        DbSet<Receipt> Receipts { get; set;  }
+        DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
     }
 }

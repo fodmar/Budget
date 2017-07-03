@@ -11,7 +11,7 @@ namespace Budget.Database
         {
         }
 
-        public virtual IDbSet<Receipt> Receipts { get; set; }
-        public virtual IDbSet<ReceiptEntry> ReceiptsEntries { get; set; }
+        public virtual DbSet<Receipt> Receipts { get; set; }
+        public virtual DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
     }
 }

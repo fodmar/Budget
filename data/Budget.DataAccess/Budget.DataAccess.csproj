@@ -53,6 +53,7 @@
     <Compile Include="DataAccessFacade.cs" />
     <Compile Include="IDataAccessFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\IncludeByProperty.cs" />
     <Compile Include="Query\QueryByDateRange.cs" />
   </ItemGroup>
   <ItemGroup>

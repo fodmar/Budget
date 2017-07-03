@@ -15,14 +15,13 @@ namespace Budget.IntegrationTests.DataAccess
     public class QueryReceiptsByDateTests
     {
         [Test]
-        [Ignore]
         public void QueryReceiptsByDateIntegrationTest()
         {
             using (IBudgetDatabase database = new BudgetDatabase())
 	        {
                 IDataAccessFacade facade = new DataAccessFacade(database);
 
-                List<Receipt> result = facade.Receipts.ByDateRange(null, DateTime.Now).ToList();
+                List<Receipt> result = facade.ReceiptsWithEntries.ByDateRange(null, DateTime.Now).ToList();
 	        }
         }
     }
