@@ -14,16 +14,9 @@ namespace Budget.UnitTests.DataAccess
     class QueryByIdTests
     {
         [Test]
-        public void QueryByIdTest_OneId()
+        [TestCaseSource("Generate")]
+        public void QueryByIdTest_OneId(IQueryable<Receipt> receipts)
         {
-            IQueryable<Receipt> receipts = (new[]
-            {
-                new Receipt { Id = 1 },
-                new Receipt { Id = 2 },
-                new Receipt { Id = 3 },
-            })
-            .AsQueryable();
-
             Receipt[] result = receipts.ById(2).ToArray();
 
             Assert.AreEqual(1, result.Length);
@@ -31,19 +24,23 @@ namespace Budget.UnitTests.DataAccess
         }
 
         [Test]
-        public void QueryByIdTest_TwoIds()
+        [TestCaseSource("Generate")]
+        public void QueryByIdTest_TwoIds(IQueryable<Receipt> receipts)
         {
-            IQueryable<Receipt> receipts = (new[]
+            Receipt[] result = receipts.ById(1).ById(2).ToArray();
+
+            Assert.AreEqual(0, result.Length);
+        }
+
+        private IEnumerable<IQueryable<Receipt>> Generate()
+        {
+            yield return new[]
             {
                 new Receipt { Id = 1 },
                 new Receipt { Id = 2 },
                 new Receipt { Id = 3 },
-            })
+            }
             .AsQueryable();
-
-            Receipt[] result = receipts.ById(1).ById(2).ToArray();
-
-            Assert.AreEqual(0, result.Length);
         }
     }
 }

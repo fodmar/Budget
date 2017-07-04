@@ -38,5 +38,17 @@ namespace Budget.IntegrationTests.DataAccess
                 List<Receipt> result = facade.ReceiptsWithEntries.ById(1).ById(2).ToList();
             }
         }
+
+        [Test]
+        [Ignore]
+        public void QueryReceiptsByValueInSet()
+        {
+            using (IBudgetDatabase database = new BudgetDatabase())
+            {
+                IDataAccessFacade facade = new DataAccessFacade(database);
+
+                List<Receipt> result = facade.ReceiptsWithEntries.ByValueInSet(r => r.Id, 1, 3, 5).ToList();
+            }
+        }
     }
 }

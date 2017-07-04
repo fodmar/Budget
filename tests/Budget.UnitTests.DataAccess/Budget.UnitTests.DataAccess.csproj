@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QueryByIdTests.cs" />
+    <Compile Include="QueryByValueInSetTests.cs" />
     <Compile Include="QueryReceiptsByDateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
