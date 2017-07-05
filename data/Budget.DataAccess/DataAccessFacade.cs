@@ -34,5 +34,15 @@ namespace Budget.DataAccess
                 return this.budgetDatabase.Receipts.Include(r => r.Entries).AsQueryable();
             }
         }
+
+        public Receipt GetReceipt(int id)
+        {
+            return this.ReceiptsWithEntries.ById(id);
+        }
+
+        public IEnumerable<Receipt> GetReceiptsByDates(DateTime? from, DateTime? to)
+        {
+            return this.ReceiptsWithEntries.ByDateRange(from, to);
+        }
     }
 }

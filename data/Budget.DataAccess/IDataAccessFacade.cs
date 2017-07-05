@@ -8,7 +8,7 @@ using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
-    public interface IDataAccessFacade
+    public interface IDataAccessFacade : IReceiptProvider
     {
         IQueryable<Receipt> Receipts { get; }
 
