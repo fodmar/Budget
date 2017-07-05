@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Budget.Database;
-using Budget.Domain;
+using Budget.ObjectModel;
 
 namespace Budget.DataAccess.Query
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Budget.Domain;
+using Budget.ObjectModel;
 using Budget.DataAccess.Query;
 using NUnit.Framework;
 

@@ -65,9 +65,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\shared\Budget.Domain\Budget.Domain.csproj">
+    <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
-      <Name>Budget.Domain</Name>
+      <Name>Budget.ObjectModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

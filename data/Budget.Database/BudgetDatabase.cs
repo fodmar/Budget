@@ -1,7 +1,7 @@
 using System;
 using System.Data.Entity;
 using System.Linq;
-using Budget.Domain;
+using Budget.ObjectModel;
 
 namespace Budget.Database
 {

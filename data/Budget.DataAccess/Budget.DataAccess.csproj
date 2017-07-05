@@ -59,9 +59,9 @@
     <Compile Include="Query\QueryByValueInSet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\shared\Budget.Domain\Budget.Domain.csproj">
+    <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
-      <Name>Budget.Domain</Name>
+      <Name>Budget.ObjectModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Budget.Database\Budget.Database.csproj">
       <Project>{d52605eb-ca5e-4fcd-8da5-a34dded21219}</Project>

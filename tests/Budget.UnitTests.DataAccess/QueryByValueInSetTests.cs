@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Budget.Domain;
+using Budget.ObjectModel;
 using Budget.DataAccess.Query;
 using NUnit.Framework;
 
@@ -17,7 +17,7 @@ namespace Budget.UnitTests.DataAccess
         [TestCaseSource("Generate")]
         public void QueryByValueInSetId(IQueryable<Receipt> receipts)
         {
-            int[] ids = new { 1, 3, 8 };
+            int[] ids = new[] { 1, 3, 8 };
             Receipt[] result = receipts.ByValueInSet(r => r.Id, ids).ToArray();
 
             Assert.AreEqual(2, result.Length);

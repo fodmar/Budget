@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Budget.DataAccess.Query;
 using Budget.Database;
-using Budget.Domain;
+using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
