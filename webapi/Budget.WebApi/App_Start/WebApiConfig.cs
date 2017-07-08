@@ -12,13 +12,7 @@ namespace Budget.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
             config.MapHttpAttributeRoutes();
-
-            IContainer container = IoC.Initialize();
-            GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(container);
 
             WebApiConfig.RegisterRoutes(config.Routes);
         }

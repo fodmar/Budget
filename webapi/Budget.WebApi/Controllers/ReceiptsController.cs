@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Budget.DataAccess;
 using Budget.Database;
@@ -10,7 +11,7 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApi.Controllers
 {
-    public class ReceiptsController : ApiController
+    public class ReceiptsController : BaseController
     {
         private readonly IReceiptProvider receiptProvider;
 
@@ -20,20 +21,20 @@ namespace Budget.WebApi.Controllers
         }
 
         [HttpGet]
-        public Receipt GetReceipt(
+        public async Task<Receipt> GetReceipt(
             [FromUri] int id)
         {
             return this.receiptProvider.GetReceipt(id);
         }
 
         [HttpGet]
-        public Receipt[] GetReceipts()
+        public async Task<Receipt[]> GetReceipts()
         {
             return this.receiptProvider.GetReceipts().ToArray();
         }
 
         [HttpGet]
-        public Receipt[] GetReceiptsFromDateRange(
+        public async Task<Receipt[]> GetReceiptsFromDateRange(
             [FromUri] DateTime? from,
             [FromUri] DateTime? to)
         {

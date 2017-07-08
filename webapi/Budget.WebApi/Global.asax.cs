@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using Budget.WebApi.DependencyResolution;
+using StructureMap;
 
 namespace Budget.WebApi
 {
@@ -12,6 +14,9 @@ namespace Budget.WebApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            IContainer container = IoC.Initialize();
+            GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(container);
         }
     }
 }
