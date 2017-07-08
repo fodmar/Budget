@@ -10,7 +10,7 @@ using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
-    public class DataAccessFacade : IDataAccessFacade
+    public class DataAccessFacade : IReceiptProvider
     {
         private readonly IBudgetDatabase budgetDatabase;
 
@@ -37,7 +37,12 @@ namespace Budget.DataAccess
 
         public Receipt GetReceipt(int id)
         {
-            return this.ReceiptsWithEntries.ById(id);
+            return this.ReceiptsWithEntries.ById(id).SingleOrDefault();
+        }
+
+        public IEnumerable<Receipt> GetReceipts()
+        {
+            return this.ReceiptsWithEntries;
         }
 
         public IEnumerable<Receipt> GetReceiptsByDates(DateTime? from, DateTime? to)

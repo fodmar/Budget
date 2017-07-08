@@ -10,6 +10,8 @@ namespace Budget.ObjectModel
     {
         Receipt GetReceipt(int id);
 
+        IEnumerable<Receipt> GetReceipts();
+
         IEnumerable<Receipt> GetReceiptsByDates(DateTime? from, DateTime? to);
     }
 }

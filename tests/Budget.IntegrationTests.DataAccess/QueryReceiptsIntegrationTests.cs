@@ -21,7 +21,7 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase database = new BudgetDatabase())
 	        {
-                IDataAccessFacade facade = new DataAccessFacade(database);
+                DataAccessFacade facade = new DataAccessFacade(database);
 
                 List<Receipt> result = facade.ReceiptsWithEntries.ByDateRange(null, DateTime.Now).ToList();
 	        }
@@ -33,7 +33,7 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase database = new BudgetDatabase())
             {
-                IDataAccessFacade facade = new DataAccessFacade(database);
+                DataAccessFacade facade = new DataAccessFacade(database);
 
                 List<Receipt> result = facade.ReceiptsWithEntries.ById(1).ById(2).ToList();
             }
@@ -45,7 +45,7 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase database = new BudgetDatabase())
             {
-                IDataAccessFacade facade = new DataAccessFacade(database);
+                DataAccessFacade facade = new DataAccessFacade(database);
 
                 List<Receipt> result = facade.ReceiptsWithEntries.ByValueInSet(r => r.Id, 1, 3, 5).ToList();
             }
