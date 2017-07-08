@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Budget.WebApi.DependencyResolution;
 using Newtonsoft.Json;
+using StructureMap;
 
 namespace Budget.WebApi
 {
@@ -14,6 +16,9 @@ namespace Budget.WebApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            IContainer container = IoC.Initialize();
+            GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(container);
 
             WebApiConfig.RegisterRoutes(config.Routes);
         }

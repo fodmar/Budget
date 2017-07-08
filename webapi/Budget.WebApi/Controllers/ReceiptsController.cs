@@ -19,11 +19,6 @@ namespace Budget.WebApi.Controllers
             this.receiptProvider = receiptProvider;
         }
 
-        // poor's man dependency injection
-        public ReceiptsController() : this(new DataAccessFacade(new BudgetDatabase()))
-        {
-        }
-
         [HttpGet]
         public Receipt GetReceipt(
             [FromUri] int id)
