@@ -10,11 +10,10 @@ namespace Budget.WebApi
 {
     public static class WebApiConfig
     {
-        public static void Register(HttpConfiguration config)
+        public static void InitializeDependencyResolution(HttpConfiguration config)
         {
-            config.MapHttpAttributeRoutes();
-
-            WebApiConfig.RegisterRoutes(config.Routes);
+            IContainer container = IoC.Initialize();
+            config.DependencyResolver = new StructureMapDependencyResolver(container);
         }
 
         public static void RegisterRoutes(HttpRouteCollection routes)

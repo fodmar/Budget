@@ -13,10 +13,15 @@ namespace Budget.WebApi
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configure(ConfigureHttp);
+        }
 
-            IContainer container = IoC.Initialize();
-            GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(container);
+        private void ConfigureHttp(HttpConfiguration config)
+        {
+            config.MapHttpAttributeRoutes();
+
+            WebApiConfig.RegisterRoutes(config.Routes);
+            WebApiConfig.InitializeDependencyResolution(config);
         }
     }
 }
