@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{A084C5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.WebApi", "webapi\Budget.WebApi\Budget.WebApi.csproj", "{85459483-C2FE-4033-ACFC-38A2FAC62537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.WebApi", "Budget.UnitTests.WebApi\Budget.UnitTests.WebApi.csproj", "{8D2B4919-2F0E-4457-97B9-194C8D1B6695}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.WebApi", "tests\Budget.UnitTests.WebApi\Budget.UnitTests.WebApi.csproj", "{8D2B4919-2F0E-4457-97B9-194C8D1B6695}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
