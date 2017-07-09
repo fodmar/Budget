@@ -105,7 +105,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\ReceiptsController.cs" />
+    <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="DependencyResolution\Registry\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />

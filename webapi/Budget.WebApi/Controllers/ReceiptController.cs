@@ -11,11 +11,11 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApi.Controllers
 {
-    public class ReceiptsController : BaseController
+    public class ReceiptController : BaseController
     {
         private readonly IReceiptProvider receiptProvider;
 
-        public ReceiptsController(IReceiptProvider receiptProvider)
+        public ReceiptController(IReceiptProvider receiptProvider)
         {
             this.receiptProvider = receiptProvider;
         }

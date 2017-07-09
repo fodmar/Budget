@@ -19,9 +19,13 @@ namespace Budget.WebApi
         public static void RegisterRoutes(HttpRouteCollection routes)
         {
             routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "ListAll",
+                routeTemplate: "api/{controller}/"
+            );
+
+            routes.MapHttpRoute(
+                name: "GetOne",
+                routeTemplate: "api/{controller}/{id}"
             );
 
             routes.MapHttpRoute(
