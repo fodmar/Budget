@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using Budget.DataAccess.Query;
 using Budget.Database;
 using Budget.ObjectModel;
@@ -35,19 +36,19 @@ namespace Budget.DataAccess
             }
         }
 
-        public Receipt GetReceipt(int id)
+        public Task<Receipt> GetReceiptAsync(int id)
         {
-            return this.ReceiptsWithEntries.ById(id).SingleOrDefault();
+            return this.ReceiptsWithEntries.ById(id).SingleOrDefaultAsync();
         }
 
-        public IEnumerable<Receipt> GetReceipts()
+        public async Task<IEnumerable<Receipt>> GetReceiptsAsync()
         {
-            return this.ReceiptsWithEntries;
+            return await this.ReceiptsWithEntries.ToListAsync();
         }
 
-        public IEnumerable<Receipt> GetReceiptsByDates(DateTime? from, DateTime? to)
+        public async Task<IEnumerable<Receipt>> GetReceiptsByDatesAsync(DateTime? from, DateTime? to)
         {
-            return this.ReceiptsWithEntries.ByDateRange(from, to);
+            return await this.ReceiptsWithEntries.ByDateRange(from, to).ToListAsync();
         }
     }
 }

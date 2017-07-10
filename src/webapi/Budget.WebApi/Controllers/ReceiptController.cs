@@ -24,13 +24,14 @@ namespace Budget.WebApi.Controllers
         public async Task<Receipt> GetReceipt(
             [FromUri] int id)
         {
-            return this.receiptProvider.GetReceipt(id);
+            return await this.receiptProvider.GetReceiptAsync(id);
         }
 
         [HttpGet]
         public async Task<Receipt[]> GetReceipts()
         {
-            return this.receiptProvider.GetReceipts().ToArray();
+            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsAsync();
+            return receipts.ToArray();
         }
 
         [HttpGet]
@@ -38,7 +39,8 @@ namespace Budget.WebApi.Controllers
             [FromUri] DateTime? from,
             [FromUri] DateTime? to)
         {
-            return this.receiptProvider.GetReceiptsByDates(from, to).ToArray();
+            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDatesAsync(from, to);
+            return receipts.ToArray();
         }
     }
 }
