@@ -3,32 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F595035D-A700-4906-ACDE-DE1C8F73AD89}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{D38C59E4-9C2E-478D-8EFE-EF86C8751B31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.ObjectModel", "shared\Budget.ObjectModel\Budget.ObjectModel.csproj", "{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{712B63F5-4F83-4D38-B1CC-8CBB760A5C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.ObjectModel", "src\shared\Budget.ObjectModel\Budget.ObjectModel.csproj", "{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B0044C27-7A69-44F7-ADBC-D95A3C084DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Database", "data\Budget.Database\Budget.Database.csproj", "{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.DataAccess", "data\Budget.DataAccess\Budget.DataAccess.csproj", "{08966193-7E22-4566-8976-A6C72FECB375}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AD74B865-5691-4622-A87F-8393E448B645}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.DataAccess", "tests\Budget.UnitTests.DataAccess\Budget.UnitTests.DataAccess.csproj", "{2C705686-DEB0-4C72-8A8F-7B5C0B245A62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Database", "src\data\Budget.Database\Budget.Database.csproj", "{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.DataAccess", "src\data\Budget.DataAccess\Budget.DataAccess.csproj", "{08966193-7E22-4566-8976-A6C72FECB375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.DataAccess", "tests\unit\Budget.UnitTests.DataAccess\Budget.UnitTests.DataAccess.csproj", "{2C705686-DEB0-4C72-8A8F-7B5C0B245A62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{971F6ADB-3326-4695-8B3D-2837EEB016B7}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.IntegrationTests.DataAccess", "tests\Budget.IntegrationTests.DataAccess\Budget.IntegrationTests.DataAccess.csproj", "{4DED8797-F4A9-4F5B-A42B-2E3BF608F8F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.IntegrationTests.DataAccess", "tests\integration\Budget.IntegrationTests.DataAccess\Budget.IntegrationTests.DataAccess.csproj", "{4DED8797-F4A9-4F5B-A42B-2E3BF608F8F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{A084C5BD-D9B5-49CD-BC63-38ABBFBDE4B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.WebApi", "webapi\Budget.WebApi\Budget.WebApi.csproj", "{85459483-C2FE-4033-ACFC-38A2FAC62537}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.WebApi", "src\webapi\Budget.WebApi\Budget.WebApi.csproj", "{85459483-C2FE-4033-ACFC-38A2FAC62537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.WebApi", "tests\Budget.UnitTests.WebApi\Budget.UnitTests.WebApi.csproj", "{8D2B4919-2F0E-4457-97B9-194C8D1B6695}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.WebApi", "tests\unit\Budget.UnitTests.WebApi\Budget.UnitTests.WebApi.csproj", "{8D2B4919-2F0E-4457-97B9-194C8D1B6695}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,12 +75,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{D38C59E4-9C2E-478D-8EFE-EF86C8751B31} = {F595035D-A700-4906-ACDE-DE1C8F73AD89}
 		{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
+		{B0044C27-7A69-44F7-ADBC-D95A3C084DF3} = {F595035D-A700-4906-ACDE-DE1C8F73AD89}
 		{D52605EB-CA5E-4FCD-8DA5-A34DDED21219} = {B0044C27-7A69-44F7-ADBC-D95A3C084DF3}
 		{08966193-7E22-4566-8976-A6C72FECB375} = {B0044C27-7A69-44F7-ADBC-D95A3C084DF3}
-		{2C705686-DEB0-4C72-8A8F-7B5C0B245A62} = {AD74B865-5691-4622-A87F-8393E448B645}
-		{4DED8797-F4A9-4F5B-A42B-2E3BF608F8F2} = {AD74B865-5691-4622-A87F-8393E448B645}
+		{2C705686-DEB0-4C72-8A8F-7B5C0B245A62} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
+		{4DED8797-F4A9-4F5B-A42B-2E3BF608F8F2} = {712B63F5-4F83-4D38-B1CC-8CBB760A5C4F}
+		{A084C5BD-D9B5-49CD-BC63-38ABBFBDE4B6} = {F595035D-A700-4906-ACDE-DE1C8F73AD89}
 		{85459483-C2FE-4033-ACFC-38A2FAC62537} = {A084C5BD-D9B5-49CD-BC63-38ABBFBDE4B6}
-		{8D2B4919-2F0E-4457-97B9-194C8D1B6695} = {AD74B865-5691-4622-A87F-8393E448B645}
+		{8D2B4919-2F0E-4457-97B9-194C8D1B6695} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
+		{4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112} = {AD74B865-5691-4622-A87F-8393E448B645}
+		{712B63F5-4F83-4D38-B1CC-8CBB760A5C4F} = {AD74B865-5691-4622-A87F-8393E448B645}
 	EndGlobalSection
 EndGlobal
