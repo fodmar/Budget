@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 using Budget.DataAccess;
 using Budget.Database;
 using Budget.ObjectModel;
+using Budget.WebApi.ModelBinders;
 
 namespace Budget.WebApi.Controllers
 {
@@ -36,8 +39,8 @@ namespace Budget.WebApi.Controllers
 
         [HttpGet]
         public async Task<Receipt[]> GetReceiptsFromDateRange(
-            [FromUri] DateTime? from,
-            [FromUri] DateTime? to)
+            [ModelBinder(typeof(DateTimeFromUnixTimeStampBinder))] DateTime? from,
+            [ModelBinder(typeof(DateTimeFromUnixTimeStampBinder))] DateTime? to)
         {
             IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDatesAsync(from, to);
             return receipts.ToArray();

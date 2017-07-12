@@ -30,8 +30,7 @@ namespace Budget.WebApi
 
             routes.MapHttpRoute(
                 name: "ReceiptsByDateRange",
-                routeTemplate: "api/{controller}/{from}/{to}",
-                defaults: new { from = RouteParameter.Optional, to = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{from}/{to}"
             );
         }
     }

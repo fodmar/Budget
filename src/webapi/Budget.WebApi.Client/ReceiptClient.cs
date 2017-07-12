@@ -39,12 +39,7 @@ namespace Budget.WebApi.Client
 
         public async Task<IEnumerable<Receipt>> GetReceiptsByDatesAsync(DateTime? from, DateTime? to)
         {
-            //// todo: https://stackoverflow.com/questions/14359566/how-to-pass-a-datetime-parameter
-
-            string fromString = from.HasValue ? from.Value.ToString("yyyyMMdd") : "null";
-            string toString = to.HasValue ? to.Value.ToString("yyyyMMdd") : "null";
-
-            string uri = string.Format("api/Receipt/{0}/{1}", fromString, toString);
+            string uri = string.Format("api/Receipt/{0}/{1}", from.ToUriParamString(), to.ToUriParamString());
 
             HttpResponseMessage response = await this.httpClient.GetAsync(uri);
             Receipt[] result = await response.Content.ReadAsAsync<Receipt[]>();
