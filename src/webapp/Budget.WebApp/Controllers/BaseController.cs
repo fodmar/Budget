@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Budget.WebApp.Controllers
 {
-    public abstract class BaseController : Controller
+    public abstract partial class BaseController : Controller
     {
     }
 }
