@@ -12,13 +12,13 @@ namespace Budget.IntegrationTests.WebApi.Client
     [TestFixture]
     public class CallReceiptApi
     {
-        private string apiUrl = @"http://localhost:16618/";
+        private IConfigurationProvider configurationProvider = new ConfigurationProvider();
 
         [Test]
         [Ignore]
         public async void GetReceipt()
         {
-            ReceiptClient client = new ReceiptClient(this.apiUrl);
+            ReceiptClient client = new ReceiptClient(this.configurationProvider);
             Receipt result = await client.GetReceiptAsync(2);
         }
 
@@ -26,7 +26,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         [Ignore]
         public async void GetReceipts()
         {
-            ReceiptClient client = new ReceiptClient(this.apiUrl);
+            ReceiptClient client = new ReceiptClient(this.configurationProvider);
             IEnumerable<Receipt> result = await client.GetReceiptsAsync();
         }
 
@@ -34,8 +34,17 @@ namespace Budget.IntegrationTests.WebApi.Client
         [Ignore]
         public async void GetReceiptByDateRange()
         {
-            ReceiptClient client = new ReceiptClient(this.apiUrl);
+            ReceiptClient client = new ReceiptClient(this.configurationProvider);
             IEnumerable<Receipt> result = await client.GetReceiptsByDatesAsync(null, DateTime.Now);
+        }
+
+        private class ConfigurationProvider : IConfigurationProvider
+        {
+
+            public string BudgetApiUrl
+            {
+                get { return @"http://localhost:16618/"; }
+            }
         }
     }
 }

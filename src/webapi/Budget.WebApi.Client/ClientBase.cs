@@ -11,20 +11,30 @@ namespace Budget.WebApi.Client
 {
     public abstract class ClientBase
     {
-        protected HttpClient httpClient;
+        private HttpClient httpClient;
+        private string budgetApiUrl;
 
-        public ClientBase(string baseUrl)
+        public ClientBase(IConfigurationProvider configurationProvider)
         {
-            this.httpClient = new HttpClient();
-            this.httpClient.BaseAddress = new Uri(baseUrl);
-            var acceptHeaders = this.httpClient.DefaultRequestHeaders.Accept;
-
-            acceptHeaders.Clear();
-            acceptHeaders.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            this.budgetApiUrl = configurationProvider.BudgetApiUrl;
         }
 
-        public ClientBase() : this(ConfigurationManager.AppSettings["BudgetApiUrl"])
+        protected HttpClient HttpClient
         {
+            get
+            {
+                if (this.httpClient == null)
+                {
+                    this.httpClient = new HttpClient();
+                    this.httpClient.BaseAddress = new Uri(this.budgetApiUrl);
+                    var acceptHeaders = this.httpClient.DefaultRequestHeaders.Accept;
+
+                    acceptHeaders.Clear();
+                    acceptHeaders.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                }
+
+                return this.httpClient;
+            }
         }
     }
 }

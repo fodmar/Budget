@@ -10,11 +10,7 @@ namespace Budget.WebApi.Client
 {
     public class ReceiptClient : ClientBase, IReceiptProvider
     {
-        public ReceiptClient() : base()
-        {
-        }
-
-        public ReceiptClient(string url) : base(url)
+        public ReceiptClient(IConfigurationProvider configurationProvider) : base(configurationProvider)
         {
         }
 
@@ -22,7 +18,7 @@ namespace Budget.WebApi.Client
         {
             string uri = string.Format("api/Receipt/{0}", id);
 
-            HttpResponseMessage response = await this.httpClient.GetAsync(uri);
+            HttpResponseMessage response = await this.HttpClient.GetAsync(uri);
 
             return await response.Content.ReadAsAsync<Receipt>();
         }
@@ -31,7 +27,7 @@ namespace Budget.WebApi.Client
         {
             string uri = "api/Receipt/";
 
-            HttpResponseMessage response = await this.httpClient.GetAsync(uri);
+            HttpResponseMessage response = await this.HttpClient.GetAsync(uri);
             Receipt[] result = await response.Content.ReadAsAsync<Receipt[]>();
 
             return result;
@@ -41,7 +37,7 @@ namespace Budget.WebApi.Client
         {
             string uri = string.Format("api/Receipt/{0}/{1}", from.ToUriParamString(), to.ToUriParamString());
 
-            HttpResponseMessage response = await this.httpClient.GetAsync(uri);
+            HttpResponseMessage response = await this.HttpClient.GetAsync(uri);
             Receipt[] result = await response.Content.ReadAsAsync<Receipt[]>();
 
             return result;

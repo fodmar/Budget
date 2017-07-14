@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="App_Start\DependencyResolutionConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />

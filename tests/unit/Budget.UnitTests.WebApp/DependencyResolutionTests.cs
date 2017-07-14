@@ -12,16 +12,16 @@ using System.Web.Mvc;
 namespace Budget.UnitTests.WebApp
 {
     [TestFixture]
-    class DependencyResolutionTests
+    class WebAppDependencyResolutionTests
     {
         [Test]
-        public void StructureMapInternalTest()
+        public void StructureMapInternalTestWebApp()
         {
             IoC.EnsureConfigIsValid();
         }
 
         [Test]
-        public void ShouldInstantiateAllControllers()
+        public void ShouldInstantiateAllControllersWebApp()
         {
             // Arrange
             Type baseType = typeof(BaseController);
