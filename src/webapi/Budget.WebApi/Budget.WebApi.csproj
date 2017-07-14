@@ -55,7 +55,7 @@
       <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>..\..\..\..\packages\structuremap.3.0.0.108\lib\net40\StructureMap.dll</HintPath>
+      <HintPath>..\..\..\packages\structuremap.3.0.0.108\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap.Net4">
       <HintPath>..\..\..\packages\structuremap.3.0.0.108\lib\net40\StructureMap.Net4.dll</HintPath>
