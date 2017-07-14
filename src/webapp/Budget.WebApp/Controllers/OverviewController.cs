@@ -9,8 +9,15 @@ using Budget.WebApi.Client;
 
 namespace Budget.WebApp.Controllers
 {
-    public class BudgetController : Controller
+    public class OverviewController : Controller
     {
+        private IReceiptProvider receiptProvider;
+
+        public OverviewController(IReceiptProvider receiptProvider)
+        {
+            this.receiptProvider = receiptProvider;
+        }
+
         public ActionResult Overview()
         {
             return this.View();
@@ -18,8 +25,7 @@ namespace Budget.WebApp.Controllers
 
         public async Task<ActionResult> GetReceipts(DateTime from, DateTime to)
         {
-            IReceiptProvider provider = new ReceiptClient();
-            return Json(await provider.GetReceiptsByDatesAsync(from, to));
+            return Json(await this.receiptProvider.GetReceiptsByDatesAsync(from, to));
         }
     }
 }

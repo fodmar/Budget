@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
 using NUnit.Framework;
-using Budget.WebApi;
-using System.Web.Http.Dependencies;
-using Budget.WebApi.Controllers;
-using System.Web;
-using System.Web.Hosting;
-using Rhino.Mocks;
-using Budget.WebApi.DependencyResolution;
+using Budget.WebApp.Controllers;
+using Budget.WebApp.DependencyResolution;
+using Budget.WebApp;
+using System.Web.Mvc;
 
-namespace Budget.UnitTests.WebApi
+namespace Budget.UnitTests.WebApp
 {
     [TestFixture]
     class DependencyResolutionTests
@@ -28,20 +24,16 @@ namespace Budget.UnitTests.WebApi
         public void ShouldInstantiateAllControllers()
         {
             // Arrange
-            SimpleWorkerRequest request = new SimpleWorkerRequest(string.Empty, string.Empty, string.Empty, null, null);
-            HttpContext.Current = new HttpContext(request);
-            HttpConfiguration httpConfig = new HttpConfiguration();
-
             Type baseType = typeof(BaseController);
             var toCreate = baseType.Assembly
                                    .GetTypes()
                                    .Where(t => t.IsSubclassOf(baseType));
 
             // Act
-            WebApiConfig.InitializeDependencyResolution(httpConfig);
+            DependencyResolutionConfig.InitializeDependencyResolution();
             foreach (Type controllerType in toCreate)
             {
-                httpConfig.DependencyResolver.GetService(controllerType);
+                DependencyResolver.Current.GetService(controllerType);
             }
         }
     }

@@ -15,6 +15,8 @@ namespace Budget.WebApp
 
             RouteConfig.IgnoreRoutes(RouteTable.Routes);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            DependencyResolutionConfig.InitializeDependencyResolution();
         }
     }
 }

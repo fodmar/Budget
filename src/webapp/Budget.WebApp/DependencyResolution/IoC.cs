@@ -16,7 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Budget.WebApi.DependencyResolution
+namespace Budget.WebApp.DependencyResolution
 {
     using Budget.WebApi.DependencyResolution.Registry;
     using StructureMap;

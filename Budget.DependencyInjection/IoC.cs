@@ -16,24 +16,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Budget.WebApi.DependencyResolution
-{
-    using Budget.WebApi.DependencyResolution.Registry;
+namespace Budget.DependencyInjection.DependencyResolution {
     using StructureMap;
 	
-    public static class IoC
-    {
-        public static IContainer Initialize()
-        {
-            return new Container(c =>
-            {
-                c.AddRegistry<ControllerRegistry>();
-            });
-        }
-
-        public static void EnsureConfigIsValid()
-        {
-            Initialize().AssertConfigurationIsValid();
+    public static class IoC {
+        public static IContainer Initialize() {
+            return new Container(c => c.AddRegistry<DefaultRegistry>());
         }
     }
 }
