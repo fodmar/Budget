@@ -7,8 +7,8 @@
     <ProjectGuid>{43E28DBF-DB27-4BA8-AFA2-D2CFD2FD60B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Budget.Domain</RootNamespace>
-    <AssemblyName>Budget.Domain</AssemblyName>
+    <RootNamespace>Budget.ObjectModel</RootNamespace>
+    <AssemblyName>Budget.ObjectModel</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
