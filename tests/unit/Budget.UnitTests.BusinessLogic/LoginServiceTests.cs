@@ -37,7 +37,7 @@ namespace Budget.UnitTests.BusinessLogic
         {
             public string Login { get; set; }
 
-            public SecureString Password { get; set; }
+            public string Password { get; set; }
 
             public IUserProvider UserProvider { get; set; }
 
@@ -52,7 +52,7 @@ namespace Budget.UnitTests.BusinessLogic
                 UserPassword password = (UserPassword)p.Arguments[0];
                 User returnValue = null;
 
-                if (password.UserLogin == "a" && password.Hash == "0CC175B9C0F1B6A831C399E269772661") // password: a
+                if (password.UserLogin == "a" && password.Hash == "0cc175b9c0f1b6a831c399e269772661") // password: a
                 {
                     returnValue = new User { Name = "A" };
                 }
@@ -60,15 +60,11 @@ namespace Budget.UnitTests.BusinessLogic
                 p.ReturnValue = returnValue;
             });
 
-            SecureString pass = new SecureString();
-            pass.AppendChar('a');
-            pass.MakeReadOnly();
-
             yield return new Scenario
             {
                 UserProvider = userProvider,
                 Login = "a",
-                Password = pass,
+                Password = "a",
                 ExpectedUser = new User { Name = "A" }
             };
 
@@ -76,7 +72,7 @@ namespace Budget.UnitTests.BusinessLogic
             {
                 UserProvider = userProvider,
                 Login = "b",
-                Password = pass,
+                Password = "b",
                 ExpectedUser = null
             };
         }

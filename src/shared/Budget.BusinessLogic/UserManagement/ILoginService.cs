@@ -9,6 +9,6 @@ namespace Budget.BusinessLogic.UserManagement
 {
     public interface ILoginService
     {
-        LoginAttempt Login(string login, SecureString password);
+        LoginAttempt Login(string login, string password);
     }
 }

@@ -19,7 +19,7 @@ namespace Budget.BusinessLogic.UserManagement
             this.userProvider = userProvider;
         }
 
-        public LoginAttempt Login(string login, SecureString password)
+        public LoginAttempt Login(string login, string password)
         {
             string hash = this.CalculateHash(password);
 
@@ -31,37 +31,18 @@ namespace Budget.BusinessLogic.UserManagement
             return attempt;
         }
 
-        private string CalculateHash(SecureString password)
+        private string CalculateHash(string password)
         {
-            // never do crypto yourself :)
-
-            char[] passwordChars = new char[password.Length];
-            IntPtr passwordPointer = Marshal.SecureStringToBSTR(password);
-
-            // password is visible now
-            Marshal.Copy(passwordPointer, passwordChars, 0, passwordChars.Length);
-
-            // delete password from memory
-            Marshal.ZeroFreeBSTR(passwordPointer);
-            password = null;
-
-            // hash
             byte[] hash;
             using (MD5 algorithm = MD5.Create())
             {
-                hash = algorithm.ComputeHash(Encoding.ASCII.GetBytes(passwordChars));
-            }
-
-            // delete copy of password from memory
-            for (int i = 0; i < passwordChars.Length; i++)
-            {
-                passwordChars[i] = '\0';
+                hash = algorithm.ComputeHash(Encoding.ASCII.GetBytes(password));
             }
 
             StringBuilder stringBuiler = new StringBuilder();
             foreach (byte item in hash)
             {
-                stringBuiler.Append(item.ToString("X2"));
+                stringBuiler.Append(item.ToString("x2"));
             }
 
             return stringBuiler.ToString();
