@@ -22,6 +22,7 @@ namespace Budget.UnitTests.BusinessLogic
 
             LoginAttempt attempt = loginService.Login(scenario.Login, scenario.Password);
 
+            scenario.UserProvider.AssertWasCalled(p => p.FindUser(Arg<UserPassword>.Is.Anything));
             if (scenario.ExpectedUser == null)
             {
                 Assert.IsNull(attempt.User);
@@ -45,17 +46,29 @@ namespace Budget.UnitTests.BusinessLogic
 
         public IEnumerable<Scenario> Generate()
         {
-            IUserProvider userProvider = new FakeUserProvider();
+            IUserProvider userProvider = MockRepository.GenerateStub<IUserProvider>();
+            userProvider.Stub(s => s.FindUser(Arg<UserPassword>.Is.Anything)).WhenCalled(p =>
+            {
+                UserPassword password = (UserPassword)p.Arguments[0];
+                User returnValue = null;
 
-            SecureString password = new SecureString();
-            password.AppendChar('a');
-            password.MakeReadOnly();
+                if (password.UserLogin == "a" && password.Hash == "0CC175B9C0F1B6A831C399E269772661") // password: a
+                {
+                    returnValue = new User { Name = "A" };
+                }
+
+                p.ReturnValue = returnValue;
+            });
+
+            SecureString pass = new SecureString();
+            pass.AppendChar('a');
+            pass.MakeReadOnly();
 
             yield return new Scenario
             {
                 UserProvider = userProvider,
                 Login = "a",
-                Password = password,
+                Password = pass,
                 ExpectedUser = new User { Name = "A" }
             };
 
@@ -63,22 +76,9 @@ namespace Budget.UnitTests.BusinessLogic
             {
                 UserProvider = userProvider,
                 Login = "b",
-                Password = password,
+                Password = pass,
                 ExpectedUser = null
             };
-        }
-
-        class FakeUserProvider : IUserProvider
-        {
-            public User FindUser(UserPassword password)
-            {
-                if (password.UserLogin == "a" && password.Hash == "0CC175B9C0F1B6A831C399E269772661") // password: a
-	            {
-                    return new User { Name = "A" };
-	            }
-
-                return null;
-            }
         }
     }
 }
