@@ -1,6 +1,7 @@
 using System;
 using System.Data.Entity;
 using System.Linq;
+using Budget.Database.Configuration;
 using Budget.ObjectModel;
 
 namespace Budget.Database
@@ -11,7 +12,15 @@ namespace Budget.Database
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            UserConfiguration.Configure(modelBuilder.Entity<User>());
+            UserPasswordConfiguration.Configure(modelBuilder.Entity<UserPassword>());
+        }
+
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserPassword> UsersPasswords { get; set; }
     }
 }

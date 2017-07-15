@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public class Receipt
+    public partial class User
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public string Name { get; set; }
 
-        public DateTime Date { get; set; }
+        public string Email { get; set; }
 
-        public ICollection<ReceiptEntry> Entries { get; set; }
+        public ICollection<Receipt> Receipts { get; set; }
     }
 }

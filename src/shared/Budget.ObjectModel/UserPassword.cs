@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public class Receipt
+    public class UserPassword
     {
-        public int Id { get; set; }
-
         public int UserId { get; set; }
 
-        public DateTime Date { get; set; }
+        public string UserLogin { get; set; }
 
-        public ICollection<ReceiptEntry> Entries { get; set; }
+        public string Hash { get; set; }
     }
 }

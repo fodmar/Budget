@@ -49,10 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BudgetDatabase.cs" />
+    <Compile Include="Configuration\UserConfiguration.cs" />
+    <Compile Include="Configuration\UserPasswordConfiguration.cs" />
     <Compile Include="IBudgetDatabase.cs" />
     <Compile Include="Migrations\201707021324318_InitialCreate.cs" />
     <Compile Include="Migrations\201707021324318_InitialCreate.Designer.cs">
       <DependentUpon>201707021324318_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707151429165_CreateUser.cs" />
+    <Compile Include="Migrations\201707151429165_CreateUser.Designer.cs">
+      <DependentUpon>201707151429165_CreateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707021324318_InitialCreate.resx">
       <DependentUpon>201707021324318_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707151429165_CreateUser.resx">
+      <DependentUpon>201707151429165_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
