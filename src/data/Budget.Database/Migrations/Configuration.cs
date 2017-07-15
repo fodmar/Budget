@@ -20,7 +20,7 @@ namespace Budget.Database.Migrations
                 new User { Id = 1, Name = "Marcin", Email = "a@a.a" });
 
             context.UsersPasswords.AddOrUpdate(
-                new UserPassword { UserId = 1, UserLogin = "marcin", Hash = "d5fad0cda8f1079681ec510bb20a586c" });
+                new UserPassword { UserId = 1, UserLogin = "marcin", Hash = "0CC175B9C0F1B6A831C399E269772661" }); //password: a
 
             context.Receipts.AddOrUpdate(
                 e => e.Id,

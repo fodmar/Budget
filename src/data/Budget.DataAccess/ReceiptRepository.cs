@@ -11,11 +11,11 @@ using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
-    public class DataAccessFacade : IReceiptProvider
+    public class ReceiptRepository : IReceiptProvider
     {
         private readonly IBudgetDatabase budgetDatabase;
 
-        public DataAccessFacade(IBudgetDatabase budgetDatabase)
+        public ReceiptRepository(IBudgetDatabase budgetDatabase)
         {
             this.budgetDatabase = budgetDatabase;
         }

@@ -10,7 +10,7 @@ namespace Budget.WebApi.DependencyResolution.Registry
     {
         public ControllerRegistry() 
         {
-            For<IReceiptProvider>().Use<DataAccessFacade>();
+            For<IReceiptProvider>().Use<ReceiptRepository>();
             For<IBudgetDatabase>().Use<BudgetDatabase>();
         }
     }
