@@ -126,6 +126,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
