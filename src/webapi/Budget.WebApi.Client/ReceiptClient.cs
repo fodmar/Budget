@@ -10,37 +10,43 @@ namespace Budget.WebApi.Client
 {
     public class ReceiptClient : ClientBase, IReceiptProvider
     {
-        public ReceiptClient(IConfigurationProvider configurationProvider) : base(configurationProvider)
+        protected override string UriController
+        {
+            get { return "api/Receipt/"; }
+        }
+
+        public ReceiptClient(
+            IConfigurationProvider configurationProvider,
+            IHeadersProvider headersProvider) 
+            : base(configurationProvider, headersProvider)
         {
         }
 
-        public async Task<Receipt> GetReceiptAsync(int id)
+        public Task<Receipt> GetReceiptAsync(int id)
         {
-            string uri = string.Format("api/Receipt/{0}", id);
-
-            HttpResponseMessage response = await this.HttpClient.GetAsync(uri);
-
-            return await response.Content.ReadAsAsync<Receipt>();
+            return
+                this.CreateRequest()
+                    .AddUriParam(id)
+                    .AsGet()
+                    .Send<Receipt>();
         }
 
         public async Task<IEnumerable<Receipt>> GetReceiptsAsync()
         {
-            string uri = "api/Receipt/";
-
-            HttpResponseMessage response = await this.HttpClient.GetAsync(uri);
-            Receipt[] result = await response.Content.ReadAsAsync<Receipt[]>();
-
-            return result;
+            return await
+                this.CreateRequest()
+                    .AsGet()
+                    .Send<Receipt[]>() as IEnumerable<Receipt>;
         }
 
         public async Task<IEnumerable<Receipt>> GetReceiptsByDatesAsync(DateTime? from, DateTime? to)
         {
-            string uri = string.Format("api/Receipt/{0}/{1}", from.ToUriParamString(), to.ToUriParamString());
-
-            HttpResponseMessage response = await this.HttpClient.GetAsync(uri);
-            Receipt[] result = await response.Content.ReadAsAsync<Receipt[]>();
-
-            return result;
+            return await
+                this.CreateRequest()
+                    .AddUriParam(from.ToUriParamString())
+                    .AddUriParam(to.ToUriParamString())
+                    .AsGet()
+                    .Send<Receipt[]>() as IEnumerable<Receipt>;
         }
     }
 }

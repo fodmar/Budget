@@ -44,9 +44,9 @@ namespace Budget.WebApi.ModelBinders
                 }
             }
 
-            long unixTimeStamp;
+            double unixTimeStamp;
 
-            if (long.TryParse(stringValue, out unixTimeStamp))
+            if (double.TryParse(stringValue, out unixTimeStamp))
             {
                 DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                 bindingContext.Model = dateTime.AddSeconds(unixTimeStamp).ToLocalTime();
