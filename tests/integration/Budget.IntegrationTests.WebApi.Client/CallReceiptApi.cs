@@ -14,6 +14,7 @@ namespace Budget.IntegrationTests.WebApi.Client
     public class CallReceiptApi
     {
         [Test]
+        [Ignore]
         public async void GetReceipt()
         {
             ReceiptClient client = this.CreateClient();
@@ -21,6 +22,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         }
 
         [Test]
+        [Ignore]
         public async void GetReceipts()
         {
             ReceiptClient client = this.CreateClient();
@@ -28,6 +30,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         }
 
         [Test]
+        [Ignore]
         public async void GetReceiptByDateRange()
         {
             ReceiptClient client = this.CreateClient();

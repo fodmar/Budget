@@ -17,7 +17,7 @@ namespace Budget.WebApp.Utils
         }
 
         public Guid CorrelationId
-        
+        {
             //// todo: use in different areas of app
             get { return Trace.CorrelationManager.ActivityId; }
         }
