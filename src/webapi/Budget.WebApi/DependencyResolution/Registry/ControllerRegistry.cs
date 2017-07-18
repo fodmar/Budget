@@ -1,4 +1,4 @@
-namespace Budget.WebApi.DependencyResolution.Registry
+namespace Budget.WebApi.DependencyResolution.Registries
 {
     using Budget.DataAccess;
     using Budget.Database;

@@ -6,14 +6,20 @@ using System.Web;
 using System.Web.Mvc;
 using Budget.ObjectModel;
 using Budget.WebApi.Client;
+using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers
 {
-    public partial class OverviewController : Controller
+    public partial class OverviewController : BaseController
     {
         private IReceiptProvider receiptProvider;
+        private ICorrelationIdProvider cor;
 
-        public OverviewController(IReceiptProvider receiptProvider)
+        public OverviewController(
+            ISessionHelper sessionHelper,
+            IReceiptProvider receiptProvider,
+            ICorrelationIdProvider cor)
+            : base(sessionHelper)
         {
             this.receiptProvider = receiptProvider;
         }

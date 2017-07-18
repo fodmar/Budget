@@ -18,7 +18,7 @@
 
 namespace Budget.WebApi.DependencyResolution
 {
-    using Budget.WebApi.DependencyResolution.Registry;
+    using Budget.WebApi.DependencyResolution.Registries;
     using StructureMap;
 	
     public static class IoC
