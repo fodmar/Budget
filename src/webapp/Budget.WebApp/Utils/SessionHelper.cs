@@ -26,7 +26,7 @@ namespace Budget.WebApp.Utils
 
         protected void Put<T>(SessionKeys sessionKey, T item)
         {
-            HttpContext.Current.Session.Add(sessionKey.ToString(), item);
+            HttpContext.Current.Session.Add(((int)sessionKey).ToString(), item);
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Budget.ObjectModel
 {
     public interface ICorrelationIdProvider
     {
-        Guid CurrentId { get; set; }
+        Guid CurrentId { get; }
     }
 }

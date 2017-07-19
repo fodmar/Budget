@@ -38,7 +38,7 @@ namespace Budget.UnitTests.WebApi
                                    .Where(t => t.IsSubclassOf(baseType));
 
             // Act
-            WebApiConfig.InitializeDependencyResolution(httpConfig);
+            DependencyResolutionConfig.InitializeDependencyResolution(httpConfig);
             foreach (Type controllerType in toCreate)
             {
                 httpConfig.DependencyResolver.GetService(controllerType);

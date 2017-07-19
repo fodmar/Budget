@@ -20,8 +20,8 @@ namespace Budget.WebApi
         {
             config.MapHttpAttributeRoutes();
 
-            WebApiConfig.RegisterRoutes(config.Routes);
-            WebApiConfig.InitializeDependencyResolution(config);
+            RouteConfig.RegisterRoutes(config.Routes);
+            DependencyResolutionConfig.InitializeDependencyResolution(config);
         }
     }
 }

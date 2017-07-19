@@ -8,6 +8,8 @@ using Budget.WebApp.Controllers;
 using Budget.WebApp.DependencyResolution;
 using Budget.WebApp;
 using System.Web.Mvc;
+using System.Web;
+using System.Web.Hosting;
 
 namespace Budget.UnitTests.WebApp
 {
@@ -24,6 +26,9 @@ namespace Budget.UnitTests.WebApp
         public void ShouldInstantiateAllControllersWebApp()
         {
             // Arrange
+            SimpleWorkerRequest request = new SimpleWorkerRequest(string.Empty, string.Empty, string.Empty, null, null);
+            HttpContext.Current = new HttpContext(request);
+
             Type baseType = typeof(BaseController);
             var toCreate = baseType.Assembly
                                    .GetTypes()

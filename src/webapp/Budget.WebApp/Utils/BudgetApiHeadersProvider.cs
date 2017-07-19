@@ -12,16 +12,19 @@ namespace Budget.WebApp.Utils
     public class BudgetApiHeadersProvider : IHeadersProvider
     {
         private ICorrelationIdProvider correlationIdProvider;
+        private ISessionHelper sessionHelper;
 
-        public BudgetApiHeadersProvider(ICorrelationIdProvider correlationIdProvider)
+        public BudgetApiHeadersProvider(
+            ICorrelationIdProvider correlationIdProvider,
+            ISessionHelper sessionHelper)
         {
             this.correlationIdProvider = correlationIdProvider;
+            this.sessionHelper = sessionHelper;
         }
 
         public int UserId
         {
-            //// todo: implement session
-            get { return 3; }//HttpContext.Current.Session["userId"]; }
+            get { return this.sessionHelper.UserId; }
         }
 
         public Guid CorrelationId

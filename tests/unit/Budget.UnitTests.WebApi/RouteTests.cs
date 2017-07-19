@@ -27,7 +27,7 @@ namespace Budget.UnitTests.WebApi
         public RouteTests()
         {
             this.routes = new HttpRouteCollection();
-            WebApiConfig.RegisterRoutes(this.routes);
+            RouteConfig.RegisterRoutes(this.routes);
 
             this.configuration = new HttpConfiguration(this.routes);
             this.controllerSelector = new DefaultHttpControllerSelector(this.configuration);

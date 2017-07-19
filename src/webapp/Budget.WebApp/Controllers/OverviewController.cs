@@ -13,12 +13,10 @@ namespace Budget.WebApp.Controllers
     public partial class OverviewController : BaseController
     {
         private IReceiptProvider receiptProvider;
-        private ICorrelationIdProvider cor;
 
         public OverviewController(
             ISessionHelper sessionHelper,
-            IReceiptProvider receiptProvider,
-            ICorrelationIdProvider cor)
+            IReceiptProvider receiptProvider)
             : base(sessionHelper)
         {
             this.receiptProvider = receiptProvider;

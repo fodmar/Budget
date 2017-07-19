@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DependencyResolutionConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
+    <Compile Include="Filters\CorrelationIdAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -128,6 +130,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
+    <Compile Include="Utils\CorrelationIdProvider.cs" />
     <Compile Include="Utils\ISessionHelper.cs" />
     <Compile Include="Utils\SessionHelper.cs" />
     <Compile Include="Utils\SessionKeys.cs" />
