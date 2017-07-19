@@ -14,7 +14,7 @@
     <RootNamespace>Budget.WebApi</RootNamespace>
     <AssemblyName>Budget.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -160,7 +160,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>19808</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/budget</IISUrl>
+          <IISUrl>http://localhost:19808/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
