@@ -23,7 +23,7 @@ namespace Budget.BusinessLogic.UserManagement
         {
             string hash = this.CalculateHash(password);
 
-            UserPassword userPassword = new UserPassword { UserLogin = login, Hash = hash };
+            UserPassword userPassword = new UserPassword(login, hash);
 
             User user = await this.userProvider.FindUser(userPassword);
             LoginAttempt attempt = new LoginAttempt(user);

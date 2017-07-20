@@ -115,6 +115,14 @@ namespace Budget.UnitTests.WebApi
                 ExpectedController = typeof(ReceiptController),
                 ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(null, null)),
             };
+
+            yield return new Scenario
+            {
+                Url = @"http://nonexisting/api/User/Find/a/a",
+                HttpMethod = HttpMethod.Get,
+                ExpectedController = typeof(UserController),
+                ExpectedAction = MethodName((UserController c) => c.Find(null, null)),
+            };
         }
     }
 }

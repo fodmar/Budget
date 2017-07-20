@@ -8,6 +8,16 @@ namespace Budget.ObjectModel
 {
     public class UserPassword
     {
+        public UserPassword()
+        {
+        }
+
+        public UserPassword(string login, string hash)
+        {
+            this.UserLogin = login;
+            this.Hash = hash;
+        }
+
         public int UserId { get; set; }
 
         public string UserLogin { get; set; }

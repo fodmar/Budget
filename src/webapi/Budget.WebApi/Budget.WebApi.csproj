@@ -107,6 +107,7 @@
     <Compile Include="App_Start\DependencyResolutionConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ReceiptController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DependencyResolution\Registry\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -139,6 +140,10 @@
     <ProjectReference Include="..\..\data\Budget.Database\Budget.Database.csproj">
       <Project>{d52605eb-ca5e-4fcd-8da5-a34dded21219}</Project>
       <Name>Budget.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
+      <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
+      <Name>Budget.BusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>

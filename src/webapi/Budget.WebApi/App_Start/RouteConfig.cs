@@ -11,8 +11,13 @@ namespace Budget.WebApi
         public static void RegisterRoutes(HttpRouteCollection routes)
         {
             routes.MapHttpRoute(
-                name: "ListAll",
-                routeTemplate: "api/{controller}/"
+                name: "User",
+                routeTemplate: "api/{controller}/{action}/{login}/{hash}"
+            );
+
+            routes.MapHttpRoute(
+                name: "ReceiptsByDateRange",
+                routeTemplate: "api/{controller}/{from}/{to}"
             );
 
             routes.MapHttpRoute(
@@ -21,8 +26,8 @@ namespace Budget.WebApi
             );
 
             routes.MapHttpRoute(
-                name: "ReceiptsByDateRange",
-                routeTemplate: "api/{controller}/{from}/{to}"
+                name: "ListAll",
+                routeTemplate: "api/{controller}"
             );
         }
     }

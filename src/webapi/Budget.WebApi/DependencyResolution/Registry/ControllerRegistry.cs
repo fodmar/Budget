@@ -1,5 +1,6 @@
 namespace Budget.WebApi.DependencyResolution.Registries
 {
+    using Budget.BusinessLogic.UserManagement;
     using Budget.DataAccess;
     using Budget.Database;
     using Budget.ObjectModel;
@@ -12,6 +13,8 @@ namespace Budget.WebApi.DependencyResolution.Registries
         {
             For<IReceiptProvider>().Use<ReceiptRepository>();
             For<IBudgetDatabase>().Use<BudgetDatabase>();
+
+            For<IUserProvider>().Use<UserRepository>();
         }
     }
 }
