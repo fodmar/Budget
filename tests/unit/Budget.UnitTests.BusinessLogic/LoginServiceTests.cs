@@ -20,7 +20,7 @@ namespace Budget.UnitTests.BusinessLogic
         {
             LoginService loginService = new LoginService(scenario.UserProvider);
 
-            LoginAttempt attempt = loginService.Login(scenario.Login, scenario.Password);
+            LoginAttempt attempt = loginService.Login(scenario.Login, scenario.Password).Result;
 
             scenario.UserProvider.AssertWasCalled(p => p.FindUser(Arg<UserPassword>.Is.Anything));
             if (scenario.ExpectedUser == null)
@@ -47,18 +47,12 @@ namespace Budget.UnitTests.BusinessLogic
         public IEnumerable<Scenario> Generate()
         {
             IUserProvider userProvider = MockRepository.GenerateStub<IUserProvider>();
-            userProvider.Stub(s => s.FindUser(Arg<UserPassword>.Is.Anything)).WhenCalled(p =>
-            {
-                UserPassword password = (UserPassword)p.Arguments[0];
-                User returnValue = null;
 
-                if (password.UserLogin == "a" && password.Hash == "0cc175b9c0f1b6a831c399e269772661") // password: a
-                {
-                    returnValue = new User { Name = "A" };
-                }
+            userProvider.Stub(s => s.FindUser(Arg<UserPassword>.Matches(p => p.UserLogin == "a" && p.Hash == "0cc175b9c0f1b6a831c399e269772661")))
+                        .Return(Task<User>.FromResult(new User { Name = "A" }));
 
-                p.ReturnValue = returnValue;
-            });
+            userProvider.Stub(s => s.FindUser(Arg<UserPassword>.Is.Anything))
+                        .Return(Task<User>.FromResult(default(User)));
 
             yield return new Scenario
             {

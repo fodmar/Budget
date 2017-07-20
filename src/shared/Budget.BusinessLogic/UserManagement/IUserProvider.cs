@@ -9,6 +9,6 @@ namespace Budget.BusinessLogic.UserManagement
 {
     public interface IUserProvider
     {
-        User FindUser(UserPassword password); 
+        Task<User> FindUser(UserPassword password); 
     }
 }

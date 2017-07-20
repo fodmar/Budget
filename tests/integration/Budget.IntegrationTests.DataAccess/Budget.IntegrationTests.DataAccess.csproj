@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="QueryReceiptsIntegrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRepositoryIntegrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\..\..\src\data\Budget.Database\Budget.Database.csproj">
       <Project>{d52605eb-ca5e-4fcd-8da5-a34dded21219}</Project>
       <Name>Budget.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
+      <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
+      <Name>Budget.BusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>

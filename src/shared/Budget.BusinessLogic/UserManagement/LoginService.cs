@@ -19,13 +19,13 @@ namespace Budget.BusinessLogic.UserManagement
             this.userProvider = userProvider;
         }
 
-        public LoginAttempt Login(string login, string password)
+        public async Task<LoginAttempt> Login(string login, string password)
         {
             string hash = this.CalculateHash(password);
 
             UserPassword userPassword = new UserPassword { UserLogin = login, Hash = hash };
 
-            User user = this.userProvider.FindUser(userPassword);
+            User user = await this.userProvider.FindUser(userPassword);
             LoginAttempt attempt = new LoginAttempt(user);
 
             return attempt;
