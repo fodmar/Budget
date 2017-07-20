@@ -28,6 +28,12 @@ namespace Budget.WebApi.Client
             requestHeaders.Add("correlationId", headersProvider.CorrelationId.ToString());
         }
 
+        public ApiRequest ActionName(string name)
+        {
+            this.uri += name + "/";
+            return this;
+        }
+
         public ApiRequest AddUriParam<T>(T param)
         {
             this.uri += param.ToString() + "/";

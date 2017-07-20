@@ -56,11 +56,16 @@
     <Compile Include="IHeadersProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptClient.cs" />
+    <Compile Include="UserClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
+      <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
+      <Name>Budget.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
       <Name>Budget.ObjectModel</Name>
