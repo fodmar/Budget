@@ -12,7 +12,7 @@ namespace Budget.WebApi.Client
     {
         protected override string UriController
         {
-            get { return "api/User/"; }
+            get { return "api/user/"; }
         }
 
         public UserClient(
@@ -26,7 +26,6 @@ namespace Budget.WebApi.Client
         {
  	        return await
                 this.CreateRequest()
-                    .ActionName("Find")
                     .AddUriParam(password.UserLogin)
                     .AddUriParam(password.Hash)
                     .Send<User>();

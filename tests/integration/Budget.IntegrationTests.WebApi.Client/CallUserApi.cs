@@ -14,6 +14,7 @@ namespace Budget.IntegrationTests.WebApi.Client
     class CallUserApi
     {
         [Test]
+        [Ignore]
         public async void GetUser()
         {
             UserClient client = this.CreateClient();

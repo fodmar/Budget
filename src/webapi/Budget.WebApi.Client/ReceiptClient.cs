@@ -12,7 +12,7 @@ namespace Budget.WebApi.Client
     {
         protected override string UriController
         {
-            get { return "api/Receipt/"; }
+            get { return "api/receipt/"; }
         }
 
         public ReceiptClient(

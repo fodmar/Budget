@@ -12,22 +12,26 @@ namespace Budget.WebApi
         {
             routes.MapHttpRoute(
                 name: "User",
-                routeTemplate: "api/{controller}/{action}/{login}/{hash}"
+                routeTemplate: "api/user/{login}/{hash}",
+                defaults: new { controller = "User", action = "Find" }
             );
 
             routes.MapHttpRoute(
                 name: "ReceiptsByDateRange",
-                routeTemplate: "api/{controller}/{from}/{to}"
+                routeTemplate: "api/receipt/{from}/{to}",
+                defaults: new { controller = "Receipt", action = "GetReceiptsFromDateRange" }
             );
 
             routes.MapHttpRoute(
                 name: "GetOne",
-                routeTemplate: "api/{controller}/{id}"
+                routeTemplate: "api/receipt/{id}",
+                defaults: new { controller = "Receipt", action = "GetReceipt" }
             );
 
             routes.MapHttpRoute(
                 name: "ListAll",
-                routeTemplate: "api/{controller}"
+                routeTemplate: "api/receipt/",
+                defaults: new { controller = "Receipt", action = "GetReceipts" }
             );
         }
     }
