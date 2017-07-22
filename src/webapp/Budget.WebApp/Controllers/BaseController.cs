@@ -8,6 +8,7 @@ using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers
 {
+    [Authorize]
     [CorrelationId]
     public abstract partial class BaseController : Controller
     {

@@ -7,6 +7,11 @@ namespace Budget.WebApp.Utils
 {
     class SessionHelper : ISessionHelper
     {
+        public void Clear()
+        {
+            HttpContext.Current.Session.Clear();
+        }
+
         public int UserId
         {
             get

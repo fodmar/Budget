@@ -1,0 +1,13 @@
+﻿@{
+    Layout = null;
+}
+
+@using Budget.WebApp.Extensions;
+@model Budget.WebApp.Models.LoginModel
+
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    @Html.SubmitForm("Zaloguj")
+}

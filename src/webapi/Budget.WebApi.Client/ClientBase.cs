@@ -11,11 +11,11 @@ namespace Budget.WebApi.Client
 {
     public abstract class ClientBase
     {
-        private IHeadersProvider headersProvider;
+        protected IHeadersProvider headersProvider;
 
         private HttpClient httpClient;
         private string budgetApiUrl;
-
+        
         public ClientBase(
             IConfigurationProvider configurationProvider,
             IHeadersProvider headersProvider)
@@ -39,9 +39,19 @@ namespace Budget.WebApi.Client
             }
         }
 
+        protected virtual void AddHeaders(ApiRequest request)
+        {
+            request.AddHeader("userId", this.headersProvider.UserId);
+            request.AddHeader("correlationId", this.headersProvider.CorrelationId);
+        }
+
         protected ApiRequest CreateRequest()
         {
-            return new ApiRequest(this.budgetApiUrl + this.UriController, this.headersProvider, this.HttpClient);
+            ApiRequest request = new ApiRequest(this.budgetApiUrl + this.UriController, this.HttpClient);
+
+            this.AddHeaders(request);
+
+            return request;
         }
     }
 }

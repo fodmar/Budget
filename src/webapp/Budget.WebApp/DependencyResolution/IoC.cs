@@ -26,6 +26,7 @@ namespace Budget.WebApp.DependencyResolution
             {
                 c.AddRegistry<ControllerRegistry>();
                 c.AddRegistry<UtilsRegistry>();
+                c.AddRegistry<AuthenticationRegistry>();
             });
         }
 

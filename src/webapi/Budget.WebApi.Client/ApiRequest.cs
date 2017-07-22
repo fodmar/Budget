@@ -14,7 +14,7 @@ namespace Budget.WebApi.Client
         private HttpClient httpClient;
         private string uri;
 
-        public ApiRequest(string uri, IHeadersProvider headersProvider, HttpClient httpClient)
+        public ApiRequest(string uri, HttpClient httpClient)
         {
             this.httpClient = httpClient;
             this.uri = uri;
@@ -23,9 +23,9 @@ namespace Budget.WebApi.Client
 
             requestHeaders.Accept.Clear();
             requestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
 
-            requestHeaders.Add("userId", headersProvider.UserId.ToString());
-            requestHeaders.Add("correlationId", headersProvider.CorrelationId.ToString());
+        {
         }
 
         public ApiRequest ActionName(string name)

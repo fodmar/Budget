@@ -8,6 +8,8 @@ namespace Budget.WebApp.Utils
 {
     public interface ISessionHelper
     {
+        void Clear();
+
         int UserId { get; set; }
     }
 }

@@ -27,7 +27,6 @@ namespace Budget.IntegrationTests.WebApi.Client
             configurationProvider.Stub(s => s.BudgetApiUrl).Return(@"http://localhost:19808/");
 
             var headersProvider = MockRepository.GenerateStub<IHeadersProvider>();
-            //headersProvider.Stub(s => s.UserId).Return(123);
             headersProvider.Stub(s => s.CorrelationId).Return(Guid.Parse("AAAAFFFF-0000-0000-0000-000000000000"));
 
             return new UserClient(configurationProvider, headersProvider);

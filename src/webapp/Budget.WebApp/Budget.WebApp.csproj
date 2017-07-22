@@ -106,17 +106,26 @@
     <Compile Include="App_Start\DependencyResolutionConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authentication\FormsAuthenticationWrapper.cs" />
+    <Compile Include="Authentication\IFormsAuthentication.cs" />
     <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
+    <Compile Include="DependencyResolution\Registries\AuthenticationRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="OverviewController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -150,6 +159,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -160,9 +170,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
+      <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
+      <Name>Budget.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
       <Name>Budget.ObjectModel</Name>
