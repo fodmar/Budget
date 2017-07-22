@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Budget.BusinessLogic.UserManagement;
 using Budget.WebApi.Client;
+using Budget.WebApp.Authentication;
 using StructureMap.Configuration.DSL;
 
 namespace Budget.WebApp.DependencyResolution.Registries
@@ -14,6 +15,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
         {
             For<ILoginService>().Use<LoginService>();
             For<IUserProvider>().Use<UserClient>();
+            For<IFormsAuthentication>().Use<FormsAuthenticationWrapper>();
         }
     }
 }

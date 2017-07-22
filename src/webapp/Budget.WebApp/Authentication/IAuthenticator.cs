@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Budget.ObjectModel;
+using Budget.WebApp.Models;
 
 namespace Budget.WebApp.Authentication
 {
-    public interface IFormsAuthentication
+    public interface IAuthenticator
     {
-        void SetAuthCookie(string userName, bool createPersistentCookie);
-        void SignOut();
+        Task<bool> Login(LoginModel model);
+        void Logout();
     }
 }

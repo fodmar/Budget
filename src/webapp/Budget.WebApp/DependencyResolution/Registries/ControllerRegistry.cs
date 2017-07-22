@@ -18,7 +18,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
             For<IReceiptProvider>().Use<ReceiptClient>();
             For<IConfigurationProvider>().Use<BudgetApiConfigurationProvider>();
             For<IHeadersProvider>().Use<BudgetApiHeadersProvider>();
-            For<IFormsAuthentication>().Use<FormsAuthenticationWrapper>();
+            For<IAuthenticator>().Use<Authenticator>();
         }
     }
 }

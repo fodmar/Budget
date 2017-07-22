@@ -14,11 +14,11 @@ namespace Budget.WebApp.Controllers
 {
     public partial class LoginController : Controller
     {
-        private readonly IFormsAuthentication formsAuthentication;
+        private readonly IAuthenticator authenticator;
 
-        public LoginController(IFormsAuthentication formsAuthentication)
+        public LoginController(IAuthenticator authenticator)
         {
-            this.formsAuthentication = formsAuthentication;
+            this.authenticator = authenticator;
         }
 
         public virtual ActionResult Login(string returnUrl = null)
@@ -34,7 +34,7 @@ namespace Budget.WebApp.Controllers
                 return this.View(model);
             }
 
-            bool correct = await this.formsAuthentication.Login(model);
+            bool correct = await this.authenticator.Login(model);
 
             if (!correct)
             {
@@ -43,19 +43,18 @@ namespace Budget.WebApp.Controllers
                 return this.View(model);
             }
 
-            string redirectTo = model.ReturnUrl;
-
-            if (string.IsNullOrEmpty(redirectTo))
+            if (string.IsNullOrEmpty(model.ReturnUrl))
             {
-                redirectTo = @"~/";
+                model.ReturnUrl = @"~/";
             }
 
-            return this.Redirect(Url.Content(redirectTo));
+            return this.Redirect(Url.Content(model.ReturnUrl));
         }
 
         public virtual ActionResult Logout()
         {
-            return this.View();
+            this.authenticator.Logout();
+            return this.RedirectToAction(MVC.Login.ActionNames.Login);
         }
     }
 }

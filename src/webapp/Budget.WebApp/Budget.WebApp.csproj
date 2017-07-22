@@ -106,8 +106,10 @@
     <Compile Include="App_Start\DependencyResolutionConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authentication\Authenticator.cs" />
     <Compile Include="Authentication\FormsAuthenticationWrapper.cs" />
     <Compile Include="Authentication\IFormsAuthentication.cs" />
+    <Compile Include="Authentication\IAuthenticator.cs" />
     <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
