@@ -25,7 +25,9 @@ namespace Budget.WebApi.Client
             requestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        public void AddHeader<T>(string name, T value)
         {
+            this.request.Headers.Add(name, value.ToString());
         }
 
         public ApiRequest ActionName(string name)
