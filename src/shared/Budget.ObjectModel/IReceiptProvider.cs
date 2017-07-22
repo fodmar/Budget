@@ -8,10 +8,10 @@ namespace Budget.ObjectModel
 {
     public interface IReceiptProvider
     {
-        Task<Receipt> GetReceiptAsync(int id);
+        Task<Receipt> GetReceipt(int userId, int receiptId);
 
-        Task<IEnumerable<Receipt>> GetReceiptsAsync();
+        Task<IEnumerable<Receipt>> GetReceipts(int userId);
 
-        Task<IEnumerable<Receipt>> GetReceiptsByDatesAsync(DateTime? from, DateTime? to);
+        Task<IEnumerable<Receipt>> GetReceiptsByDates(int userId, DateTime? from, DateTime? to);
     }
 }

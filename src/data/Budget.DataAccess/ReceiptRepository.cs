@@ -36,19 +36,30 @@ namespace Budget.DataAccess
             }
         }
 
-        public Task<Receipt> GetReceiptAsync(int id)
+        public Task<Receipt> GetReceipt(int userId, int receiptId)
         {
-            return this.ReceiptsWithEntries.ById(id).SingleOrDefaultAsync();
+            return 
+                this.ReceiptsWithEntries
+                    .ByUserId(userId)
+                    .ByReceiptId(receiptId)
+                    .SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Receipt>> GetReceiptsAsync()
+        public async Task<IEnumerable<Receipt>> GetReceipts(int userId)
         {
-            return await this.ReceiptsWithEntries.ToListAsync();
+            return await
+                this.ReceiptsWithEntries
+                    .ByUserId(userId)
+                    .ToListAsync();
         }
 
-        public async Task<IEnumerable<Receipt>> GetReceiptsByDatesAsync(DateTime? from, DateTime? to)
+        public async Task<IEnumerable<Receipt>> GetReceiptsByDates(int userId, DateTime? from, DateTime? to)
         {
-            return await this.ReceiptsWithEntries.ByDateRange(from, to).ToListAsync();
+            return await
+                this.ReceiptsWithEntries
+                    .ByUserId(userId)
+                    .ByDateRange(from, to)
+                    .ToListAsync();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         public async void GetReceipt()
         {
             ReceiptClient client = this.CreateClient();
-            Receipt result = await client.GetReceiptAsync(2);
+            Receipt result = await client.GetReceipt(1, 2);
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         public async void GetReceipts()
         {
             ReceiptClient client = this.CreateClient();
-            IEnumerable<Receipt> result = await client.GetReceiptsAsync();
+            IEnumerable<Receipt> result = await client.GetReceipts(1);
         }
 
         [Test]
@@ -34,16 +34,15 @@ namespace Budget.IntegrationTests.WebApi.Client
         public async void GetReceiptByDateRange()
         {
             ReceiptClient client = this.CreateClient();
-            IEnumerable<Receipt> result = await client.GetReceiptsByDatesAsync(null, DateTime.Now);
+            IEnumerable<Receipt> result = await client.GetReceiptsByDates(1, null, DateTime.Now);
         }
 
         private ReceiptClient CreateClient()
         {
             var configurationProvider = MockRepository.GenerateStub<IConfigurationProvider>();
-            configurationProvider.Stub(s => s.BudgetApiUrl).Return(@"http://marcin-lenovo/budget/");
+            configurationProvider.Stub(s => s.BudgetApiUrl).Return(@"http://localhost:19808/");
 
             var headersProvider = MockRepository.GenerateStub<IHeadersProvider>();
-            headersProvider.Stub(s => s.UserId).Return(123);
             headersProvider.Stub(s => s.CorrelationId).Return(Guid.Parse("AAAAFFFF-0000-0000-0000-000000000000"));
 
             return new ReceiptClient(configurationProvider, headersProvider);

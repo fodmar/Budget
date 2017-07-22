@@ -17,7 +17,7 @@ namespace Budget.UnitTests.DataAccess
         [TestCaseSource("Generate")]
         public void QueryByIdTest_OneId(IQueryable<Receipt> receipts)
         {
-            Receipt[] result = receipts.ById(2).ToArray();
+            Receipt[] result = receipts.ByReceiptId(2).ToArray();
 
             Assert.AreEqual(1, result.Length);
             Assert.AreEqual(2, result.First().Id);
@@ -27,7 +27,7 @@ namespace Budget.UnitTests.DataAccess
         [TestCaseSource("Generate")]
         public void QueryByIdTest_TwoIds(IQueryable<Receipt> receipts)
         {
-            Receipt[] result = receipts.ById(1).ById(2).ToArray();
+            Receipt[] result = receipts.ByReceiptId(1).ByReceiptId(2).ToArray();
 
             Assert.AreEqual(0, result.Length);
         }

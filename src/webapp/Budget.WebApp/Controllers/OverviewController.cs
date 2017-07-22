@@ -29,7 +29,8 @@ namespace Budget.WebApp.Controllers
 
         public virtual async Task<ActionResult> GetReceipts(DateTime from, DateTime to)
         {
-            return Json(await this.receiptProvider.GetReceiptsByDatesAsync(from, to));
+            int userId = this.sessionHelper.UserId;
+            return Json(await this.receiptProvider.GetReceiptsByDates(userId, from, to));
         }
     }
 }

@@ -18,19 +18,19 @@ namespace Budget.WebApi
 
             routes.MapHttpRoute(
                 name: "ReceiptsByDateRange",
-                routeTemplate: "api/receipt/{from}/{to}",
+                routeTemplate: "api/receipt/{userId}/{from}/{to}",
                 defaults: new { controller = "Receipt", action = "GetReceiptsFromDateRange" }
             );
 
             routes.MapHttpRoute(
                 name: "GetOne",
-                routeTemplate: "api/receipt/{id}",
+                routeTemplate: "api/receipt/{userId}/{receiptId}",
                 defaults: new { controller = "Receipt", action = "GetReceipt" }
             );
 
             routes.MapHttpRoute(
                 name: "ListAll",
-                routeTemplate: "api/receipt/",
+                routeTemplate: "api/receipt/{userId}",
                 defaults: new { controller = "Receipt", action = "GetReceipts" }
             );
         }

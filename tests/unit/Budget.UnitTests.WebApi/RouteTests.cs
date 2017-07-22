@@ -70,50 +70,50 @@ namespace Budget.UnitTests.WebApi
         {
             yield return new Scenario
             {
-                Url = @"http://nonexisting/api/receipt/",
+                Url = @"http://nonexisting/api/receipt/0",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(ReceiptController),
-                ExpectedAction = MethodName((ReceiptController c) => c.GetReceipts()),
+                ExpectedAction = MethodName((ReceiptController c) => c.GetReceipts(0)),
             };
 
             yield return new Scenario
             {
-                Url = @"http://nonexisting/api/receipt/2",
+                Url = @"http://nonexisting/api/receipt/0/2",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(ReceiptController),
-                ExpectedAction = MethodName((ReceiptController c) => c.GetReceipt(0)),
+                ExpectedAction = MethodName((ReceiptController c) => c.GetReceipt(0, 0)),
             };
 
             yield return new Scenario
             {
-                Url = @"http://nonexisting/api/receipt/null/null",
+                Url = @"http://nonexisting/api/receipt/0/null/null",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(ReceiptController),
-                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(null, null)),
+                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(0, null, null)),
             };
 
             yield return new Scenario
             {
-                Url = @"http://nonexisting/api/receipt/null/20160505",
+                Url = @"http://nonexisting/api/receipt/0/null/20160505",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(ReceiptController),
-                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(null, null)),
+                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(0, null, null)),
             };
 
             yield return new Scenario
             {
-                Url = @"http://nonexisting/api/receipt/20160505/null",
+                Url = @"http://nonexisting/api/receipt/0/20160505/null",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(ReceiptController),
-                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(null, null)),
+                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(0, null, null)),
             };
 
             yield return new Scenario
             {
-                Url = @"http://nonexisting/api/receipt/20160505/20160505",
+                Url = @"http://nonexisting/api/receipt/0/20160505/20160505",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(ReceiptController),
-                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(null, null)),
+                ExpectedAction = MethodName((ReceiptController c) => c.GetReceiptsFromDateRange(0, null, null)),
             };
 
             yield return new Scenario

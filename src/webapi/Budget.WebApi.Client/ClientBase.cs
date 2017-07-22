@@ -41,7 +41,6 @@ namespace Budget.WebApi.Client
 
         protected virtual void AddHeaders(ApiRequest request)
         {
-            request.AddHeader("userId", this.headersProvider.UserId);
             request.AddHeader("correlationId", this.headersProvider.CorrelationId);
         }
 

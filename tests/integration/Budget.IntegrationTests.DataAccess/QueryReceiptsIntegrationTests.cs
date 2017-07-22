@@ -35,7 +35,7 @@ namespace Budget.IntegrationTests.DataAccess
             {
                 ReceiptRepository facade = new ReceiptRepository(database);
 
-                List<Receipt> result = facade.ReceiptsWithEntries.ById(1).ById(2).ToList();
+                List<Receipt> result = facade.ReceiptsWithEntries.ByReceiptId(1).ByReceiptId(2).ToList();
             }
         }
 

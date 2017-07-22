@@ -25,24 +25,27 @@ namespace Budget.WebApi.Controllers
 
         [HttpGet]
         public async Task<Receipt> GetReceipt(
-            [FromUri] int id)
+            [FromUri] int userId,
+            [FromUri] int receiptId)
         {
-            return await this.receiptProvider.GetReceiptAsync(id);
+            return await this.receiptProvider.GetReceipt(userId, receiptId);
         }
 
         [HttpGet]
-        public async Task<Receipt[]> GetReceipts()
+        public async Task<Receipt[]> GetReceipts(
+            [FromUri] int userId)
         {
-            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsAsync();
+            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceipts(userId);
             return receipts.ToArray();
         }
 
         [HttpGet]
         public async Task<Receipt[]> GetReceiptsFromDateRange(
+            [FromUri] int userId,
             [ModelBinder(typeof(DateTimeFromUnixTimeStampBinder))] DateTime? from,
             [ModelBinder(typeof(DateTimeFromUnixTimeStampBinder))] DateTime? to)
         {
-            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDatesAsync(from, to);
+            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDates(userId, from, to);
             return receipts.ToArray();
         }
     }

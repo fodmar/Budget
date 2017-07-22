@@ -8,8 +8,6 @@ namespace Budget.WebApi.Client
 {
     public interface IHeadersProvider
     {
-        int UserId { get; }
-
         Guid CorrelationId { get; }
     }
 }

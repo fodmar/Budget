@@ -22,27 +22,30 @@ namespace Budget.WebApi.Client
         {
         }
 
-        public Task<Receipt> GetReceiptAsync(int id)
+        public Task<Receipt> GetReceipt(int userId, int receiptId)
         {
             return
                 this.CreateRequest()
-                    .AddUriParam(id)
+                    .AddUriParam(userId)
+                    .AddUriParam(receiptId)
                     .AsGet()
                     .Send<Receipt>();
         }
 
-        public async Task<IEnumerable<Receipt>> GetReceiptsAsync()
+        public async Task<IEnumerable<Receipt>> GetReceipts(int userId)
         {
             return await
                 this.CreateRequest()
+                    .AddUriParam(userId)
                     .AsGet()
                     .Send<Receipt[]>() as IEnumerable<Receipt>;
         }
 
-        public async Task<IEnumerable<Receipt>> GetReceiptsByDatesAsync(DateTime? from, DateTime? to)
+        public async Task<IEnumerable<Receipt>> GetReceiptsByDates(int userId, DateTime? from, DateTime? to)
         {
             return await
                 this.CreateRequest()
+                    .AddUriParam(userId)
                     .AddUriParam(from.ToUriParamString())
                     .AddUriParam(to.ToUriParamString())
                     .AsGet()
