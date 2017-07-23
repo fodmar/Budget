@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Budget.BusinessLogic.UserManagement;
+using Budget.Resources;
 using Budget.WebApp.Authentication;
 using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
@@ -38,7 +39,7 @@ namespace Budget.WebApp.Controllers
 
             if (!correct)
             {
-                this.ModelState.AddModelError(string.Empty, "User name or password is invalid");
+                this.ModelState.AddModelError(string.Empty, Text.UsernameAndPasswordDontMatch);
                 model.Password = string.Empty;
                 return this.View(model);
             }

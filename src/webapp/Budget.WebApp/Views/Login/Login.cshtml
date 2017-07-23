@@ -3,6 +3,7 @@
 }
 
 @using Budget.WebApp.Extensions;
+@using Budget.Resources;
 @model Budget.WebApp.Models.LoginModel
 
 
@@ -10,5 +11,5 @@
 {
     @Html.ValidationSummary(true)
     @Html.EditorForModel()
-    @Html.SubmitForm("Zaloguj")
+    @Html.SubmitForm(Text.SignIn)
 }

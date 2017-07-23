@@ -182,6 +182,10 @@
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
       <Name>Budget.ObjectModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\shared\Budget.Resources\Budget.Resources.csproj">
+      <Project>{678283c2-daf7-4553-97dd-5aa95595dab8}</Project>
+      <Name>Budget.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\webapi\Budget.WebApi.Client\Budget.WebApi.Client.csproj">
       <Project>{d5393114-bfb6-44e0-9c3d-af531aa0f252}</Project>
       <Name>Budget.WebApi.Client</Name>

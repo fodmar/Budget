@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.BusinessLogic", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.BusinessLogic", "tests\unit\Budget.UnitTests.BusinessLogic\Budget.UnitTests.BusinessLogic.csproj", "{CFE15E13-A102-4376-9D41-B8D07DA8537F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Resources", "src\shared\Budget.Resources\Budget.Resources.csproj", "{678283C2-DAF7-4553-97DD-5AA95595DAB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,10 @@ Global
 		{CFE15E13-A102-4376-9D41-B8D07DA8537F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFE15E13-A102-4376-9D41-B8D07DA8537F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFE15E13-A102-4376-9D41-B8D07DA8537F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,5 +138,6 @@ Global
 		{393F39D9-1269-42AC-8A18-A0910982C8CD} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
 		{99B181F5-1573-475F-9FD0-C7376CDDAA51} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 		{CFE15E13-A102-4376-9D41-B8D07DA8537F} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
+		{678283C2-DAF7-4553-97DD-5AA95595DAB8} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 	EndGlobalSection
 EndGlobal
