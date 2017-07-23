@@ -82,7 +82,10 @@
     <Compile Include="RouteTestsWebApp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">

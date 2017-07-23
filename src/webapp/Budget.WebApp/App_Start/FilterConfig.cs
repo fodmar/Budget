@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Budget.WebApp.Filters;
 
-namespace Budget.WebApp.App_Start
+namespace Budget.WebApp
 {
     public class FilterConfig
     {

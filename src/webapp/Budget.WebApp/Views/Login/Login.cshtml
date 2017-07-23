@@ -2,10 +2,12 @@
     Layout = null;
 }
 
+@using System.Web.Optimization;
 @using Budget.WebApp.Extensions;
 @using Budget.Resources;
 @model Budget.WebApp.Models.LoginModel
 
+@Scripts.Render("~/bundles/jquery-validation")   
 
 @using (Html.BeginForm())
 {
