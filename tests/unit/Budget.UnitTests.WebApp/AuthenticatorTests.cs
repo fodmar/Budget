@@ -41,7 +41,7 @@ namespace Budget.UnitTests.WebApp
             Assert.IsTrue(result);
             service.AssertWasCalled(s => s.Login(model.Login, model.Password));
             Assert.AreEqual(session.UserId, user.Id);
-            forms.AssertWasCalled(f => f.SetAuthCookie(user.Id.ToString(), true));
+            forms.AssertWasCalled(f => f.SetAuthCookie(model.Login, true));
         }
 
         [Test]
