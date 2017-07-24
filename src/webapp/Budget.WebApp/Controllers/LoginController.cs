@@ -13,7 +13,7 @@ using User = Budget.ObjectModel.User;
 
 namespace Budget.WebApp.Controllers
 {
-    public partial class LoginController : Controller
+    public partial class LoginController : BaseController
     {
         private readonly IAuthenticator authenticator;
 
@@ -22,12 +22,14 @@ namespace Budget.WebApp.Controllers
             this.authenticator = authenticator;
         }
 
+        [AllowAnonymous]
         public virtual ActionResult Login(string returnUrl = null)
         {
             return this.View(new LoginModel { ReturnUrl = returnUrl });
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async virtual Task<ActionResult> Login(LoginModel model)
         {
             if (!this.ModelState.IsValid)

@@ -37,7 +37,7 @@ namespace Budget.WebApp.Authentication
                 return false;
             }
 
-            this.formsAuthentication.SetAuthCookie(user.Id.ToString(), true);
+            this.formsAuthentication.SetAuthCookie(model.Login, true);
             this.sessionHelper.UserId = user.Id;
             return true;
         }
