@@ -111,12 +111,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\app\calendar.js" />
+    <Content Include="Scripts\lib\fullcalendar.min.js" />
+    <Content Include="Scripts\lib\fullcalendar\en-gb.js" />
+    <Content Include="Scripts\lib\fullcalendar\pl.js" />
+    <Content Include="Scripts\lib\jquery-3.1.1.min.js" />
     <None Include="T4MVC\T4MVC.tt.settings.xml" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <None Include="Scripts\lib\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\lib\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\moment-with-locales.min.js" />
+    <Content Include="Scripts\lib\moment.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

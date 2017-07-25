@@ -27,10 +27,20 @@ namespace Budget.WebApp.Controllers
             return this.View();
         }
 
-        public virtual async Task<ActionResult> GetReceipts(DateTime from, DateTime to)
+        public virtual async Task<ActionResult> GetReceipts(DateTime start, DateTime end)
         {
             int userId = this.sessionHelper.UserId;
-            return Json(await this.receiptProvider.GetReceiptsByDates(userId, from, to));
+            IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDates(userId, start, end);
+
+            var json = from receipt in receipts
+                       select new
+                       {
+                           id = receipt.Id,
+                           start = receipt.Date,
+                           title = receipt.Entries.Sum(e => e.Amount)
+                       };
+
+            return Json(json, JsonRequestBehavior.AllowGet);
         }
     }
 }
