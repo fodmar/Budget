@@ -23,6 +23,7 @@ namespace Budget.WebApp
                     "~/Scripts/app/calendar.js"));
 
             bundles.Add(new StyleBundle("~/content/calendar").Include(
+                    "~/Content/app.css").Include(
                     "~/Content/fullcalendar.min.css"));
         }
     }

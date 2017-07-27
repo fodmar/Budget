@@ -1,0 +1,9 @@
+﻿.loading {
+    background-image: url(/Content/gif/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}

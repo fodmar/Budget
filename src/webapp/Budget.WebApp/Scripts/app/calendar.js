@@ -4,13 +4,32 @@
         editable: false,
         droppable: false,
         firstDay: 1,
+        customButtons: {
+            addreceipt: {
+                text: 'todo resources.js',
+                click: function () {
+                    alert("a");
+                }
+            }
+        },
+        views:{
+            month: {
+                columnFormat: 'dddd'
+            },
+            week: {
+                columnFormat: 'dddd'
+            },
+            day: {
+                columnFormat: 'dddd'
+            }
+        },
         header: {
-            left: 'agendaDay,agendaWeek,month',
+            left: 'basicDay basicWeek month',
             center: 'title',
-            right: 'today prev, next'
+            right: 'addreceipt today prev next'
         },
         loading: function (isLoading, view) {
-
+            $(".fc-center").toggleClass('loading', isLoading);
         },
         allDayDefault: false,
         events: {

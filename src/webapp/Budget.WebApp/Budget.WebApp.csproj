@@ -111,7 +111,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app.css" />
     <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\gif\loading.gif" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\calendar.js" />
     <Content Include="Scripts\lib\fullcalendar.min.js" />
