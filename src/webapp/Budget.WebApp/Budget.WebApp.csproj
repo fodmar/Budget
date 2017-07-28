@@ -25,7 +25,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>..\..\..\bin\src\webapp\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -126,6 +126,8 @@
     <Content Include="Scripts\lib\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\lib\moment-with-locales.min.js" />
     <Content Include="Scripts\lib\moment.min.js" />
+    <Content Include="Scripts\resources\pl-PL\text.js" />
+    <Content Include="Scripts\resources\text.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +248,9 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)\packages\ResxToJson.2.0\tools\ResxToJson.exe" -i  "$(SolutionDir)\src\shared\Budget.Resources"  -dir "$(SolutionDir)\src\webapp\Budget.WebApp\Scripts\resources"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
