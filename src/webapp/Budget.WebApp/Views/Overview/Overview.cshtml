@@ -1,8 +1,19 @@
 ﻿@using System.Web.Optimization
 
-@Scripts.Render("~/bundles/calendar")
-@Styles.Render("~/content/calendar")
+@section styles{
+    @Styles.Render("~/content/calendar")
+}
 
+@section scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/ui")
+    @Scripts.Render("~/bundles/fullcalendar")
+    @Scripts.Render("~/bundles/calendar")
+}
+
+<div id="add-receipt">
+
+</div>
 
 <div id="calendar">
 

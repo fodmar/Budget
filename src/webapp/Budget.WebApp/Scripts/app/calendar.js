@@ -1,4 +1,15 @@
 ﻿$(function () {
+    (function () {
+        $("#add-receipt").dialog({
+           
+        });
+    })();
+
+
+    function addreceipt() {
+        $("#add-receipt").dialog();
+    };
+
     $("#calendar").fullCalendar({
         locale: 'pl',
         editable: false,
@@ -7,9 +18,7 @@
         customButtons: {
             addreceipt: {
                 text: 'todo resources.js',
-                click: function () {
-                    alert("a");
-                }
+                click: addreceipt
             }
         },
         views:{

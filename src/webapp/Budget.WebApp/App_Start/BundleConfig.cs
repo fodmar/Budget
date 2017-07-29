@@ -11,21 +11,29 @@ namespace Budget.WebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery-validation").Include(
-                    "~/Scripts/lib/jquery-{version}.min.js").Include(
-                    "~/Scripts/lib/jquery.validate.min.js").Include(
-                    "~/Scripts/lib/jquery.validate.unobtrusive.min.js"));
+                    "~/Scripts/lib/jquery-{version}.js",
+                    "~/Scripts/lib/jquery.validate.js",
+                    "~/Scripts/lib/jquery.validate.unobtrusive.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                    "~/Scripts/lib/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ui").Include(
+                    "~/Scripts/lib/jquery-ui-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
+                    "~/Scripts/lib/moment.js",
+                    "~/Scripts/lib/moment-with-locales.js",
+                    "~/Scripts/lib/fullcalendar.js",
+                    "~/Scripts/lib/locale-all.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/calendar").Include(
-                    "~/Scripts/lib/jquery-{version}.min.js").Include(
-                    "~/Scripts/lib/moment.min.js").Include(
-                    "~/Scripts/lib/moment-with-locales.min.js").Include(
-                    "~/Scripts/lib/fullcalendar.min.js").Include(
-                    "~/Scripts/lib/fullcalendar/pl.js").Include(
                     "~/Scripts/app/calendar.js"));
 
             bundles.Add(new StyleBundle("~/content/calendar").Include(
-                    "~/Content/app.css").Include(
-                    "~/Content/fullcalendar.min.css"));
+                    "~/Content/themes/base/*.css",
+                    "~/Content/fullcalendar.css",
+                    "~/Content/app.css"));
         }
     }
 }
