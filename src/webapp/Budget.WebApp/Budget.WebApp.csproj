@@ -121,7 +121,6 @@
     <Content Include="Scripts\lib\fullcalendar\pl.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.min.js" />
     <None Include="T4MVC\T4MVC.tt.settings.xml" />
-    <None Include="Scripts\lib\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\lib\jquery.validate.min.js" />
     <Content Include="Scripts\lib\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\lib\moment-with-locales.min.js" />

@@ -22,7 +22,6 @@ namespace Budget.WebApp
             FilterConfig.RegisterFilters(GlobalFilters.Filters);
 
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            BundleTable.EnableOptimizations = true;
 
             DependencyResolutionConfig.InitializeDependencyResolution();
         }

@@ -12,7 +12,8 @@ namespace Budget.WebApp
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery-validation").Include(
                     "~/Scripts/lib/jquery-{version}.min.js").Include(
-                    "~/Scripts/lib/jquery.validate*"));
+                    "~/Scripts/lib/jquery.validate.min.js").Include(
+                    "~/Scripts/lib/jquery.validate.unobtrusive.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/calendar").Include(
                     "~/Scripts/lib/jquery-{version}.min.js").Include(
