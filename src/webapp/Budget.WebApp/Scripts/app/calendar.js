@@ -1,13 +1,13 @@
 ﻿$(function () {
     (function () {
         $("#add-receipt").dialog({
-           
+           autoOpen: false
         });
     })();
 
 
     function addreceipt() {
-        $("#add-receipt").dialog();
+        $("#add-receipt").dialog("open");
     };
 
     $("#calendar").fullCalendar({

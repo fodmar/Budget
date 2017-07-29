@@ -111,31 +111,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\app.css" />
-    <Content Include="Content\fullcalendar.css" />
-    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\app\app.css" />
+    <Content Include="Content\lib\fullcalendar.css" />
+    <Content Include="Content\lib\fullcalendar.min.css" />
     <Content Include="Content\gif\loading.gif" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\lib\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\lib\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\lib\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\lib\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\lib\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\lib\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\lib\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\lib\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\lib\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\lib\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\lib\jquery-ui.css" />
+    <Content Include="Content\lib\jquery-ui.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\calendar.js" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
@@ -280,7 +280,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\packages\ResxToJson.2.0\tools\ResxToJson.exe" -i  "$(SolutionDir)\src\shared\Budget.Resources"  -dir "$(SolutionDir)\src\webapp\Budget.WebApp\Scripts\resources"</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)\packages\ResxToJson.2.0\tools\ResxToJson.exe" -i  "$(SolutionDir)\src\shared\Budget.Resources"  -dir "$(SolutionDir)\src\webapp\Budget.WebApp\Scripts\resources"
+xcopy /Y /E "$(OutDir)*" "$(ProjectDir)\bin\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

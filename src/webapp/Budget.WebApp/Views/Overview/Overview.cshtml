@@ -1,17 +1,14 @@
 ﻿@using System.Web.Optimization
 
 @section styles{
-    @Styles.Render("~/content/calendar")
+    @Styles.Render("~/bundles/content/overview")
 }
 
 @section scripts {
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/ui")
-    @Scripts.Render("~/bundles/fullcalendar")
-    @Scripts.Render("~/bundles/calendar")
+    @Scripts.Render("~/bundles/scripts/overview")
 }
 
-<div id="add-receipt">
+<div id="add-receipt" hidden="hidden">
 
 </div>
 

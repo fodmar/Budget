@@ -10,30 +10,24 @@ namespace Budget.WebApp
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery-validation").Include(
+            bundles.Add(new ScriptBundle("~/bundles/scripts/login").Include(
                     "~/Scripts/lib/jquery-{version}.js",
                     "~/Scripts/lib/jquery.validate.js",
                     "~/Scripts/lib/jquery.validate.unobtrusive.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                    "~/Scripts/lib/jquery-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/ui").Include(
-                    "~/Scripts/lib/jquery-ui-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
+            bundles.Add(new ScriptBundle("~/bundles/scripts/overview").Include(
+                    "~/Scripts/lib/jquery-{version}.js",
+                    "~/Scripts/lib/jquery-ui-{version}.js",
                     "~/Scripts/lib/moment.js",
                     "~/Scripts/lib/moment-with-locales.js",
                     "~/Scripts/lib/fullcalendar.js",
-                    "~/Scripts/lib/locale-all.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/calendar").Include(
+                    "~/Scripts/lib/locale-all.js",
                     "~/Scripts/app/calendar.js"));
 
-            bundles.Add(new StyleBundle("~/content/calendar").Include(
-                    "~/Content/themes/base/*.css",
-                    "~/Content/fullcalendar.css",
-                    "~/Content/app.css"));
+            bundles.Add(new StyleBundle("~/bundles/content/overview").Include(
+                    "~/Content/lib/jquery-ui.css",
+                    "~/Content/lib/fullcalendar.css",
+                    "~/Content/app/app.css"));
         }
     }
 }
