@@ -1,5 +1,6 @@
 ﻿define({
   "root": {
+    "LogIntoApplication": "Log into application",
     "Password": "Password",
     "SignIn": "Sign in",
     "ThisFieldIsRequired": "This field is required",

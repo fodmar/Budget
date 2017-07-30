@@ -97,8 +97,8 @@ namespace Budget.WebApp.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_GetReceipts
         {
-            public readonly string from = "from";
-            public readonly string to = "to";
+            public readonly string start = "start";
+            public readonly string end = "end";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -133,15 +133,15 @@ namespace Budget.WebApp.Controllers
         }
 
         [NonAction]
-        partial void GetReceiptsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.DateTime from, System.DateTime to);
+        partial void GetReceiptsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.DateTime start, System.DateTime end);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> GetReceipts(System.DateTime from, System.DateTime to)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> GetReceipts(System.DateTime start, System.DateTime end)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetReceipts);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "from", from);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "to", to);
-            GetReceiptsOverride(callInfo, from, to);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "start", start);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "end", end);
+            GetReceiptsOverride(callInfo, start, end);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

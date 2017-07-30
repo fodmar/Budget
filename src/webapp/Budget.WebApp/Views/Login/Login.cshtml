@@ -8,10 +8,16 @@
 @model Budget.WebApp.Models.LoginModel
 
 @Scripts.Render("~/bundles/scripts/login")
+@Styles.Render("~/bundles/content/app")
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
-    @Html.EditorForModel()
-    @Html.SubmitForm(Text.SignIn)
-}
+<div class="flex center">
+    <div class="vertical login-form">
+        <h2 class="login-title">@Text.LogIntoApplication</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.EditorForModel()
+            @Html.SubmitForm(Text.SignIn)
+            @Html.ValidationSummary(true)
+        }
+    </div>
+</div>

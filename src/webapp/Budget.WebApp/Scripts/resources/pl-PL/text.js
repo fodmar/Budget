@@ -1,4 +1,5 @@
 ﻿define({
+  "LogIntoApplication": "Zaloguj się do aplikacji",
   "Password": "Hasło",
   "SignIn": "Zaloguj się",
   "ThisFieldIsRequired": "To pole jest wymagane",

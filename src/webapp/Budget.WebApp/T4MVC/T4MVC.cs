@@ -71,10 +71,115 @@ namespace Links
         public const string UrlPath = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-        public static readonly string jquery_3_1_1_min_js = Url("jquery-3.1.1.min.js");
-        public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
-        public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
-        public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class app {
+            public const string UrlPath = "~/Scripts/app";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string calendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/calendar.min.js") ? Url("calendar.min.js") : Url("calendar.js");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class lib {
+            public const string UrlPath = "~/Scripts/lib";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string fullcalendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fullcalendar.min.js") ? Url("fullcalendar.min.js") : Url("fullcalendar.js");
+            public static readonly string fullcalendar_min_js = Url("fullcalendar.min.js");
+            public static readonly string jquery_3_1_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.intellisense.min.js") ? Url("jquery-3.1.1.intellisense.min.js") : Url("jquery-3.1.1.intellisense.js");
+            public static readonly string jquery_3_1_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.min.js") ? Url("jquery-3.1.1.min.js") : Url("jquery-3.1.1.js");
+            public static readonly string jquery_3_1_1_min_js = Url("jquery-3.1.1.min.js");
+            public static readonly string jquery_3_1_1_min_map = Url("jquery-3.1.1.min.map");
+            public static readonly string jquery_ui_1_12_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-ui-1.12.1.min.js") ? Url("jquery-ui-1.12.1.min.js") : Url("jquery-ui-1.12.1.js");
+            public static readonly string jquery_ui_1_12_1_min_js = Url("jquery-ui-1.12.1.min.js");
+            public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
+            public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
+            public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
+            public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
+            public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
+            public static readonly string locale_all_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/locale-all.min.js") ? Url("locale-all.min.js") : Url("locale-all.js");
+            public static readonly string moment_with_locales_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/moment-with-locales.min.js") ? Url("moment-with-locales.min.js") : Url("moment-with-locales.js");
+            public static readonly string moment_with_locales_min_js = Url("moment-with-locales.min.js");
+            public static readonly string moment_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/moment.min.js") ? Url("moment.min.js") : Url("moment.js");
+            public static readonly string moment_min_js = Url("moment.min.js");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class resources {
+            public const string UrlPath = "~/Scripts/resources";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class pl_PL {
+                public const string UrlPath = "~/Scripts/resources/pl-PL";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
+            }
+        
+            public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
+        }
+    
+    }
+
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public static class Content {
+        public const string UrlPath = "~/Content";
+        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class app {
+            public const string UrlPath = "~/Content/app";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string app_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/app.min.css") ? Url("app.min.css") : Url("app.css");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class gif {
+            public const string UrlPath = "~/Content/gif";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string loading_gif = Url("loading.gif");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class lib {
+            public const string UrlPath = "~/Content/lib";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fullcalendar.min.css") ? Url("fullcalendar.min.css") : Url("fullcalendar.css");
+            public static readonly string fullcalendar_min_css = Url("fullcalendar.min.css");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class images {
+                public const string UrlPath = "~/Content/lib/images";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string ui_bg_flat_0_aaaaaa_40x100_png = Url("ui-bg_flat_0_aaaaaa_40x100.png");
+                public static readonly string ui_bg_flat_75_ffffff_40x100_png = Url("ui-bg_flat_75_ffffff_40x100.png");
+                public static readonly string ui_bg_glass_55_fbf9ee_1x400_png = Url("ui-bg_glass_55_fbf9ee_1x400.png");
+                public static readonly string ui_bg_glass_65_ffffff_1x400_png = Url("ui-bg_glass_65_ffffff_1x400.png");
+                public static readonly string ui_bg_glass_75_dadada_1x400_png = Url("ui-bg_glass_75_dadada_1x400.png");
+                public static readonly string ui_bg_glass_75_e6e6e6_1x400_png = Url("ui-bg_glass_75_e6e6e6_1x400.png");
+                public static readonly string ui_bg_glass_95_fef1ec_1x400_png = Url("ui-bg_glass_95_fef1ec_1x400.png");
+                public static readonly string ui_bg_highlight_soft_75_cccccc_1x100_png = Url("ui-bg_highlight-soft_75_cccccc_1x100.png");
+                public static readonly string ui_icons_222222_256x240_png = Url("ui-icons_222222_256x240.png");
+                public static readonly string ui_icons_2e83ff_256x240_png = Url("ui-icons_2e83ff_256x240.png");
+                public static readonly string ui_icons_444444_256x240_png = Url("ui-icons_444444_256x240.png");
+                public static readonly string ui_icons_454545_256x240_png = Url("ui-icons_454545_256x240.png");
+                public static readonly string ui_icons_555555_256x240_png = Url("ui-icons_555555_256x240.png");
+                public static readonly string ui_icons_777620_256x240_png = Url("ui-icons_777620_256x240.png");
+                public static readonly string ui_icons_777777_256x240_png = Url("ui-icons_777777_256x240.png");
+                public static readonly string ui_icons_888888_256x240_png = Url("ui-icons_888888_256x240.png");
+                public static readonly string ui_icons_cc0000_256x240_png = Url("ui-icons_cc0000_256x240.png");
+                public static readonly string ui_icons_cd0a0a_256x240_png = Url("ui-icons_cd0a0a_256x240.png");
+                public static readonly string ui_icons_ffffff_256x240_png = Url("ui-icons_ffffff_256x240.png");
+            }
+        
+            public static readonly string jquery_ui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-ui.min.css") ? Url("jquery-ui.min.css") : Url("jquery-ui.css");
+            public static readonly string jquery_ui_min_css = Url("jquery-ui.min.css");
+        }
+    
     }
 
     
@@ -83,11 +188,86 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class app 
+            {
+                public static class Assets
+                {
+                    public const string calendar_js = "~/Scripts/app/calendar.js"; 
+                }
+            }
+            public static partial class lib 
+            {
+                public static class Assets
+                {
+                    public const string fullcalendar_js = "~/Scripts/lib/fullcalendar.js"; 
+                    public const string fullcalendar_min_js = "~/Scripts/lib/fullcalendar.min.js"; 
+                    public const string jquery_3_1_1_intellisense_js = "~/Scripts/lib/jquery-3.1.1.intellisense.js"; 
+                    public const string jquery_3_1_1_js = "~/Scripts/lib/jquery-3.1.1.js"; 
+                    public const string jquery_3_1_1_min_js = "~/Scripts/lib/jquery-3.1.1.min.js"; 
+                    public const string jquery_ui_1_12_1_js = "~/Scripts/lib/jquery-ui-1.12.1.js"; 
+                    public const string jquery_ui_1_12_1_min_js = "~/Scripts/lib/jquery-ui-1.12.1.min.js"; 
+                    public const string jquery_validate_js = "~/Scripts/lib/jquery.validate.js"; 
+                    public const string jquery_validate_min_js = "~/Scripts/lib/jquery.validate.min.js"; 
+                    public const string jquery_validate_unobtrusive_js = "~/Scripts/lib/jquery.validate.unobtrusive.js"; 
+                    public const string jquery_validate_unobtrusive_min_js = "~/Scripts/lib/jquery.validate.unobtrusive.min.js"; 
+                    public const string locale_all_js = "~/Scripts/lib/locale-all.js"; 
+                    public const string moment_with_locales_js = "~/Scripts/lib/moment-with-locales.js"; 
+                    public const string moment_with_locales_min_js = "~/Scripts/lib/moment-with-locales.min.js"; 
+                    public const string moment_js = "~/Scripts/lib/moment.js"; 
+                    public const string moment_min_js = "~/Scripts/lib/moment.min.js"; 
+                }
+            }
+            public static partial class resources 
+            {
+                public static partial class pl_PL 
+                {
+                    public static class Assets
+                    {
+                        public const string text_js = "~/Scripts/resources/pl-PL/text.js"; 
+                    }
+                }
+                public static class Assets
+                {
+                    public const string text_js = "~/Scripts/resources/text.js"; 
+                }
+            }
             public static class Assets
             {
-                public const string jquery_3_1_1_min_js = "~/Scripts/jquery-3.1.1.min.js"; 
-                public const string jquery_validate_min_js = "~/Scripts/jquery.validate.min.js"; 
-                public const string jquery_validate_unobtrusive_min_js = "~/Scripts/jquery.validate.unobtrusive.min.js"; 
+            }
+        }
+        public static partial class Content 
+        {
+            public static partial class app 
+            {
+                public static class Assets
+                {
+                    public const string app_css = "~/Content/app/app.css";
+                }
+            }
+            public static partial class gif 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class lib 
+            {
+                public static partial class images 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                    public const string fullcalendar_css = "~/Content/lib/fullcalendar.css";
+                    public const string fullcalendar_min_css = "~/Content/lib/fullcalendar.min.css";
+                    public const string jquery_ui_css = "~/Content/lib/jquery-ui.css";
+                    public const string jquery_ui_min_css = "~/Content/lib/jquery-ui.min.css";
+                }
+            }
+            public static class Assets
+            {
             }
         }
     }

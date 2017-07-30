@@ -61,6 +61,15 @@ namespace Budget.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log into application.
+        /// </summary>
+        public static string LogIntoApplication {
+            get {
+                return ResourceManager.GetString("LogIntoApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {

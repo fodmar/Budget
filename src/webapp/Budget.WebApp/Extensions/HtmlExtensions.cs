@@ -10,7 +10,7 @@ namespace Budget.WebApp.Extensions
     {
         public static IHtmlString SubmitForm(this HtmlHelper helper, string text)
         {
-            return new MvcHtmlString(string.Format("<div><input type='submit' value='{0}' /></div>", text));
+            return new MvcHtmlString(string.Format("<button type='submit'>{0}</button>", text));
         }
     }
 }

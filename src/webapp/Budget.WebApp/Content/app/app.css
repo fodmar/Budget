@@ -1,4 +1,68 @@
-﻿.loading {
+﻿body {
+	background-color: rgb(231, 231, 231);
+	font-family: "Trebuchet MS";
+}
+
+input {
+	border: solid;
+	border-width: 1px;
+	padding: 3px;
+	border-color: darkcyan;
+    display: block;
+}
+
+input:focus {
+	box-shadow: 0px 0px 5px darkcyan;
+    outline: none;
+}
+
+button {
+	padding: 5px;
+	border: solid;
+	border-width: 0px;
+	background-color: darkcyan;
+	color: white;
+	font-weight: bold;
+	outline: 0;
+    align-items: center;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+button:hover {
+	background-color: lightblue;
+}
+
+button[type="submit"] {
+    margin-top: 4px;
+    text-align:center;
+}
+
+form {
+    margin-bottom: 0em;
+}
+
+form * {
+	margin-top: 2px;
+}
+
+h2.login-title {
+    color: darkcyan;
+    padding-bottom: 2em;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    align-self: center;
+}
+
+.login-form {
+	padding: 10px;
+	box-shadow: 0px 0px 5px darkcyan;
+	background-color: white;
+}
+
+.loading {
     background-image: url(/Content/gif/loading.gif);
     background-repeat: no-repeat;
     background-position: center center;
@@ -6,4 +70,53 @@
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    flex-flow: wrap column;
+}
+
+.flex * {
+    display: flex;
+    flex-flow: wrap column;
+}
+
+
+.center {
+    justify-content: center;
+	align-items: center;
+}
+
+.vertical {
+    flex-flow: wrap column;
+}
+
+.field-validation-error {
+    color: red;
+    font-size: 0.75em;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid red;
+    background-color: #fee;
+}
+
+.validation-summary-errors { 
+    font-weight: bold; 
+    color: #f00;
+}
+
+.validation-summary-errors ul {
+    -webkit-padding-start: 0em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 0em;
+}
+
+.validation-summary-valid {
+    display: none;
 }
