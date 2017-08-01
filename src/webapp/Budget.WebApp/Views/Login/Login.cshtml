@@ -5,19 +5,29 @@
 @using System.Web.Optimization;
 @using Budget.WebApp.Extensions;
 @using Budget.Resources;
+@using Budget.WebApp.Utils;
 @model Budget.WebApp.Models.LoginModel
 
-@Scripts.Render("~/bundles/scripts/login")
-@Styles.Render("~/bundles/content/app")
-
-<div class="flex center">
-    <div class="vertical login-form">
-        <h2 class="login-title">@Text.LogIntoApplication</h2>
-        @using (Html.BeginForm())
-        {
-            @Html.EditorForModel()
-            @Html.SubmitForm(Text.SignIn)
-            @Html.ValidationSummary(true)
-        }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Text.LogIntoApplication</title>
+    @Styles.Render("~/bundles/content/app")
+    @RequireJs.Require(@"app/login")
+</head>
+<body>
+    <div class="flex center">
+        <div class="vertical login-form">
+            <h2 class="login-title">@Text.LogIntoApplication</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.EditorForModel()
+                @Html.SubmitForm(Text.SignIn)
+                @Html.ValidationSummary(true)
+            }
+        </div>
     </div>
-</div>
+</body>
+</html>

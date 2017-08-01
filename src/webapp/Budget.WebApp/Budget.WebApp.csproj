@@ -139,6 +139,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\calendar.js" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\app\login.js" />
     <Content Include="Scripts\lib\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\lib\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\lib\fullcalendar.js" />
@@ -157,6 +158,9 @@
     <Content Include="Scripts\lib\moment-with-locales.min.js" />
     <Content Include="Scripts\lib\moment.js" />
     <Content Include="Scripts\lib\moment.min.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\require.config.js" />
     <Content Include="Scripts\resources\pl-PL\text.js" />
     <Content Include="Scripts\resources\text.js" />
     <Content Include="Web.config" />
@@ -203,6 +207,7 @@
     <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
     <Compile Include="Utils\CorrelationIdProvider.cs" />
     <Compile Include="Utils\ISessionHelper.cs" />
+    <Compile Include="Utils\RequireJs.cs" />
     <Compile Include="Utils\SessionHelper.cs" />
     <Compile Include="Utils\SessionKeys.cs" />
   </ItemGroup>
