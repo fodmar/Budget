@@ -137,6 +137,8 @@
     <Content Include="Content\lib\jquery-ui.css" />
     <Content Include="Content\lib\jquery-ui.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\text.js" />
+    <Content Include="Scripts\lib\i18n.js" />
     <Content Include="Scripts\app\calendar.js" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\app\login.js" />
@@ -158,11 +160,11 @@
     <Content Include="Scripts\lib\moment-with-locales.min.js" />
     <Content Include="Scripts\lib\moment.js" />
     <Content Include="Scripts\lib\moment.min.js" />
-    <Content Include="Scripts\r.js" />
-    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\lib\r.js" />
+    <Content Include="Scripts\lib\require.js" />
     <Content Include="Scripts\require.config.js" />
-    <Content Include="Scripts\resources\pl-PL\text.js" />
-    <Content Include="Scripts\resources\text.js" />
+    <Content Include="Scripts\nls\pl\text.js" />
+    <Content Include="Scripts\nls\text.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -285,7 +287,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\packages\ResxToJson.2.0\tools\ResxToJson.exe" -i  "$(SolutionDir)\src\shared\Budget.Resources"  -dir "$(SolutionDir)\src\webapp\Budget.WebApp\Scripts\resources"
+    <PostBuildEvent>"$(SolutionDir)\packages\ResxToJson.2.0\tools\ResxToJson.exe" -i  "$(SolutionDir)\src\shared\Budget.Resources"  -dir "$(SolutionDir)\src\webapp\Budget.WebApp\Scripts\nls"
 xcopy /Y /E "$(OutDir)*" "$(ProjectDir)\bin\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

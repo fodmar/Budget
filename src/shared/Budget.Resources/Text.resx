@@ -120,6 +120,9 @@
   <data name="LogIntoApplication" xml:space="preserve">
     <value>Log into application</value>
   </data>
+  <data name="NewExpense" xml:space="preserve">
+    <value>New expense</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>

@@ -1,11 +1,12 @@
 ﻿@using System.Web.Optimization
+@using Budget.WebApp.Utils
 
 @section styles{
     @Styles.Render("~/bundles/content/overview")
 }
 
 @section scripts {
-    @Scripts.Render("~/bundles/scripts/overview")
+    @RequireJs.Require("app/calendar")
 }
 
 <div id="add-receipt" hidden="hidden">

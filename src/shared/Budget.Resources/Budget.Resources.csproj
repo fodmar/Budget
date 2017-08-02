@@ -47,7 +47,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Text.pl-PL.resx" />
+    <EmbeddedResource Include="Text.pl.resx" />
     <EmbeddedResource Include="Text.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.Designer.cs</LastGenOutput>

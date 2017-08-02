@@ -13,7 +13,7 @@ namespace Budget.WebApp.Utils
             string scriptsPath = VirtualPathUtility.ToAbsolute("~/Scripts/");
 
             string script = string.Format(
-                @"<script src='/Scripts/require.js'></script>
+                @"<script src='/Scripts/lib/require.js'></script>
                   <script>
                     require(['{0}require.config.js'], function () {{
                          require(['{1}']);

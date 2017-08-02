@@ -1,51 +1,52 @@
-﻿$(function () {
-    (function () {
-        $("#add-receipt").dialog({
-           autoOpen: false
-        });
-    })();
-
-
+﻿define(['app/text', 'lib/locale-all', 'jqueryUi'], function (text) {
     function addreceipt() {
         $("#add-receipt").dialog("open");
     };
 
-    $("#calendar").fullCalendar({
-        locale: 'pl',
-        editable: false,
-        droppable: false,
-        firstDay: 1,
-        customButtons: {
-            addreceipt: {
-                text: 'todo resources.js',
-                click: addreceipt
-            }
-        },
-        views:{
-            month: {
-                columnFormat: 'dddd'
+    function init() {
+        $("#add-receipt").dialog({
+            autoOpen: false
+        });
+
+        $("#calendar").fullCalendar({
+            locale: navigator.language, //todo only supported languages
+            editable: false,
+            droppable: false,
+            firstDay: 1,
+            customButtons: {
+                addreceipt: {
+                    text: text.NewExpense,
+                    click: addreceipt
+                }
             },
-            week: {
-                columnFormat: 'dddd'
+            views: {
+                month: {
+                    columnFormat: 'dddd'
+                },
+                week: {
+                    columnFormat: 'dddd'
+                },
+                day: {
+                    columnFormat: 'dddd'
+                }
             },
-            day: {
-                columnFormat: 'dddd'
+            header: {
+                left: 'basicDay basicWeek month',
+                center: 'title',
+                right: 'addreceipt today prev next'
+            },
+            loading: function (isLoading, view) {
+                $(".fc-center").toggleClass('loading', isLoading);
+            },
+            allDayDefault: false,
+            events: {
+                url: "/Overview/GetReceipts"
+            },
+            eventAfterAllRender: function (view) {
+
             }
-        },
-        header: {
-            left: 'basicDay basicWeek month',
-            center: 'title',
-            right: 'addreceipt today prev next'
-        },
-        loading: function (isLoading, view) {
-            $(".fc-center").toggleClass('loading', isLoading);
-        },
-        allDayDefault: false,
-        events: {
-            url: "/Overview/GetReceipts"
-        },
-        eventAfterAllRender: function (view) {
-            
-        }
-    });
+        });
+    };
+
+    $(init);
 });
