@@ -16,7 +16,9 @@ namespace Budget.WebApp.Utils
                 @"<script src='/Scripts/lib/require.js'></script>
                   <script>
                     require(['{0}require.config.js'], function () {{
-                         require(['{1}']);
+                         require(['{1}'], function (module) {{
+                             module.init();
+                         }});
                     }});
                   </script>", scriptsPath, path);
 

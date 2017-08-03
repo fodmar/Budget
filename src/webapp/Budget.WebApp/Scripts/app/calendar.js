@@ -48,5 +48,7 @@
         });
     };
 
-    $(init);
+    return {
+        init: init
+    };
 });
