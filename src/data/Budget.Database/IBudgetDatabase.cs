@@ -10,6 +10,8 @@ namespace Budget.Database
 {
     public interface IBudgetDatabase : IDisposable
     {
+        Task<int> SaveChangesAsync();
+
         DbSet<Receipt> Receipts { get; set;  }
         DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
         DbSet<User> Users { get; set; }

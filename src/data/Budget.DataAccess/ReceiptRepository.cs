@@ -11,7 +11,7 @@ using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
-    public class ReceiptRepository : IReceiptProvider
+    public class ReceiptRepository : IReceiptProvider, IReceiptSaver
     {
         private readonly IBudgetDatabase budgetDatabase;
 
@@ -60,6 +60,14 @@ namespace Budget.DataAccess
                     .ByUserId(userId)
                     .ByDateRange(from, to)
                     .ToListAsync();
+        }
+
+        public async Task Save(Receipt receipt)
+        {
+            this.budgetDatabase.Receipts.Add(receipt);
+            this.budgetDatabase.ReceiptsEntries.AddRange(receipt.Entries);
+
+            await this.budgetDatabase.SaveChangesAsync();
         }
     }
 }

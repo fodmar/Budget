@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InsertReceiptIntegrationTest.cs" />
     <Compile Include="QueryReceiptsIntegrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRepositoryIntegrationTests.cs" />

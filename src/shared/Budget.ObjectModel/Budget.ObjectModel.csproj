@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="ICorrelationIdProvider.cs" />
     <Compile Include="IReceiptProvider.cs" />
+    <Compile Include="IReceiptSaver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receipt.cs" />
     <Compile Include="ReceiptEntry.cs" />
