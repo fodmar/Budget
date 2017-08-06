@@ -17,10 +17,14 @@ namespace Budget.WebApi.Controllers
     public class ReceiptController : BaseController
     {
         private readonly IReceiptProvider receiptProvider;
+        private readonly IReceiptSaver saver;
 
-        public ReceiptController(IReceiptProvider receiptProvider)
+        public ReceiptController(
+            IReceiptProvider receiptProvider,
+            IReceiptSaver saver)
         {
             this.receiptProvider = receiptProvider;
+            this.saver = saver;
         }
 
         [HttpGet]
@@ -47,6 +51,14 @@ namespace Budget.WebApi.Controllers
         {
             IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDates(userId, from, to);
             return receipts.ToArray();
+        }
+
+        [HttpPost]
+        public async Task<Receipt> SaveReceipt(
+            [FromBody] Receipt receipt)
+        {
+            await this.saver.Save(receipt);
+            return receipt;
         }
     }
 }

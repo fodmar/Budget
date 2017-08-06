@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Budget.WebApi.Client
 {
@@ -42,9 +43,23 @@ namespace Budget.WebApi.Client
             return this;
         }
 
+        public ApiRequest AddBody<T>(T body)
+        {
+            string content = JsonConvert.SerializeObject(body);
+            this.request.Content = new StringContent(content);
+            this.request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+            return this;
+        }
+
         public ApiRequest AsGet()
         {
             this.request.Method = HttpMethod.Get;
+            return this;
+        }
+
+        public ApiRequest AsPost()
+        {
+            this.request.Method = HttpMethod.Post;
             return this;
         }
 

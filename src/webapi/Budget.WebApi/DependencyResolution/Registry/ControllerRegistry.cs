@@ -12,6 +12,7 @@ namespace Budget.WebApi.DependencyResolution.Registries
         public ControllerRegistry() 
         {
             For<IReceiptProvider>().Use<ReceiptRepository>();
+            For<IReceiptSaver>().Use<ReceiptRepository>();
             For<IBudgetDatabase>().Use<BudgetDatabase>();
 
             For<IUserProvider>().Use<UserRepository>();

@@ -118,6 +118,14 @@ namespace Budget.UnitTests.WebApi
 
             yield return new Scenario
             {
+                Url = @"http://nonexisting/api/receipt/",
+                HttpMethod = HttpMethod.Post,
+                ExpectedController = typeof(ReceiptController),
+                ExpectedAction = MethodName((ReceiptController c) => c.SaveReceipt(null)),
+            };
+
+            yield return new Scenario
+            {
                 Url = @"http://nonexisting/api/user/a/a",
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(UserController),

@@ -33,6 +33,12 @@ namespace Budget.WebApi
                 routeTemplate: "api/receipt/{userId}",
                 defaults: new { controller = "Receipt", action = "GetReceipts" }
             );
+
+            routes.MapHttpRoute(
+                name: "SaveReceipt",
+                routeTemplate: "api/receipt/",
+                defaults: new { controller = "Receipt", action = "SaveReceipt" }
+            );
         }
     }
 }

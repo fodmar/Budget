@@ -62,12 +62,14 @@ namespace Budget.DataAccess
                     .ToListAsync();
         }
 
-        public async Task Save(Receipt receipt)
+        public async Task<Receipt> Save(Receipt receipt)
         {
             this.budgetDatabase.Receipts.Add(receipt);
             this.budgetDatabase.ReceiptsEntries.AddRange(receipt.Entries);
 
             await this.budgetDatabase.SaveChangesAsync();
+
+            return receipt;
         }
     }
 }

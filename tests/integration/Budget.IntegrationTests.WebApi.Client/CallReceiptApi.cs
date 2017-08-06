@@ -37,10 +37,27 @@ namespace Budget.IntegrationTests.WebApi.Client
             IEnumerable<Receipt> result = await client.GetReceiptsByDates(1, null, DateTime.Now);
         }
 
+        [Test]
+        public async void PostReceipt()
+        {
+            ReceiptClient client = this.CreateClient();
+
+            Receipt receipt = new Receipt();
+            receipt.Date = DateTime.Now;
+            receipt.UserId = 1;
+
+            ReceiptEntry entry = new ReceiptEntry();
+            entry.Amount = 30m;
+
+            receipt.Entries = new List<ReceiptEntry> { entry };
+
+            Receipt saved = await client.Save(receipt);
+        }
+
         private ReceiptClient CreateClient()
         {
             var configurationProvider = MockRepository.GenerateStub<IConfigurationProvider>();
-            configurationProvider.Stub(s => s.BudgetApiUrl).Return(@"http://localhost:19808/");
+            configurationProvider.Stub(s => s.BudgetApiUrl).Return(@"http://marcin-lenovo/api/");
 
             var headersProvider = MockRepository.GenerateStub<IHeadersProvider>();
             headersProvider.Stub(s => s.CorrelationId).Return(Guid.Parse("AAAAFFFF-0000-0000-0000-000000000000"));

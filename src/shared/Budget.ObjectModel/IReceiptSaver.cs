@@ -8,6 +8,6 @@ namespace Budget.ObjectModel
 {
     public interface IReceiptSaver
     {
-        Task Save(Receipt receipt);
+        Task<Receipt> Save(Receipt receipt);
     }
 }

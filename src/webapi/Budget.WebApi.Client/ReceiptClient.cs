@@ -8,7 +8,7 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApi.Client
 {
-    public class ReceiptClient : ClientBase, IReceiptProvider
+    public class ReceiptClient : ClientBase, IReceiptProvider, IReceiptSaver
     {
         protected override string UriController
         {
@@ -50,6 +50,16 @@ namespace Budget.WebApi.Client
                     .AddUriParam(to.ToUriParamString())
                     .AsGet()
                     .Send<Receipt[]>() as IEnumerable<Receipt>;
+        }
+
+        public async Task<Receipt> Save(Receipt receipt)
+        {
+            return await
+                this.CreateRequest()
+                    .AddBody(receipt)
+                    .AsPost()
+                    .Send<Receipt>();
+
         }
     }
 }
