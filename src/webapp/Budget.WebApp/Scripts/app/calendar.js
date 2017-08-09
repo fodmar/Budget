@@ -1,11 +1,26 @@
-﻿define(['app/text', 'lib/locale-all', 'jqueryUi'], function (text) {
+﻿define(['app/text', 'lib/locale-all', 'jqueryUi', 'jqueryValidateUnobtrusive'], function (text) {
     function addreceipt() {
         $("#add-receipt").dialog("open");
     };
 
     function init() {
+        var dialogButtons = 
+
         $("#add-receipt").dialog({
-            autoOpen: false
+            autoOpen: false,
+            buttons: [
+            {
+                text: text.OK,
+                click: function () {
+                    $(this).find("form").valid();
+                }
+            },
+            {
+                text: text.Cancel,
+                click: function () {
+                    $(this).dialog("close");
+                }
+            }]
         });
 
         $("#calendar").fullCalendar({

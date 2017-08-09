@@ -13,13 +13,16 @@ namespace Budget.WebApp.Controllers
     public partial class OverviewController : BaseController
     {
         private IReceiptProvider receiptProvider;
+        private IReceiptSaver receiptSaver;
 
         public OverviewController(
             ISessionHelper sessionHelper,
-            IReceiptProvider receiptProvider)
+            IReceiptProvider receiptProvider,
+            IReceiptSaver receiptSaver)
             : base(sessionHelper)
         {
             this.receiptProvider = receiptProvider;
+            this.receiptSaver = receiptSaver;
         }
 
         public virtual ActionResult Overview()

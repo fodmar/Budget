@@ -1,7 +1,11 @@
 ﻿define({
   "root": {
+    "Amount": "Amount",
+    "Cancel": "Cancel",
+    "Date": "Date",
     "LogIntoApplication": "Log into application",
     "NewExpense": "New expense",
+    "OK": "OK",
     "Password": "Password",
     "SignIn": "Sign in",
     "ThisFieldIsRequired": "This field is required",

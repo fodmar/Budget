@@ -1,6 +1,10 @@
 ﻿define({
+  "Amount": "Kwota",
+  "Cancel": "Anuluj",
+  "Date": "Data",
   "LogIntoApplication": "Zaloguj się do aplikacji",
   "NewExpense": "Nowy wydatek",
+  "OK": "OK",
   "Password": "Hasło",
   "SignIn": "Zaloguj się",
   "ThisFieldIsRequired": "To pole jest wymagane",

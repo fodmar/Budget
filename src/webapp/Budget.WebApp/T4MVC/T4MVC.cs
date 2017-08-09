@@ -77,6 +77,8 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string calendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/calendar.min.js") ? Url("calendar.min.js") : Url("calendar.js");
+            public static readonly string login_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/login.min.js") ? Url("login.min.js") : Url("login.js");
+            public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -86,6 +88,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string fullcalendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fullcalendar.min.js") ? Url("fullcalendar.min.js") : Url("fullcalendar.js");
             public static readonly string fullcalendar_min_js = Url("fullcalendar.min.js");
+            public static readonly string i18n_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/i18n.min.js") ? Url("i18n.min.js") : Url("i18n.js");
             public static readonly string jquery_3_1_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.intellisense.min.js") ? Url("jquery-3.1.1.intellisense.min.js") : Url("jquery-3.1.1.intellisense.js");
             public static readonly string jquery_3_1_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.min.js") ? Url("jquery-3.1.1.min.js") : Url("jquery-3.1.1.js");
             public static readonly string jquery_3_1_1_min_js = Url("jquery-3.1.1.min.js");
@@ -102,16 +105,18 @@ namespace Links
             public static readonly string moment_with_locales_min_js = Url("moment-with-locales.min.js");
             public static readonly string moment_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/moment.min.js") ? Url("moment.min.js") : Url("moment.js");
             public static readonly string moment_min_js = Url("moment.min.js");
+            public static readonly string r_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/r.min.js") ? Url("r.min.js") : Url("r.js");
+            public static readonly string require_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/require.min.js") ? Url("require.min.js") : Url("require.js");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class resources {
-            public const string UrlPath = "~/Scripts/resources";
+        public static class nls {
+            public const string UrlPath = "~/Scripts/nls";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class pl_PL {
-                public const string UrlPath = "~/Scripts/resources/pl-PL";
+            public static class pl {
+                public const string UrlPath = "~/Scripts/nls/pl";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
                 public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
@@ -120,6 +125,7 @@ namespace Links
             public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
         }
     
+        public static readonly string require_config_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/require.config.min.js") ? Url("require.config.min.js") : Url("require.config.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -193,6 +199,8 @@ namespace Links
                 public static class Assets
                 {
                     public const string calendar_js = "~/Scripts/app/calendar.js"; 
+                    public const string login_js = "~/Scripts/app/login.js"; 
+                    public const string text_js = "~/Scripts/app/text.js"; 
                 }
             }
             public static partial class lib 
@@ -201,6 +209,7 @@ namespace Links
                 {
                     public const string fullcalendar_js = "~/Scripts/lib/fullcalendar.js"; 
                     public const string fullcalendar_min_js = "~/Scripts/lib/fullcalendar.min.js"; 
+                    public const string i18n_js = "~/Scripts/lib/i18n.js"; 
                     public const string jquery_3_1_1_intellisense_js = "~/Scripts/lib/jquery-3.1.1.intellisense.js"; 
                     public const string jquery_3_1_1_js = "~/Scripts/lib/jquery-3.1.1.js"; 
                     public const string jquery_3_1_1_min_js = "~/Scripts/lib/jquery-3.1.1.min.js"; 
@@ -215,24 +224,27 @@ namespace Links
                     public const string moment_with_locales_min_js = "~/Scripts/lib/moment-with-locales.min.js"; 
                     public const string moment_js = "~/Scripts/lib/moment.js"; 
                     public const string moment_min_js = "~/Scripts/lib/moment.min.js"; 
+                    public const string r_js = "~/Scripts/lib/r.js"; 
+                    public const string require_js = "~/Scripts/lib/require.js"; 
                 }
             }
-            public static partial class resources 
+            public static partial class nls 
             {
-                public static partial class pl_PL 
+                public static partial class pl 
                 {
                     public static class Assets
                     {
-                        public const string text_js = "~/Scripts/resources/pl-PL/text.js"; 
+                        public const string text_js = "~/Scripts/nls/pl/text.js"; 
                     }
                 }
                 public static class Assets
                 {
-                    public const string text_js = "~/Scripts/resources/text.js"; 
+                    public const string text_js = "~/Scripts/nls/text.js"; 
                 }
             }
             public static class Assets
             {
+                public const string require_config_js = "~/Scripts/require.config.js"; 
             }
         }
         public static partial class Content 

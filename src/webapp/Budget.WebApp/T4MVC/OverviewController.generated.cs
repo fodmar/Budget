@@ -110,8 +110,10 @@ namespace Budget.WebApp.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string AddReceipt = "AddReceipt";
                 public readonly string Overview = "Overview";
             }
+            public readonly string AddReceipt = "~/Views/Overview/AddReceipt.cshtml";
             public readonly string Overview = "~/Views/Overview/Overview.cshtml";
         }
     }
