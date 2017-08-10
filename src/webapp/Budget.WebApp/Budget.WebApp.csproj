@@ -232,6 +232,7 @@
     </None>
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Overview\AddReceipt.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AddReceiptEntryModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

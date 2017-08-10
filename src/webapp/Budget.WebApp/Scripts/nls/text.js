@@ -4,6 +4,7 @@
     "Cancel": "Cancel",
     "Date": "Date",
     "LogIntoApplication": "Log into application",
+    "New": "New",
     "NewExpense": "New expense",
     "OK": "OK",
     "Password": "Password",

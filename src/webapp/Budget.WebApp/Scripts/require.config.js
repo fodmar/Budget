@@ -1,6 +1,6 @@
 ﻿requirejs.config({
     baseUrl: '/Scripts',
-    urlArgs: '=1',
+    urlArgs: '',
     paths: {
         app: 'app',
         lib: 'lib',

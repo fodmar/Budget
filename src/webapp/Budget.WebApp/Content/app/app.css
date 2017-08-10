@@ -92,7 +92,7 @@ h2.login-title {
     flex-flow: wrap column;
 }
 
-.field-validation-error {
+.field-validation-error, label.error {
     color: red;
     font-size: 0.75em;
 }
@@ -101,7 +101,7 @@ h2.login-title {
     display: none;
 }
 
-.input-validation-error {
+.input-validation-error, input.error {
     border: 1px solid red;
     background-color: #fee;
 }

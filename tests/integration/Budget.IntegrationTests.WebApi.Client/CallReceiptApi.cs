@@ -11,6 +11,7 @@ using Rhino.Mocks;
 namespace Budget.IntegrationTests.WebApi.Client
 {
     [TestFixture]
+    [Ignore]
     public class CallReceiptApi
     {
         [Test]
@@ -38,6 +39,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         }
 
         [Test]
+        [Ignore]
         public async void PostReceipt()
         {
             ReceiptClient client = this.CreateClient();

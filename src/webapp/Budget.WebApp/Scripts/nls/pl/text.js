@@ -3,6 +3,7 @@
   "Cancel": "Anuluj",
   "Date": "Data",
   "LogIntoApplication": "Zaloguj się do aplikacji",
+  "New": "Nowy",
   "NewExpense": "Nowy wydatek",
   "OK": "OK",
   "Password": "Hasło",

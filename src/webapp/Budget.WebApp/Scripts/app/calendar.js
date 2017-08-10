@@ -1,10 +1,43 @@
-﻿define(['app/text', 'lib/locale-all', 'jqueryUi', 'jqueryValidateUnobtrusive'], function (text) {
+﻿define(['app/text', 'lib/locale-all', 'jqueryUi', 'jqueryValidate'], function (text) {
     function addreceipt() {
         $("#add-receipt").dialog("open");
     };
 
+    function nextReceiptEntryClick(event) {
+        var button = $(event.target);
+        var parent = button.prev();
+        var child = parent.clone();
+
+        var currentIndex = parseInt(parent.attr("data-index")) + 1;
+        child.attr("data-index", currentIndex);
+
+        var currentName = parent.data("name") + currentIndex;
+        child.find("label").attr("for", currentName);
+
+        var input = child.find("input");
+        input.attr("id", currentName);
+        input.attr("name", currentName);
+
+        child.insertBefore(button);
+
+        input.rules("add", {
+            required: true,
+            messages: {
+                required: text.ThisFieldIsRequired
+            }
+        });
+    };
+
     function init() {
-        var dialogButtons = 
+        var form = $("#add-receipt").find("form");
+
+        form.validate();
+        form.find('input[type="number"]').rules("add", {
+            required: true,
+            messages: {
+                required: text.ThisFieldIsRequired
+            }
+        });
 
         $("#add-receipt").dialog({
             autoOpen: false,
@@ -14,14 +47,10 @@
                 click: function () {
                     $(this).find("form").valid();
                 }
-            },
-            {
-                text: text.Cancel,
-                click: function () {
-                    $(this).dialog("close");
-                }
             }]
         });
+
+        $("#add-receipt").find("button").on("click", nextReceiptEntryClick);
 
         $("#calendar").fullCalendar({
             locale: navigator.language, //todo only supported languages
