@@ -11,6 +11,7 @@ using Rhino.Mocks;
 namespace Budget.IntegrationTests.WebApi.Client
 {
     [TestFixture]
+    [Ignore]
     class CallUserApi
     {
         [Test]

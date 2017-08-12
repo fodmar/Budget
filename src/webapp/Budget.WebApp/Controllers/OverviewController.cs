@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Budget.ObjectModel;
 using Budget.WebApi.Client;
+using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers
@@ -44,6 +45,14 @@ namespace Budget.WebApp.Controllers
                        };
 
             return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> SaveReceipt(Receipt receipt)
+        {
+            receipt.UserId = this.sessionHelper.UserId;
+            Receipt saved = await this.receiptSaver.Save(receipt);
+            return Json(saved);
         }
     }
 }

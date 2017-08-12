@@ -13,7 +13,7 @@ namespace Budget.WebApp.Models
         [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
         [Display(ResourceType = typeof(Text), Name = "Date")]
         [DataType(DataType.DateTime)]
-        public DateTime ReceiptDate { get; set; }
+        public DateTime Date { get; set; }
 
         public AddReceiptEntryModel[] Entires { get; set; }
     }

@@ -63,6 +63,13 @@ namespace Budget.WebApp.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetReceipts);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SaveReceipt()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveReceipt);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public OverviewController Actions { get { return MVC.Overview; } }
@@ -81,6 +88,7 @@ namespace Budget.WebApp.Controllers
         {
             public readonly string Overview = "Overview";
             public readonly string GetReceipts = "GetReceipts";
+            public readonly string SaveReceipt = "SaveReceipt";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -88,6 +96,7 @@ namespace Budget.WebApp.Controllers
         {
             public const string Overview = "Overview";
             public const string GetReceipts = "GetReceipts";
+            public const string SaveReceipt = "SaveReceipt";
         }
 
 
@@ -99,6 +108,14 @@ namespace Budget.WebApp.Controllers
         {
             public readonly string start = "start";
             public readonly string end = "end";
+        }
+        static readonly ActionParamsClass_SaveReceipt s_params_SaveReceipt = new ActionParamsClass_SaveReceipt();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SaveReceipt SaveReceiptParams { get { return s_params_SaveReceipt; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SaveReceipt
+        {
+            public readonly string receipt = "receipt";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -144,6 +161,18 @@ namespace Budget.WebApp.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "start", start);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "end", end);
             GetReceiptsOverride(callInfo, start, end);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SaveReceiptOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Budget.ObjectModel.Receipt receipt);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SaveReceipt(Budget.ObjectModel.Receipt receipt)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveReceipt);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "receipt", receipt);
+            SaveReceiptOverride(callInfo, receipt);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

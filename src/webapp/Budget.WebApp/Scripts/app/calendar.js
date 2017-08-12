@@ -3,6 +3,23 @@
         $("#add-receipt").dialog("open");
     };
 
+    function postForm(form) {
+        $.ajax({
+            url: "/Overview/SaveReceipt",
+            method: "POST",
+            data: form.serialize()
+        });
+    }
+
+    function addRequiredRule(element) {
+        element.rules("add", {
+            required: true,
+            messages: {
+                required: text.ThisFieldIsRequired
+            }
+        });
+    }
+
     function nextReceiptEntryClick(event) {
         var button = $(event.target);
         var parent = button.prev();
@@ -11,32 +28,27 @@
         var currentIndex = parseInt(parent.attr("data-index")) + 1;
         child.attr("data-index", currentIndex);
 
-        var currentName = parent.data("name") + currentIndex;
+        var currentName = parent.data("name") + "[" + currentIndex + "].Amount";
         child.find("label").attr("for", currentName);
 
         var input = child.find("input");
-        input.attr("id", currentName);
         input.attr("name", currentName);
 
         child.insertBefore(button);
 
-        input.rules("add", {
-            required: true,
-            messages: {
-                required: text.ThisFieldIsRequired
-            }
-        });
+        addRequiredRule(input);
     };
 
     function init() {
         var form = $("#add-receipt").find("form");
-
         form.validate();
-        form.find('input[type="number"]').rules("add", {
-            required: true,
-            messages: {
-                required: text.ThisFieldIsRequired
-            }
+
+        form.find('input[type="datetime"]').each(function (index, value) {
+            $(value).attr("type", "datetime-local");
+        });
+
+        form.find("input").each(function (index, value) {
+            addRequiredRule($(value));
         });
 
         $("#add-receipt").dialog({
@@ -45,7 +57,12 @@
             {
                 text: text.OK,
                 click: function () {
-                    $(this).find("form").valid();
+                    var form = $(this).find("form");
+
+                    if (form.valid()) {
+                        postForm(form);
+                        $(this).dialog("close");
+                    }
                 }
             }]
         });
