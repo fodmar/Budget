@@ -127,11 +127,11 @@ namespace Budget.WebApp.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string AddReceipt = "AddReceipt";
                 public readonly string Overview = "Overview";
+                public readonly string SaveReceipt = "SaveReceipt";
             }
-            public readonly string AddReceipt = "~/Views/Overview/AddReceipt.cshtml";
             public readonly string Overview = "~/Views/Overview/Overview.cshtml";
+            public readonly string SaveReceipt = "~/Views/Overview/SaveReceipt.cshtml";
         }
     }
 
@@ -165,10 +165,10 @@ namespace Budget.WebApp.Controllers
         }
 
         [NonAction]
-        partial void SaveReceiptOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Budget.ObjectModel.Receipt receipt);
+        partial void SaveReceiptOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Budget.WebApp.Models.SaveReceiptModel receipt);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SaveReceipt(Budget.ObjectModel.Receipt receipt)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SaveReceipt(Budget.WebApp.Models.SaveReceiptModel receipt)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveReceipt);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "receipt", receipt);

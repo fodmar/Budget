@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -46,13 +47,18 @@ namespace Budget.WebApp.Controllers
 
             return Json(json, JsonRequestBehavior.AllowGet);
         }
-
+        
         [HttpPost]
-        public virtual async Task<ActionResult> SaveReceipt(Receipt receipt)
+        public virtual async Task<ActionResult> SaveReceipt(SaveReceiptModel receipt)
         {
-            receipt.UserId = this.sessionHelper.UserId;
-            Receipt saved = await this.receiptSaver.Save(receipt);
-            return Json(saved);
+            if (!ModelState.IsValid)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            //receipt.UserId = this.sessionHelper.UserId;
+            //Receipt saved = await this.receiptSaver.Save(receipt);
+            return Json(receipt);
         }
     }
 }

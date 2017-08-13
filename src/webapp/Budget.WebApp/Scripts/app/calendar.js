@@ -1,4 +1,6 @@
 ﻿define(['app/text', 'lib/locale-all', 'jqueryUi', 'jqueryValidate'], function (text) {
+    var currentEntryIndex = 1;
+
     function addreceipt() {
         $("#add-receipt").dialog("open");
     };
@@ -22,22 +24,21 @@
 
     function nextReceiptEntryClick(event) {
         var button = $(event.target);
-        var parent = button.prev();
-        var child = parent.clone();
+        var template = $("#entry-template").html();
+        //todo: simple engine for templates
+        var newEntry = $(template.split("{{ index }}").join(currentEntryIndex));
+        currentEntryIndex++;
 
-        var currentIndex = parseInt(parent.attr("data-index")) + 1;
-        child.attr("data-index", currentIndex);
+        newEntry.insertBefore(button);
 
-        var currentName = parent.data("name") + "[" + currentIndex + "].Amount";
-        child.find("label").attr("for", currentName);
-
-        var input = child.find("input");
-        input.attr("name", currentName);
-
-        child.insertBefore(button);
-
-        addRequiredRule(input);
+        newEntry.find(".js-required").each(function (index, value) {
+            addRequiredRule($(value));
+        });
     };
+
+    function deleteReceiptEntryClick(event) {
+        $(event.target).closest(".js-entry").remove();
+    }
 
     function init() {
         var form = $("#add-receipt").find("form");
@@ -51,8 +52,11 @@
             addRequiredRule($(value));
         });
 
+        form.on("click", ".delete-icon", deleteReceiptEntryClick);
+
         $("#add-receipt").dialog({
             autoOpen: false,
+            title: text.NewExpense,
             buttons: [
             {
                 text: text.OK,

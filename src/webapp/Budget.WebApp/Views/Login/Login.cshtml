@@ -18,10 +18,10 @@
     @RequireJs.Require(@"app/login")
 </head>
 <body>
-    <div class="flex center">
+    <div class="flex justify-center">
         <div class="vertical login-form">
             <h2 class="login-title">@Text.LogIntoApplication</h2>
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(MVC.Login.ActionNames.Login, MVC.Login.Name, FormMethod.Post, new { @class = "vertical" }))
             {
                 @Html.EditorForModel()
                 @Html.SubmitForm(Text.SignIn)

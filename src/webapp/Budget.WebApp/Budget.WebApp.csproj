@@ -190,8 +190,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AddReceiptEntryModel.cs" />
-    <Compile Include="Models\AddReceiptModel.cs" />
+    <Compile Include="Models\SaveReceiptEntryModel.cs" />
+    <Compile Include="Models\SaveReceiptModel.cs" />
     <Compile Include="T4MVC\LoginController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -231,8 +231,8 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Overview\AddReceipt.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\AddReceiptEntryModel.cshtml" />
+    <Content Include="Views\Overview\SaveReceipt.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SaveReceiptEntryModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

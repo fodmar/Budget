@@ -1,8 +1,8 @@
-﻿@model Budget.WebApp.Models.AddReceiptModel
+﻿@model Budget.WebApp.Models.SaveReceiptModel
 @using Budget.Resources;
 
 <form>
     @Html.EditorForModel()
-    @Html.EditorFor(m => m.Entires[0])
+    @Html.EditorFor(m => m.Entries[0])
     <button type="button">@Text.New</button>
 </form>

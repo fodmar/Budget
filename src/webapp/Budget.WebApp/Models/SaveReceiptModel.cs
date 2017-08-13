@@ -8,13 +8,14 @@ using Budget.Resources;
 
 namespace Budget.WebApp.Models
 {
-    public class AddReceiptModel
+    public class SaveReceiptModel
     {
         [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
         [Display(ResourceType = typeof(Text), Name = "Date")]
         [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
 
-        public AddReceiptEntryModel[] Entires { get; set; }
+        [Required]
+        public List<SaveReceiptEntryModel> Entries { get; set; }
     }
 }

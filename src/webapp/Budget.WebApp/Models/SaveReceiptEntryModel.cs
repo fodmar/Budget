@@ -7,7 +7,7 @@ using Budget.Resources;
 
 namespace Budget.WebApp.Models
 {
-    public class AddReceiptEntryModel
+    public class SaveReceiptEntryModel
     {
         [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
         [Display(ResourceType = typeof(Text), Name = "Amount")]

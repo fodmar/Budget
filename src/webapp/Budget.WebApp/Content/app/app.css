@@ -24,7 +24,8 @@ button {
 	color: white;
 	font-weight: bold;
 	outline: 0;
-    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 button::-moz-focus-inner {
@@ -33,11 +34,6 @@ button::-moz-focus-inner {
 
 button:hover {
 	background-color: lightblue;
-}
-
-button[type="submit"] {
-    margin-top: 4px;
-    text-align:center;
 }
 
 form {
@@ -50,7 +46,7 @@ form * {
 
 h2.login-title {
     color: darkcyan;
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
     align-self: center;
@@ -72,24 +68,24 @@ h2.login-title {
     overflow: hidden;
 }
 
-.flex {
+.flex, .flex * {
     display: flex;
-    flex-flow: wrap column;
 }
 
-.flex * {
-    display: flex;
-    flex-flow: wrap column;
-}
-
-
-.center {
+.justify-center {
     justify-content: center;
+}
+
+.align-center {
 	align-items: center;
 }
 
-.vertical {
+.vertical, .vertical * {
     flex-flow: wrap column;
+}
+
+.horizontal {
+    flex-flow: wrap row;
 }
 
 .field-validation-error, label.error {
@@ -119,4 +115,11 @@ h2.login-title {
 
 .validation-summary-valid {
     display: none;
+}
+
+.delete-icon {
+    margin-left: 1em;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
 }
