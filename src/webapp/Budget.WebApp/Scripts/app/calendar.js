@@ -1,4 +1,4 @@
-﻿define(['app/text', 'lib/locale-all', 'jqueryUi', 'jqueryValidate'], function (text) {
+﻿define(['app/text', 'app/template', 'lib/locale-all', 'jqueryUi', 'jqueryValidate'], function (text, template) {
     var currentEntryIndex = 1;
 
     function addreceipt() {
@@ -24,9 +24,9 @@
 
     function nextReceiptEntryClick(event) {
         var button = $(event.target);
-        var template = $("#entry-template").html();
-        //todo: simple engine for templates
-        var newEntry = $(template.split("{{ index }}").join(currentEntryIndex));
+        var entryTemplate = $("#entry-template").html();
+
+        var newEntry = $(template.fill(entryTemplate, { index: currentEntryIndex }));
         currentEntryIndex++;
 
         newEntry.insertBefore(button);

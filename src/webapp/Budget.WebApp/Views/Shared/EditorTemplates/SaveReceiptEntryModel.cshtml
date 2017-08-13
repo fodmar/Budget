@@ -1,7 +1,7 @@
 ﻿@using Budget.Resources;
 
 <script type="text/template" id="entry-template">
-    <div class="js-entry" data-name="Entries">
+    <div class="js-entry">
         <input type="hidden" name="Entries.Index" value="{{ index }}" />
 
         <label for="Entries[{{ index }}].Amount">@Text.Amount</label>
@@ -13,7 +13,7 @@
     </div>
 </script>
 
-<div class="js-entry" data-name="Entries">
+<div class="js-entry">
     <input type="hidden" name="Entries.Index" value="0" />
 
     <label for="Entries[0].Amount">@Text.Amount</label>

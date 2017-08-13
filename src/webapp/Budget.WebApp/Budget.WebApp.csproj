@@ -137,6 +137,7 @@
     <Content Include="Content\lib\jquery-ui.css" />
     <Content Include="Content\lib\jquery-ui.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\template.js" />
     <Content Include="Scripts\app\text.js" />
     <Content Include="Scripts\lib\i18n.js" />
     <Content Include="Scripts\app\calendar.js" />

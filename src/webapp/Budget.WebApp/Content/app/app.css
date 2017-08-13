@@ -24,7 +24,8 @@ button {
 	color: white;
 	font-weight: bold;
 	outline: 0;
-    justify-content: center;
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
