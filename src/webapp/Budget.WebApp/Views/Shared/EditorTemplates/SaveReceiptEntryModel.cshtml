@@ -1,25 +1,29 @@
 ﻿@using Budget.Resources;
 
 <script type="text/template" id="entry-template">
-    <div class="js-entry">
+    <div class="js-entry flex vertical">
         <input type="hidden" name="Entries.Index" value="{{ index }}" />
 
         <label for="Entries[{{ index }}].Amount">@Text.Amount</label>
 
-        <div class="flex horizontal align-center">
-            <input class="js-required" name="Entries[{{ index }}].Amount" type="number" step="0.01" />
+        <div class="horizontal">
+            <div class="vertical">
+                <input class="js-required" name="Entries[{{ index }}].Amount" type="number" step="0.01" />
+            </div>
             <div class="delete-icon">x</div>
         </div>
     </div>
 </script>
 
-<div class="js-entry">
+<div class="js-entry flex vertical">
     <input type="hidden" name="Entries.Index" value="0" />
 
     <label for="Entries[0].Amount">@Text.Amount</label>
 
-    <div class="flex horizontal align-center">
-        <input class="js-required" name="Entries[0].Amount" type="number" step="0.01" />
+    <div class="horizontal">
+        <div class="vertical">
+            <input class="js-required" name="Entries[0].Amount" type="number" step="0.01" />
+        </div>
         <div class="delete-icon">x</div>
     </div>
 </div>
