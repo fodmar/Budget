@@ -41,7 +41,8 @@
     }
 
     function init() {
-        var form = $("#add-receipt").find("form");
+        var containter = $("#add-receipt");
+        var form = containter.find("form");
         form.validate();
 
         form.find('input[type="datetime"]').each(function (index, value) {
@@ -54,9 +55,17 @@
 
         form.on("click", ".delete-icon", deleteReceiptEntryClick);
 
-        $("#add-receipt").dialog({
+        var addButton = form.find("button");
+        addButton.on("click", nextReceiptEntryClick);
+
+        var click = jQuery.Event("click");
+        click.target = addButton;
+        addButton.trigger(click);
+
+        containter.dialog({
             autoOpen: false,
             title: text.NewExpense,
+            position: { my: "top", at: "top", of: $("#calendar") },
             buttons: [
             {
                 text: text.OK,
@@ -70,8 +79,6 @@
                 }
             }]
         });
-
-        $("#add-receipt").find("button").on("click", nextReceiptEntryClick);
 
         $("#calendar").fullCalendar({
             locale: navigator.language, //todo only supported languages

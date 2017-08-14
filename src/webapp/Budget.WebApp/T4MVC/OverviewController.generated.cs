@@ -129,9 +129,11 @@ namespace Budget.WebApp.Controllers
             {
                 public readonly string Overview = "Overview";
                 public readonly string SaveReceipt = "SaveReceipt";
+                public readonly string SaveReceiptEntryModelTemplate = "SaveReceiptEntryModelTemplate";
             }
             public readonly string Overview = "~/Views/Overview/Overview.cshtml";
             public readonly string SaveReceipt = "~/Views/Overview/SaveReceipt.cshtml";
+            public readonly string SaveReceiptEntryModelTemplate = "~/Views/Overview/SaveReceiptEntryModelTemplate.cshtml";
         }
     }
 

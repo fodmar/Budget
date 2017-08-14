@@ -8,7 +8,6 @@ input {
 	border-width: 1px;
 	padding: 3px;
 	border-color: darkcyan;
-    display: block;
 }
 
 input:focus {
@@ -25,6 +24,7 @@ button {
 	font-weight: bold;
 	outline: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
@@ -37,10 +37,6 @@ button:hover {
 	background-color: lightblue;
 }
 
-form {
-    margin-bottom: 0em;
-}
-
 form * {
 	margin-top: 2px;
 }
@@ -48,15 +44,20 @@ form * {
 h2.login-title {
     color: darkcyan;
     padding-bottom: 3em;
+    text-align: center;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
-    align-self: center;
 }
 
 .login-form {
 	padding: 10px;
 	box-shadow: 0px 0px 5px darkcyan;
 	background-color: white;
+}
+
+form, form div {
+    display: flex;
+    flex-flow: wrap column;
 }
 
 .loading {
@@ -69,24 +70,29 @@ h2.login-title {
     overflow: hidden;
 }
 
-.flex, .flex * {
-    display: flex;
-}
-
 .justify-center {
+    display: flex;
     justify-content: center;
 }
 
 .align-center {
+    display: flex;
 	align-items: center;
 }
 
-.vertical, .vertical * {
+.vertical {
+    display: flex;
     flex-flow: wrap column;
 }
 
 .horizontal {
+    display: flex;
     flex-flow: wrap row;
+}
+
+.grow {
+    display: flex;
+    flex-grow: 1;
 }
 
 .field-validation-error, label.error {
@@ -109,8 +115,9 @@ h2.login-title {
 }
 
 .validation-summary-errors ul {
+    list-style: none;
     -webkit-padding-start: 0em;
-    -webkit-margin-before: 1em;
+    -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
 }
 

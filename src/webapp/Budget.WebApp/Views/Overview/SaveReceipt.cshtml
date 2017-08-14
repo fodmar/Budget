@@ -3,6 +3,8 @@
 
 <form>
     @Html.EditorForModel()
-    @Html.EditorFor(m => m.Entries[0])
-    <button type="button">@Text.New</button>
+    @Html.Partial(MVC.Overview.Views.SaveReceiptEntryModelTemplate)
+    <span>
+        <button type="button">@Text.New</button>
+    </span>
 </form>

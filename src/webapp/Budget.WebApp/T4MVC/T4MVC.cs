@@ -78,6 +78,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string calendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/calendar.min.js") ? Url("calendar.min.js") : Url("calendar.js");
             public static readonly string login_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/login.min.js") ? Url("login.min.js") : Url("login.js");
+            public static readonly string template_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/template.min.js") ? Url("template.min.js") : Url("template.js");
             public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
         }
     
@@ -200,6 +201,7 @@ namespace Links
                 {
                     public const string calendar_js = "~/Scripts/app/calendar.js"; 
                     public const string login_js = "~/Scripts/app/login.js"; 
+                    public const string template_js = "~/Scripts/app/template.js"; 
                     public const string text_js = "~/Scripts/app/text.js"; 
                 }
             }
