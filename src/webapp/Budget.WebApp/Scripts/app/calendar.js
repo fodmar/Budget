@@ -24,9 +24,8 @@
 
     function nextReceiptEntryClick(event) {
         var button = $(event.target);
-        var entryTemplate = $("#entry-template").html();
 
-        var newEntry = $(template.fill(entryTemplate, { index: currentEntryIndex }));
+        var newEntry = $(template.fillElementById("entry-template", { index: currentEntryIndex }));
         currentEntryIndex++;
 
         newEntry.insertBefore(button);
