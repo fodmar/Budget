@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BudgetDatabase.cs" />
+    <Compile Include="Configuration\ReceiptConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="Configuration\UserPasswordConfiguration.cs" />
     <Compile Include="IBudgetDatabase.cs" />
@@ -60,10 +61,17 @@
     <Compile Include="Migrations\201707151429165_CreateUser.Designer.cs">
       <DependentUpon>201707151429165_CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708201838348_CreateIndexOnReceiptUserIdAndDate.cs" />
+    <Compile Include="Migrations\201708201838348_CreateIndexOnReceiptUserIdAndDate.Designer.cs">
+      <DependentUpon>201708201838348_CreateIndexOnReceiptUserIdAndDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707151429165_CreateUser.resx">
       <DependentUpon>201707151429165_CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201838348_CreateIndexOnReceiptUserIdAndDate.resx">
+      <DependentUpon>201708201838348_CreateIndexOnReceiptUserIdAndDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

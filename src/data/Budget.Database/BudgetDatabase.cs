@@ -14,6 +14,7 @@ namespace Budget.Database
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            ReceiptConfiguration.Configure(modelBuilder.Entity<Receipt>());
             UserConfiguration.Configure(modelBuilder.Entity<User>());
             UserPasswordConfiguration.Configure(modelBuilder.Entity<UserPassword>());
         }
