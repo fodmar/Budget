@@ -1,7 +1,7 @@
-﻿define(['app/text', 'app/template', 'lib/locale-all', 'jqueryUi', 'jqueryValidate'], function (text, template) {
+﻿define(['app/overview-calendar', 'app/text', 'app/template', 'jqueryUi', 'jqueryValidate'], function (calendar, text, template) {
     var currentEntryIndex = 1;
 
-    function addreceipt() {
+    function addReceipt() {
         $("#add-receipt").dialog("open");
     };
 
@@ -40,6 +40,10 @@
     }
 
     function init() {
+        calendar.init({
+            addReceipt: addReceipt
+        });
+
         var containter = $("#add-receipt");
         var form = containter.find("form");
         form.validate();
@@ -77,45 +81,6 @@
                     }
                 }
             }]
-        });
-
-        $("#calendar").fullCalendar({
-            locale: navigator.language, //todo only supported languages
-            editable: false,
-            droppable: false,
-            firstDay: 1,
-            customButtons: {
-                addreceipt: {
-                    text: text.NewExpense,
-                    click: addreceipt
-                }
-            },
-            views: {
-                month: {
-                    columnFormat: 'dddd'
-                },
-                week: {
-                    columnFormat: 'dddd'
-                },
-                day: {
-                    columnFormat: 'dddd'
-                }
-            },
-            header: {
-                left: 'basicDay basicWeek month',
-                center: 'title',
-                right: 'addreceipt today prev next'
-            },
-            loading: function (isLoading, view) {
-                $(".fc-center").toggleClass('loading', isLoading);
-            },
-            allDayDefault: false,
-            events: {
-                url: "/Overview/GetReceipts"
-            },
-            eventAfterAllRender: function (view) {
-
-            }
         });
     };
 
