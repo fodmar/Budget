@@ -16,5 +16,6 @@ namespace Budget.Database
         DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
         DbSet<User> Users { get; set; }
         DbSet<UserPassword> UsersPasswords { get; set; }
+        DbSet<Product> Products { get; set; }
     }
 }

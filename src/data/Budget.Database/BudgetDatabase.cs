@@ -15,13 +15,16 @@ namespace Budget.Database
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             ReceiptConfiguration.Configure(modelBuilder.Entity<Receipt>());
+            ReceiptEntryConfiguration.Configure(modelBuilder.Entity<ReceiptEntry>());
             UserConfiguration.Configure(modelBuilder.Entity<User>());
             UserPasswordConfiguration.Configure(modelBuilder.Entity<UserPassword>());
+            ProductConfiguration.Configure(modelBuilder.Entity<Product>());
         }
 
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<ReceiptEntry> ReceiptsEntries { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserPassword> UsersPasswords { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

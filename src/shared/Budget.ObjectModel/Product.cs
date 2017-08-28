@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public class ReceiptEntry
+    public class Product
     {
         public int Id { get; set; }
 
-        public int ReceiptId { get; set; }
-
-        public decimal Amount { get; set; }
-
-        public Product Product { get; set; }
+        public string Name { get; set; }
     }
 }

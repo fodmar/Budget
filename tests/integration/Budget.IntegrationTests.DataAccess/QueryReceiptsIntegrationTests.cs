@@ -16,38 +16,25 @@ namespace Budget.IntegrationTests.DataAccess
     public class QueryReceiptsIntegrationTests
     {
         [Test]
-        [Ignore]
-        public void QueryReceiptsByDateRange()
+        public async void QueryReceiptsByDateRange()
         {
             using (IBudgetDatabase database = new BudgetDatabase())
 	        {
                 ReceiptRepository facade = new ReceiptRepository(database);
 
-                List<Receipt> result = facade.ReceiptsWithEntries.ByDateRange(null, DateTime.Now).ToList();
+                List<Receipt> result = (await facade.GetReceiptsByDates(1, null, DateTime.Now)).ToList();
 	        }
         }
 
         [Test]
         [Ignore]
-        public void QueryReceiptsById()
+        public async void QueryReceiptsById()
         {
             using (IBudgetDatabase database = new BudgetDatabase())
             {
                 ReceiptRepository facade = new ReceiptRepository(database);
 
-                List<Receipt> result = facade.ReceiptsWithEntries.ByReceiptId(1).ByReceiptId(2).ToList();
-            }
-        }
-
-        [Test]
-        [Ignore]
-        public void QueryReceiptsByValueInSet()
-        {
-            using (IBudgetDatabase database = new BudgetDatabase())
-            {
-                ReceiptRepository facade = new ReceiptRepository(database);
-
-                List<Receipt> result = facade.ReceiptsWithEntries.ByValueInSet(r => r.Id, 1, 3, 5).ToList();
+                List<Receipt> result = (await facade.GetReceipts(1)).ToList();
             }
         }
     }

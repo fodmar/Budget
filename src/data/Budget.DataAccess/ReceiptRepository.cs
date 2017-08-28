@@ -20,26 +20,22 @@ namespace Budget.DataAccess
             this.budgetDatabase = budgetDatabase;
         }
 
-        public IQueryable<Receipt> Receipts
+        private IQueryable<Receipt> Receipts
         {
             get
             {
-                return this.budgetDatabase.Receipts.AsQueryable();
-            }
-        }
-
-        public IQueryable<Receipt> ReceiptsWithEntries
-        {
-            get
-            {
-                return this.budgetDatabase.Receipts.Include(r => r.Entries).AsQueryable();
+                return
+                    this.budgetDatabase.Receipts
+                        .Include(r => r.Entries)
+                        .Include(r => r.Entries.Select(e => e.Product))
+                        .AsQueryable();
             }
         }
 
         public Task<Receipt> GetReceipt(int userId, int receiptId)
         {
             return 
-                this.ReceiptsWithEntries
+                this.Receipts
                     .ByUserId(userId)
                     .ByReceiptId(receiptId)
                     .SingleOrDefaultAsync();
@@ -48,7 +44,7 @@ namespace Budget.DataAccess
         public async Task<IEnumerable<Receipt>> GetReceipts(int userId)
         {
             return await
-                this.ReceiptsWithEntries
+                this.Receipts
                     .ByUserId(userId)
                     .ToListAsync();
         }
@@ -56,7 +52,7 @@ namespace Budget.DataAccess
         public async Task<IEnumerable<Receipt>> GetReceiptsByDates(int userId, DateTime? from, DateTime? to)
         {
             return await
-                this.ReceiptsWithEntries
+                this.Receipts
                     .ByUserId(userId)
                     .ByDateRange(from, to)
                     .ToListAsync();

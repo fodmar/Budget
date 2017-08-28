@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="ReceiptRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query\IncludeByProperty.cs" />
     <Compile Include="Query\QueryByDateRange.cs" />
     <Compile Include="Query\QueryById.cs" />
     <Compile Include="Query\QueryByValueInSet.cs" />
