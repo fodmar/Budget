@@ -37,7 +37,7 @@ namespace Budget.DataAccess
             return 
                 this.Receipts
                     .ByUserId(userId)
-                    .ByReceiptId(receiptId)
+                    .ById(receiptId)
                     .SingleOrDefaultAsync();
         }
 

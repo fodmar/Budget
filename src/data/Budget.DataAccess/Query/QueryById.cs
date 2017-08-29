@@ -9,7 +9,7 @@ namespace Budget.DataAccess.Query
 {
     public static class QueryById
     {
-        public static IQueryable<Receipt> ByReceiptId(this IQueryable<Receipt> query, int receiptId)
+        public static IQueryable<Receipt> ById(this IQueryable<Receipt> query, int receiptId)
         {
             return query.Where(r => r.Id == receiptId);
         }

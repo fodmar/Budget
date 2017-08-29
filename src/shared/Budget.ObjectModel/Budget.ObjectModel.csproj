@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICorrelationIdProvider.cs" />
+    <Compile Include="IProductRepository.cs" />
     <Compile Include="IReceiptProvider.cs" />
     <Compile Include="IReceiptSaver.cs" />
     <Compile Include="Product.cs" />
