@@ -57,6 +57,12 @@ namespace Budget.WebApi.Client
             return this;
         }
 
+        public ApiRequest AsPut()
+        {
+            this.request.Method = HttpMethod.Put;
+            return this;
+        }
+
         public ApiRequest AsPost()
         {
             this.request.Method = HttpMethod.Post;

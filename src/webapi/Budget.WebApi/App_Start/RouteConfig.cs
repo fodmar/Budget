@@ -35,9 +35,13 @@ namespace Budget.WebApi
             );
 
             routes.MapHttpRoute(
-                name: "SaveReceipt",
-                routeTemplate: "api/receipt/",
-                defaults: new { controller = "Receipt", action = "SaveReceipt" }
+                name: "DefaultWithId",
+                routeTemplate: "api/{controller}/{id}"
+            );
+
+            routes.MapHttpRoute(
+                name: "Default",
+                routeTemplate: "api/{controller}/"
             );
         }
     }

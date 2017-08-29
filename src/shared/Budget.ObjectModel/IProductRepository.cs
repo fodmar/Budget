@@ -14,6 +14,6 @@ namespace Budget.ObjectModel
 
         Task Update(Product product);
 
-        Task Delete(Product productId);
+        Task Delete(Product product);
     }
 }

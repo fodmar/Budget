@@ -16,6 +16,7 @@ namespace Budget.IntegrationTests.DataAccess
     public class QueryReceiptsIntegrationTests
     {
         [Test]
+        [Ignore]
         public async void QueryReceiptsByDateRange()
         {
             using (IBudgetDatabase database = new BudgetDatabase())

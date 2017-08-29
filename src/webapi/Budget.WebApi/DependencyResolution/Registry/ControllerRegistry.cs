@@ -16,6 +16,8 @@ namespace Budget.WebApi.DependencyResolution.Registries
             For<IBudgetDatabase>().Use<BudgetDatabase>();
 
             For<IUserProvider>().Use<UserRepository>();
+
+            For<IProductRepository>().Use<ProductRepository>();
         }
     }
 }

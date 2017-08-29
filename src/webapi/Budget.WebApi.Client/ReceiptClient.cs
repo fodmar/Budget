@@ -57,7 +57,7 @@ namespace Budget.WebApi.Client
             return await
                 this.CreateRequest()
                     .AddBody(receipt)
-                    .AsPost()
+                    .AsPut()
                     .Send<Receipt>();
 
         }

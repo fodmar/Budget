@@ -53,7 +53,7 @@ namespace Budget.WebApi.Controllers
             return receipts.ToArray();
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<Receipt> SaveReceipt(
             [FromBody] Receipt receipt)
         {

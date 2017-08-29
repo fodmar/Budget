@@ -119,7 +119,7 @@ namespace Budget.UnitTests.WebApi
             yield return new Scenario
             {
                 Url = @"http://nonexisting/api/receipt/",
-                HttpMethod = HttpMethod.Post,
+                HttpMethod = HttpMethod.Put,
                 ExpectedController = typeof(ReceiptController),
                 ExpectedAction = MethodName((ReceiptController c) => c.SaveReceipt(null)),
             };
@@ -130,6 +130,38 @@ namespace Budget.UnitTests.WebApi
                 HttpMethod = HttpMethod.Get,
                 ExpectedController = typeof(UserController),
                 ExpectedAction = MethodName((UserController c) => c.Find(null, null)),
+            };
+
+            yield return new Scenario
+            {
+                Url = @"http://nonexisting/api/product/",
+                HttpMethod = HttpMethod.Get,
+                ExpectedController = typeof(ProductController),
+                ExpectedAction = MethodName((ProductController c) => c.GetAll()),
+            };
+
+            yield return new Scenario
+            {
+                Url = @"http://nonexisting/api/product/",
+                HttpMethod = HttpMethod.Put,
+                ExpectedController = typeof(ProductController),
+                ExpectedAction = MethodName((ProductController c) => c.Insert(null)),
+            };
+
+            yield return new Scenario
+            {
+                Url = @"http://nonexisting/api/product/",
+                HttpMethod = HttpMethod.Post,
+                ExpectedController = typeof(ProductController),
+                ExpectedAction = MethodName((ProductController c) => c.Update(null)),
+            };
+
+            yield return new Scenario
+            {
+                Url = @"http://nonexisting/api/product/123",
+                HttpMethod = HttpMethod.Delete,
+                ExpectedController = typeof(ProductController),
+                ExpectedAction = MethodName((ProductController c) => c.Delete(0)),
             };
         }
     }
