@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.BusinessLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Resources", "src\shared\Budget.Resources\Budget.Resources.csproj", "{678283C2-DAF7-4553-97DD-5AA95595DAB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Log4net", "src\shared\Budget.Log4net\Budget.Log4net.csproj", "{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,10 @@ Global
 		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{678283C2-DAF7-4553-97DD-5AA95595DAB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,5 +145,6 @@ Global
 		{99B181F5-1573-475F-9FD0-C7376CDDAA51} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 		{CFE15E13-A102-4376-9D41-B8D07DA8537F} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
 		{678283C2-DAF7-4553-97DD-5AA95595DAB8} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
+		{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 	EndGlobalSection
 EndGlobal
