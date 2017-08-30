@@ -30,10 +30,5 @@ namespace Budget.WebApi.Client
                     .AddUriParam(password.Hash)
                     .Send<User>();
         }
-
-        protected override void AddHeaders(ApiRequest request)
-        {
-            request.AddHeader("correlationId", this.headersProvider.CorrelationId);
-        }
     }
 }

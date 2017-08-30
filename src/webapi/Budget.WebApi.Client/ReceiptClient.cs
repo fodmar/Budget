@@ -38,7 +38,7 @@ namespace Budget.WebApi.Client
                 this.CreateRequest()
                     .AddUriParam(userId)
                     .AsGet()
-                    .Send<Receipt[]>() as IEnumerable<Receipt>;
+                    .Send<Receipt[]>();
         }
 
         public async Task<IEnumerable<Receipt>> GetReceiptsByDates(int userId, DateTime? from, DateTime? to)
@@ -49,7 +49,7 @@ namespace Budget.WebApi.Client
                     .AddUriParam(from.ToUriParamString())
                     .AddUriParam(to.ToUriParamString())
                     .AsGet()
-                    .Send<Receipt[]>() as IEnumerable<Receipt>;
+                    .Send<Receipt[]>();
         }
 
         public async Task<Receipt> Save(Receipt receipt)
@@ -59,7 +59,6 @@ namespace Budget.WebApi.Client
                     .AddBody(receipt)
                     .AsPut()
                     .Send<Receipt>();
-
         }
     }
 }

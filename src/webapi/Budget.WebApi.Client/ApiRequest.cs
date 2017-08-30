@@ -69,13 +69,31 @@ namespace Budget.WebApi.Client
             return this;
         }
 
+        public ApiRequest AsDelete()
+        {
+            this.request.Method = HttpMethod.Delete;
+            return this;
+        }
+
         public async Task<T> Send<T>()
         {
-            this.request.RequestUri = new Uri(uri);
-            HttpResponseMessage response = await this.httpClient.SendAsync(this.request);
-            T result = await response.Content.ReadAsAsync<T>();
+            this.request.RequestUri = new Uri(this.uri);
 
-            return result;
+            using (HttpResponseMessage response = await this.httpClient.SendAsync(this.request))
+            {
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadAsAsync<T>();
+            }
+        }
+
+        public async Task Send()
+        {
+            this.request.RequestUri = new Uri(this.uri);
+
+            using (HttpResponseMessage response = await this.httpClient.SendAsync(this.request))
+            {
+                response.EnsureSuccessStatusCode();
+            }
         }
     }
 }
