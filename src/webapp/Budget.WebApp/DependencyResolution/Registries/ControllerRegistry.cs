@@ -20,6 +20,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
             For<IConfigurationProvider>().Use<BudgetApiConfigurationProvider>();
             For<IHeadersProvider>().Use<BudgetApiHeadersProvider>();
             For<IAuthenticator>().Use<Authenticator>();
+            For<IProductRepository>().Use<ProductClient>();
         }
     }
 }

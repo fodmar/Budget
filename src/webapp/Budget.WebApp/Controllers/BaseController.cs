@@ -14,6 +14,7 @@ namespace Budget.WebApp.Controllers
     {
         protected ISessionHelper sessionHelper;
 
+        [Obsolete("This constructor is required by T4MVC lib, don't use it")]
         protected BaseController()
         {
         }
