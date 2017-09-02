@@ -142,6 +142,7 @@
     <Content Include="Scripts\app\text.js" />
     <Content Include="Scripts\lib\i18n.js" />
     <Content Include="Scripts\app\overview.js" />
+    <Content Include="Views\Overview\SaveReceipt.cshtml" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\app\login.js" />
     <Content Include="Scripts\lib\jquery-ui-1.12.1.js" />
@@ -193,6 +194,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\OverviewModel.cs" />
+    <Compile Include="Models\ProductsDataListModel.cs" />
     <Compile Include="Models\SaveReceiptEntryModel.cs" />
     <Compile Include="Models\SaveReceiptModel.cs" />
     <Compile Include="T4MVC\LoginController.generated.cs">
@@ -237,8 +240,8 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Overview\SaveReceipt.cshtml" />
     <Content Include="Views\Overview\SaveReceiptEntryModelTemplate.cshtml" />
+    <Content Include="Views\Overview\SaveReceiptHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -249,7 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">

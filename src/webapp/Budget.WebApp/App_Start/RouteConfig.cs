@@ -18,8 +18,8 @@ namespace Budget.WebApp
         {
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/",
-                defaults: new { controller = MVC.Overview.Name, action = MVC.Overview.ActionNames.Overview }
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = MVC.Overview.Name, action = MVC.Overview.ActionNames.Overview, id = UrlParameter.Optional }
             );
         }
     }

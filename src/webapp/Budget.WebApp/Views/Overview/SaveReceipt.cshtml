@@ -1,9 +1,9 @@
-﻿@model Budget.WebApp.Models.SaveReceiptModel
+﻿@model Budget.WebApp.Models.OverviewModel
 @using Budget.Resources;
 
 <form>
-    @Html.EditorForModel()
-    @Html.Partial(MVC.Overview.Views.SaveReceiptEntryModelTemplate)
+    @Html.Partial(MVC.Overview.Views.ViewNames.SaveReceiptHeader, Model.SaveReceipt)
+    @Html.Partial(MVC.Overview.Views.SaveReceiptEntryModelTemplate, Model.Products)
     <span>
         <button type="button">@Text.New</button>
     </span>

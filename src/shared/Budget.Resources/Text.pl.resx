@@ -141,6 +141,9 @@
   <data name="Password" xml:space="preserve">
     <value>Hasło</value>
   </data>
+  <data name="Product" xml:space="preserve">
+    <value>Produkt</value>
+  </data>
   <data name="SignIn" xml:space="preserve">
     <value>Zaloguj się</value>
   </data>

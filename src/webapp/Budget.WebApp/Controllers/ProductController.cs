@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Budget.ObjectModel;
+using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers

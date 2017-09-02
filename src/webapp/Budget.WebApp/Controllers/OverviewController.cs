@@ -16,20 +16,30 @@ namespace Budget.WebApp.Controllers
     {
         private IReceiptProvider receiptProvider;
         private IReceiptSaver receiptSaver;
+        private IProductRepository productRepository;
 
         public OverviewController(
             ISessionHelper sessionHelper,
             IReceiptProvider receiptProvider,
-            IReceiptSaver receiptSaver)
+            IReceiptSaver receiptSaver,
+            IProductRepository productRepository)
             : base(sessionHelper)
         {
             this.receiptProvider = receiptProvider;
             this.receiptSaver = receiptSaver;
+            this.productRepository = productRepository;
         }
 
-        public virtual ActionResult Overview()
+        public virtual async Task<ActionResult> Overview()
         {
-            return this.View();
+            ProductsDataListModel productsModel = new ProductsDataListModel();
+            productsModel.Products = await this.productRepository.GetAll();
+
+            OverviewModel model = new OverviewModel();
+            model.SaveReceipt = new SaveReceiptModel();
+            model.Products = productsModel;
+
+            return this.View(model);
         }
 
         public virtual async Task<ActionResult> GetReceipts(DateTime start, DateTime end)

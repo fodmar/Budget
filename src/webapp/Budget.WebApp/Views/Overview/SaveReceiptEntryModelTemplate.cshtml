@@ -1,16 +1,24 @@
 ﻿@using Budget.Resources;
+@using Budget.ObjectModel;
+@model Budget.WebApp.Models.ProductsDataListModel
 
 <script type="text/template" id="entry-template">
     <div class="js-entry vertical">
         <input type="hidden" name="Entries.Index" value="{{ index }}" />
 
-        <label for="Entries[{{ index }}].Amount">@Text.Amount</label>
-
-        <div class="horizontal vertical-center-items">
-            <div class="vertical grow">
-                <input class="js-required" name="Entries[{{ index }}].Amount" type="number" step="0.01" />
-            </div>
+        <div class="horizontal space-between">
+            <label for="Entries[{{ index }}].Product">@Text.Product</label>
             <div class="delete-icon ui-icon-closethick"></div>
         </div>
+
+        <select class="js-required" name="Entries[{{ index }}].Product.Id">
+            @foreach (Product product in Model.Products)
+            {
+                <option value="@product.Id">@product.Name</option>
+            }
+        </select>
+
+        <label for="Entries[{{ index }}].Amount">@Text.Amount</label>
+        <input class="js-required" name="Entries[{{ index }}].Amount" type="number" step="0.01" />
     </div>
 </script>

@@ -21,11 +21,11 @@ namespace Budget.UnitTests.WebApp
             TestRoute("~/", "GET", MVC.Overview.Name, MVC.Overview.ActionNames.Overview);
             TestRoute("~/Overview", "GET", MVC.Overview.Name, MVC.Overview.ActionNames.Overview);
             TestRoute("~/Overview/Overview", "GET", MVC.Overview.Name, MVC.Overview.ActionNames.Overview);
-            TestRoute("~/Overview/GetReceipts", "GET", MVC.Overview.Name, MVC.Overview.ActionNames.GetReceipts);
+            TestRoute("~/Overview/GetReceipts/start=2017-08-28&end=2017-10-09", "GET", MVC.Overview.Name, MVC.Overview.ActionNames.GetReceipts);
             TestRoute("~/Login/Login", "GET", MVC.Login.Name, MVC.Login.ActionNames.Login);
             TestRoute("~/Login/Login", "POST", MVC.Login.Name, MVC.Login.ActionNames.Login);
             TestRoute("~/Login/Logout", "GET", MVC.Login.Name, MVC.Login.ActionNames.Logout);
-            TestRoute("~/Overview/SaveReceipt", "Post", MVC.Overview.Name, MVC.Overview.ActionNames.SaveReceipt);
+            TestRoute("~/Overview/SaveReceipt", "POST", MVC.Overview.Name, MVC.Overview.ActionNames.SaveReceipt);
         }
 
         private HttpContextBase CreateHttpContext(string url, string method)
@@ -51,9 +51,9 @@ namespace Budget.UnitTests.WebApp
 
             RouteData routeData = routes.GetRouteData(this.CreateHttpContext(url, method));
 
-            Assert.IsNotNull(routeData);
-            Assert.AreEqual(expectedController, routeData.Values["controller"]);
-            Assert.AreEqual(expectedAction, routeData.Values["action"]);
+            Assert.IsNotNull(routeData, url);
+            Assert.AreEqual(expectedController, routeData.Values["controller"], url);
+            Assert.AreEqual(expectedAction, routeData.Values["action"], url);
         }
     }
 }

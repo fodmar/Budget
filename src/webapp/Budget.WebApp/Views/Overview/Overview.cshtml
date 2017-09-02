@@ -1,5 +1,6 @@
 ﻿@using System.Web.Optimization
 @using Budget.WebApp.Utils
+@model Budget.WebApp.Models.OverviewModel
 
 @section styles{
     @Styles.Render("~/bundles/content/overview")
@@ -10,7 +11,7 @@
 }
 
 <div id="add-receipt" hidden="hidden">
-    @Html.Partial(MVC.Overview.Views.ViewNames.SaveReceipt)
+    @Html.Partial(MVC.Overview.Views.ViewNames.SaveReceipt, Model)
 </div>
 
 <div id="calendar">

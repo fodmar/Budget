@@ -130,10 +130,12 @@ namespace Budget.WebApp.Controllers
                 public readonly string Overview = "Overview";
                 public readonly string SaveReceipt = "SaveReceipt";
                 public readonly string SaveReceiptEntryModelTemplate = "SaveReceiptEntryModelTemplate";
+                public readonly string SaveReceiptHeader = "SaveReceiptHeader";
             }
             public readonly string Overview = "~/Views/Overview/Overview.cshtml";
             public readonly string SaveReceipt = "~/Views/Overview/SaveReceipt.cshtml";
             public readonly string SaveReceiptEntryModelTemplate = "~/Views/Overview/SaveReceiptEntryModelTemplate.cshtml";
+            public readonly string SaveReceiptHeader = "~/Views/Overview/SaveReceiptHeader.cshtml";
         }
     }
 
@@ -146,11 +148,11 @@ namespace Budget.WebApp.Controllers
         partial void OverviewOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Overview()
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Overview()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Overview);
             OverviewOverride(callInfo);
-            return callInfo;
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
         [NonAction]

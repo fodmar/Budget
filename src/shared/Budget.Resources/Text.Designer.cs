@@ -133,6 +133,15 @@ namespace Budget.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string Product {
+            get {
+                return ResourceManager.GetString("Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign in.
         /// </summary>
         public static string SignIn {

@@ -7,14 +7,14 @@
     font-family: "Trebuchet MS" !important;
 }
 
-input {
+input, select {
 	border: solid;
 	border-width: 1px;
 	padding: 3px;
 	border-color: darkcyan;
 }
 
-input:focus {
+input:focus, select:focus {
 	box-shadow: 0px 0px 5px darkcyan;
     outline: none;
 }
@@ -96,6 +96,11 @@ form, form div {
 .horizontal {
     display: flex;
     flex-flow: wrap row;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
 }
 
 .grow {
