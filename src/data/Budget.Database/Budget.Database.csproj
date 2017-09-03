@@ -75,6 +75,10 @@
     <Compile Include="Migrations\201709031254486_ChangeUserPasswordPrimaryKey.Designer.cs">
       <DependentUpon>201709031254486_ChangeUserPasswordPrimaryKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709031842181_AddUniqueConstraintToUserPassword.cs" />
+    <Compile Include="Migrations\201709031842181_AddUniqueConstraintToUserPassword.Designer.cs">
+      <DependentUpon>201709031842181_AddUniqueConstraintToUserPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709031254486_ChangeUserPasswordPrimaryKey.resx">
       <DependentUpon>201709031254486_ChangeUserPasswordPrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031842181_AddUniqueConstraintToUserPassword.resx">
+      <DependentUpon>201709031842181_AddUniqueConstraintToUserPassword.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

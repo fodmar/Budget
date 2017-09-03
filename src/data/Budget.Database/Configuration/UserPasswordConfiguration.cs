@@ -22,6 +22,13 @@ namespace Budget.Database.Configuration
                 .WithMany()
                 .HasForeignKey(e => e.UserId)
                 .WillCascadeOnDelete(true);
+
+            string annotation = IndexAnnotation.AnnotationName;
+            string indexName = "IX_UserIdUnique";
+
+            configuration
+                .Property(e => e.UserId)
+                .HasColumnAnnotation(annotation, new IndexAnnotation(new IndexAttribute(indexName, 1) { IsUnique = true }));
         }
     }
 }
