@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using Budget.Database.Configuration;
 using Budget.ObjectModel;
@@ -17,8 +18,8 @@ namespace Budget.Database
             ReceiptConfiguration.Configure(modelBuilder.Entity<Receipt>());
             ReceiptEntryConfiguration.Configure(modelBuilder.Entity<ReceiptEntry>());
             UserConfiguration.Configure(modelBuilder.Entity<User>());
-            UserPasswordConfiguration.Configure(modelBuilder.Entity<UserPassword>());
             ProductConfiguration.Configure(modelBuilder.Entity<Product>());
+            UserPasswordConfiguration.Configure(modelBuilder.Entity<UserPassword>());
         }
 
         public virtual DbSet<Receipt> Receipts { get; set; }

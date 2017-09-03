@@ -23,5 +23,7 @@ namespace Budget.ObjectModel
         public string UserLogin { get; set; }
 
         public string Hash { get; set; }
+
+        public User User { get; set; }
     }
 }

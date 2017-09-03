@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201708281656539_CreateProduct.Designer.cs">
       <DependentUpon>201708281656539_CreateProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709031254486_ChangeUserPasswordPrimaryKey.cs" />
+    <Compile Include="Migrations\201709031254486_ChangeUserPasswordPrimaryKey.Designer.cs">
+      <DependentUpon>201709031254486_ChangeUserPasswordPrimaryKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708281656539_CreateProduct.resx">
       <DependentUpon>201708281656539_CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031254486_ChangeUserPasswordPrimaryKey.resx">
+      <DependentUpon>201709031254486_ChangeUserPasswordPrimaryKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
