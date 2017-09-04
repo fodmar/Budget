@@ -9,7 +9,7 @@ using StructureMap;
 
 namespace Budget.WebApi
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class BudgetWebApi : HttpApplication
     {
         protected void Application_Start()
         {

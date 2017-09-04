@@ -8,6 +8,7 @@
     "NewExpense": "New expense",
     "OK": "OK",
     "Password": "Password",
+    "Product": "Product",
     "SignIn": "Sign in",
     "ThisFieldIsRequired": "This field is required",
     "Username": "Username",

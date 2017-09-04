@@ -10,7 +10,7 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApp
 {
-    public class MvcApplication : HttpApplication
+    public class BudgetWebApp : HttpApplication
     {
         protected void Application_Start()
         {
