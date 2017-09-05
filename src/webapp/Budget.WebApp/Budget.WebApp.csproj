@@ -195,6 +195,7 @@
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
+    <Compile Include="Filters\LogErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

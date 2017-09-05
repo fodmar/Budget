@@ -10,6 +10,7 @@ namespace Budget.WebApp.Controllers
 {
     [Authorize]
     [CorrelationId]
+    [LogErrorAttribute]
     public abstract partial class BaseController : Controller
     {
         protected ISessionHelper sessionHelper;
