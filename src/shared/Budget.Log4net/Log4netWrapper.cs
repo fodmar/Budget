@@ -8,15 +8,15 @@ using log4net;
 
 namespace Budget.Log4net
 {
-    public class LoggerWrapper : ILogger
+    public class Log4netWrapper : ILogger
     {
         private readonly ILog log4net;
 
-        public LoggerWrapper() : this("default")
+        public Log4netWrapper() : this("default")
         {
         }
 
-        public LoggerWrapper(string loggerName) 
+        public Log4netWrapper(string loggerName) 
         {
             this.log4net = LogManager.GetLogger(loggerName);
         }

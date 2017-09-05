@@ -1,4 +1,5 @@
 ﻿using System.Web.Configuration;
+using Budget.Log4net;
 using Budget.ObjectModel;
 using Budget.WebApi.Client;
 using Budget.WebApp.Configuration;
@@ -15,6 +16,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
         {
             For<ICorrelationIdProvider>().Use<CorrelationIdProvider>();
             For<ISessionHelper>().Use<SessionHelper>();
+            For<ILogger>().Use<Log4netWrapper>().Ctor<string>("loggerName").Is("default");
         }
     }
 }

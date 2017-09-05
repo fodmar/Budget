@@ -109,8 +109,9 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="DependencyResolution\Registry\ControllerRegistry.cs" />
+    <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
+    <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
@@ -123,6 +124,10 @@
   <ItemGroup>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="..\..\shared\Budget.Log4net\log4net.config">
+      <Link>log4net.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -147,6 +152,10 @@
     <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
       <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
       <Name>Budget.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\Budget.Log4net\Budget.Log4net.csproj">
+      <Project>{3720ed30-a5e7-4bb1-ae0a-e197cf2061b9}</Project>
+      <Name>Budget.Log4net</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>

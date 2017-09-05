@@ -16,7 +16,7 @@ namespace Budget.IntegrationTests.Log4net
         public void LogSomething()
         {
             Log4netSetup.Setup();
-            LoggerWrapper log = new LoggerWrapper();
+            Log4netWrapper log = new Log4netWrapper();
 
             try
             {

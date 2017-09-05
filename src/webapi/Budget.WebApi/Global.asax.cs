@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using Budget.Log4net;
 using Budget.WebApi.DependencyResolution;
 using StructureMap;
 
@@ -22,6 +23,8 @@ namespace Budget.WebApi
 
             RouteConfig.RegisterRoutes(config.Routes);
             DependencyResolutionConfig.InitializeDependencyResolution(config);
+
+            Log4netSetup.Setup(Server.MapPath("~/bin/log4net.config"));
         }
     }
 }

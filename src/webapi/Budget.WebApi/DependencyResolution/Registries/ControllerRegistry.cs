@@ -1,13 +1,13 @@
+using Budget.BusinessLogic.UserManagement;
+using Budget.DataAccess;
+using Budget.Database;
+using Budget.ObjectModel;
+using StructureMap.Configuration.DSL;
+using StructureMap.Graph;
+
 namespace Budget.WebApi.DependencyResolution.Registries
 {
-    using Budget.BusinessLogic.UserManagement;
-    using Budget.DataAccess;
-    using Budget.Database;
-    using Budget.ObjectModel;
-    using StructureMap.Configuration.DSL;
-    using StructureMap.Graph;
-	
-    public class ControllerRegistry : Registry 
+    public class ControllerRegistry : Registry
     {
         public ControllerRegistry() 
         {

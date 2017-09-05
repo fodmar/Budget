@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Log4netSetup.cs" />
-    <Compile Include="LoggerWrapper.cs" />
+    <Compile Include="Log4netWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

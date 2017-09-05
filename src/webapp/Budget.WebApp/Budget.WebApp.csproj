@@ -143,6 +143,10 @@
     <Content Include="Scripts\lib\i18n.js" />
     <Content Include="Scripts\app\overview.js" />
     <Content Include="Views\Overview\SaveReceipt.cshtml" />
+    <Content Include="..\..\shared\Budget.Log4net\log4net.config">
+      <Link>log4net.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\app\login.js" />
     <Content Include="Scripts\lib\jquery-ui-1.12.1.js" />
@@ -257,6 +261,10 @@
     <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
       <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
       <Name>Budget.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\Budget.Log4net\Budget.Log4net.csproj">
+      <Project>{3720ed30-a5e7-4bb1-ae0a-e197cf2061b9}</Project>
+      <Name>Budget.Log4net</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
