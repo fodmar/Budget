@@ -150,6 +150,9 @@
   <data name="ThisFieldIsRequired" xml:space="preserve">
     <value>To pole jest wymagane</value>
   </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>Wystąpił nieoczekiwany błąd</value>
+  </data>
   <data name="Username" xml:space="preserve">
     <value>Nazwa użytkownika</value>
   </data>

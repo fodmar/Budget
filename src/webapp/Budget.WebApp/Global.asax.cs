@@ -28,5 +28,10 @@ namespace Budget.WebApp
 
             Log4netSetup.Setup(Server.MapPath("~/bin/log4net.config"));
         }
+
+        protected void Application_Error()
+        {
+            Server.GetLastError();
+        }
     }
 }

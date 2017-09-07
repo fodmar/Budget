@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Budget.ObjectModel;
+using Budget.Resources;
+using Budget.WebApp.Models;
 
 namespace Budget.WebApp.Filters
 {
@@ -11,19 +14,36 @@ namespace Budget.WebApp.Filters
     {
         public override void OnException(ExceptionContext filterContext)
         {
-            ILogger logger = DependencyResolver.Current.GetService<ILogger>();
+            HttpContextBase httpContext = filterContext.HttpContext;
 
             string userName = "[unauthenticated]";
-            if (filterContext.HttpContext.User.Identity.IsAuthenticated)
+            if (httpContext.User.Identity.IsAuthenticated)
             {
-                userName = filterContext.HttpContext.User.Identity.Name;
+                userName = httpContext.User.Identity.Name;
             }
 
             string msg = string.Format("{0} {1}", userName, filterContext.HttpContext.Request.RawUrl);
 
+            ILogger logger = DependencyResolver.Current.GetService<ILogger>();
             logger.Error(msg, filterContext.Exception);
 
-            base.OnException(filterContext);
+            if (httpContext.Request.IsAjaxRequest())
+            {
+                filterContext.Result = new JsonResult
+                {
+                    Data = new ErrorModel(Text.UnexpectedError)
+                };
+            }
+            else
+            {
+                filterContext.Result = new ViewResult
+                {
+                    ViewName = MVC.Error.Views.Error
+                };
+            }
+
+            httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            filterContext.ExceptionHandled = true;
         }
     }
 }

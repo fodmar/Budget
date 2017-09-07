@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static Budget.WebApp.Controllers.ErrorController Error = new Budget.WebApp.Controllers.T4MVC_ErrorController();
     public static Budget.WebApp.Controllers.LoginController Login = new Budget.WebApp.Controllers.T4MVC_LoginController();
     public static Budget.WebApp.Controllers.OverviewController Overview = new Budget.WebApp.Controllers.T4MVC_OverviewController();
     public static Budget.WebApp.Controllers.ProductController Product = new Budget.WebApp.Controllers.T4MVC_ProductController();

@@ -10,6 +10,7 @@
   "Product": "Produkt",
   "SignIn": "Zaloguj się",
   "ThisFieldIsRequired": "To pole jest wymagane",
+  "UnexpectedError": "Wystąpił nieoczekiwany błąd",
   "Username": "Nazwa użytkownika",
   "UsernameAndPasswordDontMatch": "Nazwa użytkownika i hasło nie pasują"
 });

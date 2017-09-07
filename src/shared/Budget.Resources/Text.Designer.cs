@@ -160,6 +160,15 @@ namespace Budget.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unexpected error occured.
+        /// </summary>
+        public static string UnexpectedError {
+            get {
+                return ResourceManager.GetString("UnexpectedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string Username {

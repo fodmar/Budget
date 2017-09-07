@@ -192,6 +192,7 @@
     <Compile Include="Authentication\IAuthenticator.cs" />
     <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -206,10 +207,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\OverviewModel.cs" />
     <Compile Include="Models\ProductsDataListModel.cs" />
     <Compile Include="Models\SaveReceiptEntryModel.cs" />
     <Compile Include="Models\SaveReceiptModel.cs" />
+    <Compile Include="T4MVC\ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\LoginController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -254,6 +259,11 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Overview\SaveReceiptEntryModelTemplate.cshtml" />
     <Content Include="Views\Overview\SaveReceiptHeader.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Forbidden.cshtml" />
+    <Content Include="Views\Error\BadRequest.cshtml" />
+    <Content Include="Views\Error\_LayoutError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

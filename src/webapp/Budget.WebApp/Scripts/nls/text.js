@@ -11,6 +11,7 @@
     "Product": "Product",
     "SignIn": "Sign in",
     "ThisFieldIsRequired": "This field is required",
+    "UnexpectedError": "Unexpected error occured",
     "Username": "Username",
     "UsernameAndPasswordDontMatch": "Username and password don't match"
   },
