@@ -12,6 +12,7 @@ namespace Budget.WebApp
         public static void IgnoreRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("favicon.ico");
         }
 
         public static void RegisterRoutes(RouteCollection routes)

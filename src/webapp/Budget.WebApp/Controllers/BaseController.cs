@@ -24,5 +24,10 @@ namespace Budget.WebApp.Controllers
         {
             this.sessionHelper = sessionHelper;
         }
+
+        protected override void OnException(ExceptionContext exceptionContext)
+        {
+            DependencyResolver.Current.GetService<IErrorHandler>().HandleControllerError(exceptionContext);
+        }
     }
 }

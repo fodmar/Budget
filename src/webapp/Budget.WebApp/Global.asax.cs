@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Budget.Log4net;
 using Budget.ObjectModel;
+using Budget.WebApp.Utils;
 
 namespace Budget.WebApp
 {
@@ -31,7 +32,9 @@ namespace Budget.WebApp
 
         protected void Application_Error()
         {
-            Server.GetLastError();
+            Exception ex = this.Server.GetLastError();
+            DependencyResolver.Current.GetService<IErrorHandler>().HandleApplicationError(this.Context, ex);
+            this.Server.ClearError();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
             For<ICorrelationIdProvider>().Use<CorrelationIdProvider>();
             For<ISessionHelper>().Use<SessionHelper>();
             For<ILogger>().Use<Log4netWrapper>().Ctor<string>("loggerName").Is("default");
+            For<IErrorHandler>().Use<ErrorHandler>();
         }
     }
 }
