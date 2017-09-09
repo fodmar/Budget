@@ -36,7 +36,7 @@ namespace Budget.WebApp.Controllers
 
             if (Request.IsAjaxRequest())
             {
-                return Json(new ErrorModel(message));
+                return Json(new ErrorModel(message), JsonRequestBehavior.AllowGet);
             }
 
             return View();
