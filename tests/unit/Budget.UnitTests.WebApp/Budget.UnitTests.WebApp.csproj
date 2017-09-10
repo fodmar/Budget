@@ -78,6 +78,7 @@
     <Compile Include="AuthenticatorTests.cs" />
     <Compile Include="Controllers\LoginControllerTests.cs" />
     <Compile Include="DependencyResolutionTests.cs" />
+    <Compile Include="ModelStateExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteTestsWebApp.cs" />
   </ItemGroup>

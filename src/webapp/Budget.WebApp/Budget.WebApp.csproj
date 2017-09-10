@@ -202,6 +202,7 @@
     <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\ModelStateExtensions.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
     <Compile Include="Filters\LogErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">

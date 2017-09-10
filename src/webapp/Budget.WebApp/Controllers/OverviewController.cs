@@ -9,6 +9,7 @@ using Budget.ObjectModel;
 using Budget.WebApi.Client;
 using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
+using Budget.WebApp.Extensions;
 
 namespace Budget.WebApp.Controllers
 {
@@ -63,7 +64,8 @@ namespace Budget.WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                this.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ModelState.PropertiesErrors());
             }
 
             //receipt.UserId = this.sessionHelper.UserId;

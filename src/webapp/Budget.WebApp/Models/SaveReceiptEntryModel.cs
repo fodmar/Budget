@@ -12,7 +12,6 @@ namespace Budget.WebApp.Models
     {
         [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
         [Display(ResourceType = typeof(Text), Name = "Amount")]
-        [DataType(DataType.Currency)]
         public decimal Amount { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
