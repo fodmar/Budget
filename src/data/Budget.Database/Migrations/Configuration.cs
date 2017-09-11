@@ -37,9 +37,9 @@ namespace Budget.Database.Migrations
 
             context.ReceiptsEntries.AddOrUpdate(
                 e => e.Id,
-                new ReceiptEntry { Id = 1, ReceiptId = 1, Amount = 20.2m, Product = p1 },
-                new ReceiptEntry { Id = 2, ReceiptId = 1, Amount = 11.68m, Product = p1 },
-                new ReceiptEntry { Id = 3, ReceiptId = 2, Amount = 9.21m, Product = p2 });
+                new ReceiptEntry { Id = 1, ReceiptId = 1, Amount = 20.2m, ProductId = p1.Id },
+                new ReceiptEntry { Id = 2, ReceiptId = 1, Amount = 11.68m, ProductId = p1.Id },
+                new ReceiptEntry { Id = 3, ReceiptId = 2, Amount = 9.21m, ProductId = p2.Id });
         }
     }
 }

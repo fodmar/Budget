@@ -16,6 +16,6 @@ namespace Budget.WebApp.Models
 
         [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
         [Display(ResourceType = typeof(Text), Name = "Product")]
-        public Product Product { get; set; }
+        public int ProductId { get; set; }
     }
 }

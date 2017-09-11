@@ -30,6 +30,11 @@ namespace Budget.WebApi.Filters
 
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
+            if (actionExecutedContext.Response == null)
+            {
+                return;
+            }
+
             actionExecutedContext.Response.Headers.Add("correlationId", Trace.CorrelationManager.ActivityId.ToString());
         }
     }

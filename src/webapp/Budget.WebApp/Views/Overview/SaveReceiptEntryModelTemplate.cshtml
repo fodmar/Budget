@@ -11,7 +11,7 @@
             <div class="delete-icon ui-icon-closethick"></div>
         </div>
 
-        <select class="js-required" name="Entries[{{ index }}].Product.Id">
+        <select class="js-required" name="Entries[{{ index }}].ProductId">
             @foreach (Product product in Model.Products)
             {
                 <option value="@product.Id">@product.Name</option>

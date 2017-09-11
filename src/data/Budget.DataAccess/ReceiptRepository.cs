@@ -27,7 +27,6 @@ namespace Budget.DataAccess
                 return
                     this.budgetDatabase.Receipts
                         .Include(r => r.Entries)
-                        .Include(r => r.Entries.Select(e => e.Product))
                         .AsQueryable();
             }
         }

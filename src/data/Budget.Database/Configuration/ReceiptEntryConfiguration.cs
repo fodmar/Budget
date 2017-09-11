@@ -15,7 +15,7 @@ namespace Budget.Database.Configuration
             configuration
                 .HasRequired(e => e.Product)
                 .WithMany()
-                .Map(m => m.MapKey("ProductId"))
+                .HasForeignKey(e => e.ProductId)
                 .WillCascadeOnDelete(false);
         }
     }

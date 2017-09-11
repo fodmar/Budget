@@ -235,6 +235,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Translators\ReceiptTranslator.cs" />
     <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
     <Compile Include="Utils\CorrelationIdProvider.cs" />
     <Compile Include="Utils\ErrorHandler.cs" />

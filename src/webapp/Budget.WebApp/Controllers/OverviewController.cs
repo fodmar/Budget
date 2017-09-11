@@ -10,6 +10,7 @@ using Budget.WebApi.Client;
 using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
 using Budget.WebApp.Extensions;
+using Budget.WebApp.Translators;
 
 namespace Budget.WebApp.Controllers
 {
@@ -60,7 +61,7 @@ namespace Budget.WebApp.Controllers
         }
         
         [HttpPost]
-        public virtual async Task<ActionResult> SaveReceipt(SaveReceiptModel receipt)
+        public virtual async Task<ActionResult> SaveReceipt(SaveReceiptModel saveModel)
         {
             if (!ModelState.IsValid)
             {
@@ -68,9 +69,11 @@ namespace Budget.WebApp.Controllers
                 return Json(ModelState.PropertiesErrors());
             }
 
-            //receipt.UserId = this.sessionHelper.UserId;
-            //Receipt saved = await this.receiptSaver.Save(receipt);
-            return Json(receipt);
+            ReceiptTranslator translator = new ReceiptTranslator();
+            Receipt model = translator.Translate(saveModel, this.sessionHelper.UserId);
+
+            Receipt saved = await this.receiptSaver.Save(model);
+            return Json(saved);
         }
     }
 }
