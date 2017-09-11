@@ -8,10 +8,15 @@
 }
 
 input, select {
+    width: 100%;
+    height: 28px;
 	border: solid;
 	border-width: 1px;
 	padding: 3px;
 	border-color: darkcyan;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 input:focus, select:focus {
@@ -43,6 +48,10 @@ button:hover {
 
 form * {
 	margin-top: 2px;
+}
+
+.margin-zero {
+    margin: 0px;
 }
 
 h2.login-title {
@@ -145,7 +154,6 @@ input.input-validation-error:focus, input.error:focus {
 .delete-icon {
     height: 16px;
     width: 16px;
-    margin-left: 1em;
     cursor: pointer;
     background-image: url("../lib/images/ui-icons_cc0000_256x240.png");
 }
