@@ -21,9 +21,9 @@ namespace Budget.DataAccess
 
         public async Task<User> FindUser(UserPassword password)
         {
-            return await 
-                (from userPassword in this.budgetDatabase.UsersPasswords
-                 join user in this.budgetDatabase.Users on userPassword.UserId equals user.Id
+            return await
+                (from userPassword in this.budgetDatabase.Select<UserPassword>()
+                 join user in this.budgetDatabase.Select<User>() on userPassword.UserId equals user.Id
                  where userPassword.UserLogin == password.UserLogin && userPassword.Hash == password.Hash
                  select user)
                  .SingleOrDefaultAsync();

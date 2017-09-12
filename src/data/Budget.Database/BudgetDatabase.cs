@@ -1,13 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 using Budget.Database.Configuration;
 using Budget.ObjectModel;
 
 namespace Budget.Database
 {
-    public class BudgetDatabase : DbContext, IBudgetDatabase
+    public class BudgetDatabase : EntityFrameworkDatabase, IBudgetDatabase
     {
         public BudgetDatabase() : base("name=Budget")
         {

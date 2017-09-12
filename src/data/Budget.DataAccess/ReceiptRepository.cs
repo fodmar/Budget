@@ -24,10 +24,7 @@ namespace Budget.DataAccess
         {
             get
             {
-                return
-                    this.budgetDatabase.Receipts
-                        .Include(r => r.Entries)
-                        .AsQueryable();
+                return this.budgetDatabase.Select<Receipt>(r => r.Entries);
             }
         }
 
@@ -57,14 +54,9 @@ namespace Budget.DataAccess
                     .ToListAsync();
         }
 
-        public async Task<Receipt> Save(Receipt receipt)
+        public Task<Receipt> Save(Receipt receipt)
         {
-            this.budgetDatabase.Receipts.Add(receipt);
-            this.budgetDatabase.ReceiptsEntries.AddRange(receipt.Entries);
-
-            await this.budgetDatabase.SaveChangesAsync();
-
-            return receipt;
+            return this.budgetDatabase.Insert(receipt);
         }
     }
 }

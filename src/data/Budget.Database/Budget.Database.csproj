@@ -54,7 +54,9 @@
     <Compile Include="Configuration\ReceiptEntryConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="Configuration\UserPasswordConfiguration.cs" />
+    <Compile Include="EntityFrameworkDatabase.cs" />
     <Compile Include="IBudgetDatabase.cs" />
+    <Compile Include="IDatabase.cs" />
     <Compile Include="Migrations\201707021324318_InitialCreate.cs" />
     <Compile Include="Migrations\201707021324318_InitialCreate.Designer.cs">
       <DependentUpon>201707021324318_InitialCreate.cs</DependentUpon>

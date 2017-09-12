@@ -21,27 +21,22 @@ namespace Budget.DataAccess
 
         public async Task<IEnumerable<Product>> GetAll()
         {
-            return await this.budgetDatabase.Products.ToListAsync();
+            return await this.budgetDatabase.Select<Product>().ToListAsync();
         }
 
-        public async Task<Product> Insert(Product product)
+        public Task<Product> Insert(Product product)
         {
-            this.budgetDatabase.Products.Add(product);
-            await this.budgetDatabase.SaveChangesAsync();
-
-            return product;
+            return this.budgetDatabase.Insert(product);
         }
 
-        public async Task Update(Product product)
+        public Task Update(Product product)
         {
-            this.budgetDatabase.Entry(product).State = EntityState.Modified;
-            await this.budgetDatabase.SaveChangesAsync();
+            return this.budgetDatabase.Update(product);
         }
 
-        public async Task Delete(Product product)
+        public Task Delete(Product product)
         {
-            this.budgetDatabase.Entry(product).State = EntityState.Deleted;
-            await this.budgetDatabase.SaveChangesAsync();
+            return this.budgetDatabase.Delete(product);
         }
     }
 }
