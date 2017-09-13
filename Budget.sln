@@ -16,11 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B0044C27-7A69-44F7-ADBC-D95A3C084DF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AD74B865-5691-4622-A87F-8393E448B645}"
-	ProjectSection(SolutionItems) = preProject
-		src\webapp\Budget.WebApp\Web.config = src\webapp\Budget.WebApp\Web.config
-		src\webapp\Budget.WebApp\Web.Debug.config = src\webapp\Budget.WebApp\Web.Debug.config
-		src\webapp\Budget.WebApp\Web.Release.config = src\webapp\Budget.WebApp\Web.Release.config
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Database", "src\data\Budget.Database\Budget.Database.csproj", "{D52605EB-CA5E-4FCD-8DA5-A34DDED21219}"
 EndProject
