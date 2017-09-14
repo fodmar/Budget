@@ -42,10 +42,6 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-button:hover {
-	background-color: lightblue;
-}
-
 form * {
 	margin-top: 2px;
 }
