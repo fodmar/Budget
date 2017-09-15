@@ -14,14 +14,14 @@ namespace Budget.Database
         {
         }
 
-        public IQueryable<T> Select<T>() where T : class
+        public IQueryable<T> Table<T>() where T : class
         {
             return Set<T>().AsQueryable();
         }
 
-        public IQueryable<T> Select<T>(params Expression<Func<T, object>>[] joins) where T : class
+        public IQueryable<T> Table<T>(params Expression<Func<T, object>>[] joins) where T : class
         {
-            IQueryable<T> query = Select<T>();
+            IQueryable<T> query = Table<T>();
 
             foreach (var join in joins)
             {

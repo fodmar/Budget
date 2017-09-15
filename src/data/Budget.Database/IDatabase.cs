@@ -9,8 +9,8 @@ namespace Budget.Database
 {
     public interface IDatabase : IDisposable
     {
-        IQueryable<T> Select<T>() where T : class;
-        IQueryable<T> Select<T>(params Expression<Func<T, object>>[] joins) where T : class;
+        IQueryable<T> Table<T>() where T : class;
+        IQueryable<T> Table<T>(params Expression<Func<T, object>>[] joins) where T : class;
 
         Task<T> Insert<T>(T entitity) where T : class;
         Task<IEnumerable<T>> Insert<T>(IEnumerable<T> entities) where T : class;

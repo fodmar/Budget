@@ -21,7 +21,7 @@ namespace Budget.DataAccess
 
         public async Task<IEnumerable<Product>> GetAll()
         {
-            return await this.budgetDatabase.Select<Product>().ToListAsync();
+            return await this.budgetDatabase.Table<Product>().ToListAsync();
         }
 
         public Task<Product> Insert(Product product)

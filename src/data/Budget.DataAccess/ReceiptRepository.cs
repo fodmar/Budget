@@ -24,7 +24,7 @@ namespace Budget.DataAccess
         {
             get
             {
-                return this.budgetDatabase.Select<Receipt>(r => r.Entries);
+                return this.budgetDatabase.Table<Receipt>(r => r.Entries);
             }
         }
 
