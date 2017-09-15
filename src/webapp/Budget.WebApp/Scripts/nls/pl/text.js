@@ -7,6 +7,7 @@
   "NewExpense": "Nowy wydatek",
   "OK": "OK",
   "Password": "Hasło",
+  "PleaseWait": "Proszę czekać...",
   "Product": "Produkt",
   "SignIn": "Zaloguj się",
   "ThisFieldIsRequired": "To pole jest wymagane",

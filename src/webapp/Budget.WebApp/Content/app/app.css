@@ -1,6 +1,12 @@
 ﻿body {
 	background-color: rgb(231, 231, 231);
 	font-family: "Trebuchet MS" !important;
+    font-size: 16px;
+}
+
+input, select, textarea, button {
+    font-family: inherit;
+    font-size: .875em;
 }
 
 .ui-widget * {
@@ -26,7 +32,6 @@ input:focus, select:focus {
 
 button {
 	padding: 5px;
-	border: solid;
 	border-width: 0px;
 	background-color: darkcyan;
 	color: white;
@@ -77,6 +82,22 @@ form, form div {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.loader {
+    display: inline-block;
+    border: .25em solid silver;
+    border-top: .25em solid white;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    margin-right: 0.5em;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .justify-center {

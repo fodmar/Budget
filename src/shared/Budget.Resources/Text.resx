@@ -141,6 +141,9 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>Product</value>
   </data>
