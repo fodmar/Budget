@@ -7,20 +7,35 @@ namespace Budget.Database.Migrations
     {
         public override void Up()
         {
-            DropPrimaryKey("dbo.UserPasswords");
-            AlterColumn("dbo.UserPasswords", "UserId", c => c.Int(nullable: false));
-            AddPrimaryKey("dbo.UserPasswords", "UserLogin");
-            CreateIndex("dbo.UserPasswords", "UserId");
+            DropTable("dbo.UserPasswords");
+
+            CreateTable(
+                "dbo.UserPasswords",
+                c => new
+                {
+                    UserLogin = c.String(nullable: false, maxLength: 64),
+                    UserId = c.Int(nullable: false),
+                    Hash = c.String(nullable: false, maxLength: 32, fixedLength: true),
+                })
+                .PrimaryKey(t => t.UserLogin);
+
             AddForeignKey("dbo.UserPasswords", "UserId", "dbo.Users", "Id", cascadeDelete: true);
+            CreateIndex("dbo.UserPasswords", "UserId");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserPasswords", "UserId", "dbo.Users");
-            DropIndex("dbo.UserPasswords", new[] { "UserId" });
-            DropPrimaryKey("dbo.UserPasswords");
-            AlterColumn("dbo.UserPasswords", "UserId", c => c.Int(nullable: false, identity: true));
-            AddPrimaryKey("dbo.UserPasswords", "UserId");
+            DropTable("dbo.UserPasswords");
+
+            CreateTable(
+                "dbo.UserPasswords",
+                c => new
+                {
+                    UserId = c.Int(nullable: false, identity: true),
+                    UserLogin = c.String(nullable: false, maxLength: 64),
+                    Hash = c.String(nullable: false, maxLength: 32, fixedLength: true),
+                })
+                .PrimaryKey(t => t.UserId);
         }
     }
 }
