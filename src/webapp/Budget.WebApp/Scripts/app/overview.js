@@ -1,4 +1,4 @@
-﻿define(['app/overview-calendar', 'app/text', 'app/template', 'jqueryUi', 'jqueryValidate'], function (calendar, text, template) {
+﻿define(['app/overview-calendar', 'app/text', 'app/template', 'app/btnloader', 'jqueryUi', 'jqueryValidate'], function (calendar, text, template, btnloader) {
     var currentEntryIndex = 1;
 
     function addReceipt() {
@@ -6,7 +6,7 @@
     };
 
     function postForm(form) {
-        $.ajax({
+        return $.ajax({
             url: "/Overview/SaveReceipt",
             method: "POST",
             data: form.serialize()
@@ -72,12 +72,21 @@
             buttons: [
             {
                 text: text.OK,
-                click: function () {
-                    var form = $(this).find("form");
+                click: function (event) {
+                    var dialogWindow = $(this);
+                    var form = dialogWindow.find("form");
 
                     if (form.valid()) {
-                        postForm(form);
-                        $(this).dialog("close");
+                        var button = $(event.target);
+
+                        btnloader.loader(function () {
+                            return postForm(form);
+                        }, {
+                            after: function () {
+                                btnloader.after.apply(button);
+                                dialogWindow.dialog("close");
+                            }
+                        }).apply(button);
                     }
                 }
             }]

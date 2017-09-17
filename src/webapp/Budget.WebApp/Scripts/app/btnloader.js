@@ -14,10 +14,10 @@
         button.text(button.attr("original-text"));
     };
 
-    function loader(callback) {
+    function loader(callback, options) {
         var functions = {
-            before: before,
-            after: after
+            before: options.before || before,
+            after: options.after || after,
         };
 
         return callwrapper.wrap(callback, functions);
