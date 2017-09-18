@@ -211,6 +211,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ErrorModel.cs" />
+    <Compile Include="Models\Json\FullcalendarEvent.cs" />
     <Compile Include="Models\OverviewModel.cs" />
     <Compile Include="Models\ProductsDataListModel.cs" />
     <Compile Include="Models\SaveReceiptEntryModel.cs" />

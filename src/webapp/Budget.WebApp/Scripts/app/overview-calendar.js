@@ -40,7 +40,12 @@
         });
     };
 
+    function addEvent(calendarEvent) {
+        $("#calendar").fullCalendar("renderEvent", calendarEvent, true);
+    };
+
     return {
-        init: init
+        init: init,
+        addEvent: addEvent
     };
 });

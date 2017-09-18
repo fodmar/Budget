@@ -9,11 +9,15 @@
                 functions.before.apply(this, orignialArgs);
             }
 
-            $.when(callback.apply(this, arguments)).always(function () {
+            $.when(callback.apply(this, orignialArgs)).always(function (result) {
                 if (typeof functions.after === "function") {
-                    functions.after.apply(this, orignialArgs);
-                    promise.resolve();
+                    var original = [].slice.call(orignialArgs);
+                    var current = [].slice.call(arguments);
+
+                    functions.after.apply(this, original.concat(current));
                 }
+
+                promise.resolve(result);
             });
 
             return promise;

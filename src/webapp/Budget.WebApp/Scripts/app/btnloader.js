@@ -1,17 +1,19 @@
 ﻿define(["app/callwrapper", "app/text", "jquery"], function (callwrapper, text) {
 
-    function before(event) {
+    function before() {
         var button = $(this);
 
+        button.attr("disabled", true);
         button.attr("original-text", button.text());
         button.text(text.PleaseWait);
         button.prepend('<div class="loader"></div>');
     };
 
-    function after(event) {
+    function after() {
         var button = $(this);
         button.find("div.loader").remove();
         button.text(button.attr("original-text"));
+        button.attr("disabled", false);
     };
 
     function loader(callback, options) {

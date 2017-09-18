@@ -82,7 +82,8 @@
                         btnloader.loader(function () {
                             return postForm(form);
                         }, {
-                            after: function () {
+                            after: function (receipt) {
+                                calendar.addEvent(receipt);
                                 btnloader.after.apply(button);
                                 dialogWindow.dialog("close");
                             }

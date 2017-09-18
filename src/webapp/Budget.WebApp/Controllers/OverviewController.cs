@@ -11,6 +11,7 @@ using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
 using Budget.WebApp.Extensions;
 using Budget.WebApp.Translators;
+using Budget.WebApp.Models.Json;
 
 namespace Budget.WebApp.Controllers
 {
@@ -48,14 +49,7 @@ namespace Budget.WebApp.Controllers
         {
             int userId = this.sessionHelper.UserId;
             IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDates(userId, start, end);
-
-            var json = from receipt in receipts
-                       select new
-                       {
-                           id = receipt.Id,
-                           start = receipt.Date,
-                           title = receipt.Entries.Sum(e => e.Amount)
-                       };
+            IEnumerable<FullcalendarEvent> json = receipts.Select(r => new FullcalendarEvent(r));
 
             return Json(json, JsonRequestBehavior.AllowGet);
         }
@@ -73,7 +67,7 @@ namespace Budget.WebApp.Controllers
             Receipt model = translator.Translate(saveModel, this.sessionHelper.UserId);
 
             Receipt saved = await this.receiptSaver.Save(model);
-            return Json(saved);
+            return Json(new FullcalendarEvent(saved));
         }
     }
 }
