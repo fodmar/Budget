@@ -115,7 +115,7 @@ namespace Budget.WebApp.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_SaveReceipt
         {
-            public readonly string receipt = "receipt";
+            public readonly string saveModel = "saveModel";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -169,14 +169,14 @@ namespace Budget.WebApp.Controllers
         }
 
         [NonAction]
-        partial void SaveReceiptOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Budget.WebApp.Models.SaveReceiptModel receipt);
+        partial void SaveReceiptOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Budget.WebApp.Models.SaveReceiptModel saveModel);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SaveReceipt(Budget.WebApp.Models.SaveReceiptModel receipt)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SaveReceipt(Budget.WebApp.Models.SaveReceiptModel saveModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveReceipt);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "receipt", receipt);
-            SaveReceiptOverride(callInfo, receipt);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "saveModel", saveModel);
+            SaveReceiptOverride(callInfo, saveModel);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

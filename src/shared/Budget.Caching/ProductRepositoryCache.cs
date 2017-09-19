@@ -7,36 +7,36 @@ using Budget.ObjectModel;
 
 namespace Budget.Caching
 {
-    public class ProductRepositoryCache : IProductRepository
+    public class ProductRepositoryCache : IRepository<Product>
     {
         private const string productsKey = "Product_GetAll";
 
         private readonly ICache cache;
-        private readonly IProductRepository repository;
+        private readonly IRepository<Product> repository;
 
-        public ProductRepositoryCache(ICache cache, IProductRepository repository)
+        public ProductRepositoryCache(ICache cache, IRepository<Product> repository)
         {
             this.cache = cache;
             this.repository = repository;
         }
 
-        public Task<IEnumerable<Product>> GetAll()
+        public Task<IEnumerable<Product>> ReadAll()
         {
-            Func<Task<IEnumerable<Product>>> func = async () => await this.repository.GetAll();
+            Func<Task<IEnumerable<Product>>> func = async () => await this.repository.ReadAll();
 
             return this.cache.GetOrPut(productsKey, func);
         }
 
-        public async Task<Product> Insert(Product product)
+        public async Task<Product> Save(Product product)
         {
-            Product inserted = await this.repository.Insert(product);
+            Product inserted = await this.repository.Save(product);
 
             if (!this.cache.Contains(productsKey))
             {
                 return inserted;
             }
 
-            List<Product> products = (await this.GetAll()).ToList();
+            List<Product> products = (await this.ReadAll()).ToList();
             products.Add(inserted);
             this.cache.Put(productsKey, products);
             return inserted;
@@ -51,7 +51,7 @@ namespace Budget.Caching
                 return;
             }
 
-            List<Product> products = (await this.GetAll()).ToList();
+            List<Product> products = (await this.ReadAll()).ToList();
 
             for (int i = 0; i < products.Count; i++)
             {
@@ -65,16 +65,16 @@ namespace Budget.Caching
             this.cache.Put(productsKey, products);
         }
 
-        public async Task Delete(Product product)
+        public async Task Remove(Product product)
         {
-            await this.repository.Delete(product);
+            await this.repository.Remove(product);
 
             if (!this.cache.Contains(productsKey))
             {
                 return;
             }
 
-            List<Product> products = (await this.GetAll()).ToList();
+            List<Product> products = (await this.ReadAll()).ToList();
             products.Remove(product);
             this.cache.Put(productsKey, products);
         }

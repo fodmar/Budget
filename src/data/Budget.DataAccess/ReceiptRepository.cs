@@ -11,7 +11,7 @@ using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
-    public class ReceiptRepository : IReceiptProvider, IReceiptSaver
+    public class ReceiptRepository : IReceiptProvider, ISaver<Receipt>
     {
         private readonly IBudgetDatabase budgetDatabase;
 

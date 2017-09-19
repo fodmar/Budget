@@ -5,15 +5,16 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Budget.DataAccess;
 using Budget.ObjectModel;
 
 namespace Budget.WebApi.Controllers
 {
     public class ProductController : BaseController
     {
-        private readonly IProductRepository repository;
+        private readonly IRepository<Product> repository;
 
-        public ProductController(IProductRepository repository)
+        public ProductController(IRepository<Product> repository)
         {
             this.repository = repository;
         }
@@ -21,13 +22,13 @@ namespace Budget.WebApi.Controllers
         [HttpGet]
         public async Task<Product[]> GetAll()
         {
-            return (await this.repository.GetAll()).ToArray();
+            return (await this.repository.ReadAll()).ToArray();
         }
 
         [HttpPut]
         public Task<Product> Insert([FromBody] Product product)
         {
-            return this.repository.Insert(product);
+            return this.repository.Save(product);
         }
 
         [HttpPost]
@@ -42,7 +43,7 @@ namespace Budget.WebApi.Controllers
             Product product = new Product();
             product.Id = id;
          
-            return this.repository.Delete(product);
+            return this.repository.Remove(product);
         }
     }
 }

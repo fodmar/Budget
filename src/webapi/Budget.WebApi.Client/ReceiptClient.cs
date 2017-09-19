@@ -8,7 +8,7 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApi.Client
 {
-    public class ReceiptClient : ClientBase, IReceiptProvider, IReceiptSaver
+    public class ReceiptClient : ClientBase, IReceiptProvider, ISaver<Receipt>
     {
         protected override string UriController
         {

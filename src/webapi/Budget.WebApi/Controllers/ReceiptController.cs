@@ -17,11 +17,11 @@ namespace Budget.WebApi.Controllers
     public class ReceiptController : BaseController
     {
         private readonly IReceiptProvider receiptProvider;
-        private readonly IReceiptSaver saver;
+        private readonly ISaver<Receipt> saver;
 
         public ReceiptController(
             IReceiptProvider receiptProvider,
-            IReceiptSaver saver)
+            ISaver<Receipt> saver)
         {
             this.receiptProvider = receiptProvider;
             this.saver = saver;

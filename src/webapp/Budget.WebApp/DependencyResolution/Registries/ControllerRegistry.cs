@@ -18,12 +18,12 @@ namespace Budget.WebApp.DependencyResolution.Registries
         public ControllerRegistry()
         {
             For<IReceiptProvider>().Use<ReceiptClient>();
-            For<IReceiptSaver>().Use<ReceiptClient>();
+            For<ISaver<Receipt>>().Use<ReceiptClient>();
             For<IConfigurationProvider>().Use<BudgetApiConfigurationProvider>();
             For<IHeadersProvider>().Use<BudgetApiHeadersProvider>();
             For<IAuthenticator>().Use<Authenticator>();
 
-            For<IProductRepository>().Use<ProductRepositoryCache>().Ctor<IProductRepository>().Is<ProductClient>();
+            For<IRepository<Product>>().Use<ProductRepositoryCache>().Ctor<IRepository<Product>>().Is<ProductClient>();
             For<ICache>().Use<CacheWrapper>();
             For<ObjectCache>().Use(new MemoryCache("BudgetWebAppMemoryCache"));
         }

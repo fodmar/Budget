@@ -18,7 +18,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         public async void GetAll()
         {
             ProductClient client = this.CreateClient();
-            var result = await client.GetAll();
+            var result = await client.ReadAll();
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         public async void Insert()
         {
             ProductClient client = this.CreateClient();
-            var result = await client.Insert(new Product { Id = 11111, Name = "dupb" });
+            var result = await client.Save(new Product { Id = 11111, Name = "dupb" });
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace Budget.IntegrationTests.WebApi.Client
         public async void Delete()
         {
             ProductClient client = this.CreateClient();
-            await client.Delete(new Product { Id = 10, Name = "dupx" });
+            await client.Remove(new Product { Id = 10, Name = "dupx" });
         }
 
         private ProductClient CreateClient()

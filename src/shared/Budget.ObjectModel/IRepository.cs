@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public interface IReceiptSaver
+    public interface IRepository<T> : IReader<T>, ISaver<T>, IUpdater<T>, IRemover<T>
     {
-        Task<Receipt> Save(Receipt receipt);
     }
 }

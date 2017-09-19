@@ -7,7 +7,7 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApi.Client
 {
-    public class ProductClient : ClientBase, IProductRepository
+    public class ProductClient : ClientBase, IRepository<Product>
     {
         protected override string UriController
         {
@@ -21,7 +21,7 @@ namespace Budget.WebApi.Client
         {
         }
 
-        public async Task<IEnumerable<Product>> GetAll()
+        public async Task<IEnumerable<Product>> ReadAll()
         {
             return await
                 this.CreateRequest()
@@ -29,7 +29,7 @@ namespace Budget.WebApi.Client
                     .Send<Product[]>();
         }
 
-        public async Task<Product> Insert(Product product)
+        public async Task<Product> Save(Product product)
         {
             return await
                 this.CreateRequest()
@@ -47,7 +47,7 @@ namespace Budget.WebApi.Client
                     .Send();
         }
 
-        public Task Delete(Product product)
+        public Task Remove(Product product)
         {
             return 
                 this.CreateRequest()

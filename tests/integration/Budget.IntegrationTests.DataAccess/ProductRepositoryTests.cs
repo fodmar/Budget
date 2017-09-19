@@ -20,9 +20,9 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase db = new BudgetDatabase())
             {
-                IProductRepository repository = new ProductRepository(db);
+                IRepository<Product> repository = new Repository<Product>(db);
 
-                IEnumerable<Product> products = await repository.GetAll();
+                IEnumerable<Product> products = await repository.ReadAll();
             }
         }
 
@@ -32,13 +32,13 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase db = new BudgetDatabase())
             {
-                IProductRepository repository = new ProductRepository(db);
+                IRepository<Product> repository = new Repository<Product>(db);
 
                 Product newProduct = new Product();
                 newProduct.Id = 666;
                 newProduct.Name = "test";
 
-                newProduct = await repository.Insert(newProduct);
+                newProduct = await repository.Save(newProduct);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase db = new BudgetDatabase())
             {
-                IProductRepository repository = new ProductRepository(db);
+                IRepository<Product> repository = new Repository<Product>(db);
 
                 Product newProduct = new Product();
                 newProduct.Id = 666;
@@ -64,13 +64,13 @@ namespace Budget.IntegrationTests.DataAccess
         {
             using (IBudgetDatabase db = new BudgetDatabase())
             {
-                IProductRepository repository = new ProductRepository(db);
+                IRepository<Product> repository = new Repository<Product>(db);
 
                 Product product = new Product();
                 product.Id = 666;
                 product.Name = "non-existing";
 
-                await repository.Delete(product);
+                await repository.Remove(product);
             }
         }
     }
