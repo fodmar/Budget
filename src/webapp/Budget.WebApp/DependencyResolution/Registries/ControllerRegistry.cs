@@ -1,5 +1,7 @@
-﻿using System.Web.Configuration;
+﻿using System.Runtime.Caching;
+using System.Web.Configuration;
 using Budget.BusinessLogic.UserManagement;
+using Budget.Caching;
 using Budget.ObjectModel;
 using Budget.WebApi.Client;
 using Budget.WebApp.Authentication;
@@ -20,7 +22,10 @@ namespace Budget.WebApp.DependencyResolution.Registries
             For<IConfigurationProvider>().Use<BudgetApiConfigurationProvider>();
             For<IHeadersProvider>().Use<BudgetApiHeadersProvider>();
             For<IAuthenticator>().Use<Authenticator>();
-            For<IProductRepository>().Use<ProductClient>();
+
+            For<IProductRepository>().Use<ProductRepositoryCache>().Ctor<IProductRepository>().Is<ProductClient>();
+            For<ICache>().Use<CacheWrapper>();
+            For<ObjectCache>().Use(new MemoryCache("BudgetWebAppMemoryCache"));
         }
     }
 }

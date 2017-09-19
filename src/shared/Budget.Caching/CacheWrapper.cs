@@ -47,5 +47,10 @@ namespace Budget.Caching
 
             this.cache.Set(key, item, policy);
         }
+
+        public bool Contains(string key)
+        {
+            return this.cache.Contains(key);
+        }
     }
 }

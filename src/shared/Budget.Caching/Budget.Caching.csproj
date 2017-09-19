@@ -40,9 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheKeyGenerator.cs" />
     <Compile Include="ICache.cs" />
     <Compile Include="CacheWrapper.cs" />
+    <Compile Include="ProductRepositoryCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Budget.ObjectModel\Budget.ObjectModel.csproj">
+      <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
+      <Name>Budget.ObjectModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

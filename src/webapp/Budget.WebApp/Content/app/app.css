@@ -15,7 +15,7 @@ input, select, textarea, button {
 
 input, select {
     width: 100%;
-    height: 28px;
+    height: 1.75em;
 	border: solid;
 	border-width: 1px;
 	padding: 3px;
@@ -113,10 +113,6 @@ form, form div {
 .vertical {
     display: flex;
     flex-flow: wrap column;
-}
-
-.vertical-center-items {
-    align-items: center;
 }
 
 .horizontal {
