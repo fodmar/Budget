@@ -79,6 +79,15 @@ namespace Budget.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Collection should have at least one element.
+        /// </summary>
+        public static string CollectionShouldHaveAtLeastOneElement {
+            get {
+                return ResourceManager.GetString("CollectionShouldHaveAtLeastOneElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {

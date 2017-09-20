@@ -1,6 +1,7 @@
 ﻿define({
   "Amount": "Kwota",
   "Cancel": "Anuluj",
+  "CollectionShouldHaveAtLeastOneElement": "Kolekcja powinna posiadać co najmniej jeden element",
   "Date": "Data",
   "LogIntoApplication": "Zaloguj się do aplikacji",
   "New": "Nowy",

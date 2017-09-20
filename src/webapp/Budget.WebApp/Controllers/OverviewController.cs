@@ -10,7 +10,6 @@ using Budget.WebApi.Client;
 using Budget.WebApp.Models;
 using Budget.WebApp.Utils;
 using Budget.WebApp.Extensions;
-using Budget.WebApp.Translators;
 using Budget.WebApp.Models.Json;
 
 namespace Budget.WebApp.Controllers
@@ -63,10 +62,8 @@ namespace Budget.WebApp.Controllers
                 return Json(ModelState.PropertiesErrors());
             }
 
-            ReceiptTranslator translator = new ReceiptTranslator();
-            Receipt model = translator.Translate(saveModel, this.sessionHelper.UserId);
-
-            Receipt saved = await this.receiptSaver.Save(model);
+            Receipt receipt = saveModel.ToReceipt(this.sessionHelper.UserId);
+            Receipt saved = await this.receiptSaver.Save(receipt);
             return Json(new FullcalendarEvent(saved));
         }
     }

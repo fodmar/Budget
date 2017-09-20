@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Budget.ObjectModel;
 using Budget.Resources;
+using Budget.WebApp.Attributes;
 
 namespace Budget.WebApp.Models
 {
@@ -15,7 +16,23 @@ namespace Budget.WebApp.Models
         [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
 
-        [Required]
-        public List<SaveReceiptEntryModel> Entries { get; set; }
+        [NotEmpty]
+        [Required(ErrorMessageResourceType = typeof(Text), ErrorMessageResourceName = "ThisFieldIsRequired")]
+        public SaveReceiptEntryModel[] Entries { get; set; }
+
+        public Receipt ToReceipt(int userId)
+        {
+            Receipt result = new Receipt();
+            result.Date = this.Date;
+            result.UserId = userId;
+
+            result.Entries = this.Entries.Select(e => new ReceiptEntry()
+            {
+                Amount = e.Amount,
+                ProductId = e.ProductId
+            }).ToArray();
+
+            return result;
+        }
     }
 }

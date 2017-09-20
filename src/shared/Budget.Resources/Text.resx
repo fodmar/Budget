@@ -123,6 +123,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="CollectionShouldHaveAtLeastOneElement" xml:space="preserve">
+    <value>Collection should have at least one element</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>Date</value>
   </data>

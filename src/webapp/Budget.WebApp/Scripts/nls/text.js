@@ -2,6 +2,7 @@
   "root": {
     "Amount": "Amount",
     "Cancel": "Cancel",
+    "CollectionShouldHaveAtLeastOneElement": "Collection should have at least one element",
     "Date": "Date",
     "LogIntoApplication": "Log into application",
     "New": "New",

@@ -189,6 +189,7 @@
     <Compile Include="App_Start\DependencyResolutionConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Attributes\NotEmptyAttribute.cs" />
     <Compile Include="Authentication\Authenticator.cs" />
     <Compile Include="Authentication\FormsAuthenticationWrapper.cs" />
     <Compile Include="Authentication\IFormsAuthentication.cs" />
@@ -235,7 +236,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Translators\ReceiptTranslator.cs" />
     <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
     <Compile Include="Utils\CorrelationIdProvider.cs" />
     <Compile Include="Utils\ErrorHandler.cs" />
