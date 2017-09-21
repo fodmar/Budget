@@ -2,7 +2,17 @@
     var currentEntryIndex = 1;
 
     function addReceipt() {
-        $("#add-receipt").dialog("open");
+        var container = $("#add-receipt");
+        var nextEntryBtn = $("#next-receipt-entry");
+
+        container.find(".js-entry").remove();
+        currentEntryIndex = 1;
+
+        var click = jQuery.Event("click");
+        click.target = nextEntryBtn;
+        nextEntryBtn.trigger(click);
+
+        container.dialog("open");
     };
 
     function postForm(form) {
@@ -48,22 +58,12 @@
         var form = containter.find("form");
         form.validate();
 
-        form.find('input[type="datetime"]').each(function (index, value) {
-            $(value).attr("type", "datetime-local");
-        });
-
         form.find("input").each(function (index, value) {
             addRequiredRule($(value));
         });
 
         form.on("click", ".delete-icon", deleteReceiptEntryClick);
-
-        var addButton = form.find("button");
-        addButton.on("click", nextReceiptEntryClick);
-
-        var click = jQuery.Event("click");
-        click.target = addButton;
-        addButton.trigger(click);
+        $("#next-receipt-entry").on("click", nextReceiptEntryClick)
 
         containter.dialog({
             autoOpen: false,
