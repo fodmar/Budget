@@ -1,0 +1,18 @@
+﻿@using System.Web.Optimization
+@using Budget.WebApp.Utils
+@model System.Collections.Generic.IEnumerable<Budget.ObjectModel.Product>
+
+@section scripts {
+    @RequireJs.Require("app/products")
+}
+
+<script id="product-list" type="text/template">
+    <div>
+        <div>{{ Id }}</div>
+        <div>{{ Name }}</div>
+    </div>
+</script>
+
+<div id="product-list-container">
+
+</div>

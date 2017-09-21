@@ -147,7 +147,9 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\btnloader.js" />
     <Content Include="Scripts\app\callwrapper.js" />
+    <Content Include="Scripts\app\list.js" />
     <Content Include="Scripts\app\overview-calendar.js" />
+    <Content Include="Scripts\app\products.js" />
     <Content Include="Scripts\app\template.js" />
     <Content Include="Scripts\app\text.js" />
     <Content Include="Scripts\lib\i18n.js" />
@@ -199,6 +201,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\Registries\AuthenticationRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
@@ -268,6 +271,7 @@
     <Content Include="Views\Error\Forbidden.cshtml" />
     <Content Include="Views\Error\BadRequest.cshtml" />
     <Content Include="Views\Error\_LayoutError.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
