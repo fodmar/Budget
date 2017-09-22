@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Budget.WebApp.Filters;
@@ -23,6 +24,11 @@ namespace Budget.WebApp.Controllers
         public BaseController(ISessionHelper sessionHelper)
         {
             this.sessionHelper = sessionHelper;
+        }
+
+        protected ActionResult OkStatusCode()
+        {
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
         protected override void OnException(ExceptionContext exceptionContext)

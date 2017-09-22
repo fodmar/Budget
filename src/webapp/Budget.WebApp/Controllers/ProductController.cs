@@ -31,5 +31,12 @@ namespace Budget.WebApp.Controllers
             IEnumerable<Product> products = await this.repository.ReadAll();
             return this.Json(products, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> Delete(Product product)
+        {
+            await this.repository.Remove(product);
+            return this.OkStatusCode();
+        }
     }
 }

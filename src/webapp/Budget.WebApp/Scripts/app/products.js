@@ -2,10 +2,15 @@
 
     function init() {
         var config = {
-            templateId: "product-list",
-            containerId: "product-list-container",
+            template: "#product-list",
+            container: "#product-list-container",
             load: {
-                url: "/Product/GetProducts",
+                url: "/Product/GetProducts"
+            },
+            delete: {
+                url: "/Product/Delete",
+                target: ".delete",
+                entry: ".entry"
             }
         };
 
