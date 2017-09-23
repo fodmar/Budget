@@ -1,9 +1,11 @@
 ﻿define({
+  "AddNewProduct": "Dodaj nowy produkt",
   "Amount": "Kwota",
   "Cancel": "Anuluj",
   "CollectionShouldHaveAtLeastOneElement": "Kolekcja powinna posiadać co najmniej jeden element",
   "Date": "Data",
   "LogIntoApplication": "Zaloguj się do aplikacji",
+  "Name": "Nazwa",
   "New": "Nowy",
   "NewExpense": "Nowy wydatek",
   "OK": "OK",

@@ -1,6 +1,11 @@
 ﻿@using System.Web.Optimization
 @using Budget.WebApp.Utils
+@using Budget.Resources
 @model System.Collections.Generic.IEnumerable<Budget.ObjectModel.Product>
+
+@section styles {
+    @Styles.Render("~/bundles/content/jqueryui")
+}
 
 @section scripts {
     @RequireJs.Require("app/products")
@@ -15,5 +20,5 @@
 </script>
 
 <div id="product-list-container">
-
+    <button id="add">@Text.AddNewProduct</button>
 </div>

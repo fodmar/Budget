@@ -32,6 +32,13 @@ namespace Budget.WebApp.Controllers
             return this.Json(products, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPut]
+        public async Task<ActionResult> Add(Product product)
+        {
+            Product saved = await this.repository.Save(product);
+            return this.Json(saved);
+        }
+
         [HttpDelete]
         public async Task<ActionResult> Delete(Product product)
         {

@@ -38,7 +38,7 @@ namespace Budget.Caching
 
             List<Product> products = (await this.ReadAll()).ToList();
             products.Add(inserted);
-            this.cache.Put(productsKey, products);
+            this.cache.Put(productsKey, Task<IEnumerable<Product>>.FromResult(products.AsEnumerable()));
             return inserted;
         }
 
@@ -62,7 +62,7 @@ namespace Budget.Caching
                 }
             }
 
-            this.cache.Put(productsKey, products);
+            this.cache.Put(productsKey, Task<IEnumerable<Product>>.FromResult(products.AsEnumerable()));
         }
 
         public async Task Remove(Product product)
@@ -75,8 +75,8 @@ namespace Budget.Caching
             }
 
             List<Product> products = (await this.ReadAll()).ToList();
-            products.Remove(product);
-            this.cache.Put(productsKey, products);
+            products.Remove(products.Find(p => p.Id == product.Id));
+            this.cache.Put(productsKey, Task<IEnumerable<Product>>.FromResult(products.AsEnumerable()));
         }
     }
 }

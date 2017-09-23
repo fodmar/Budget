@@ -61,6 +61,15 @@ namespace Budget.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new product.
+        /// </summary>
+        public static string AddNewProduct {
+            get {
+                return ResourceManager.GetString("AddNewProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string Amount {
@@ -102,6 +111,15 @@ namespace Budget.Resources {
         public static string LogIntoApplication {
             get {
                 return ResourceManager.GetString("LogIntoApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         

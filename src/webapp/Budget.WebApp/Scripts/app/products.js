@@ -1,16 +1,25 @@
-﻿define(["app/list"], function (list) {
+﻿define(["app/list", "app/text"], function (list, text) {
 
     function init() {
         var config = {
             template: "#product-list",
             container: "#product-list-container",
+            entry: ".entry",
             load: {
                 url: "/Product/GetProducts"
             },
-            delete: {
+            remove: {
                 url: "/Product/Delete",
                 target: ".delete",
-                entry: ".entry"
+            },
+            add: {
+                url: "/Product/Add",
+                target: "#add",
+                title: text.AddNewProduct,
+                properties: [{
+                    name: "Name",
+                    display: text.Name
+                }]
             }
         };
 

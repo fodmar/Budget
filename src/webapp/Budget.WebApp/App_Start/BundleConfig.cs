@@ -14,6 +14,9 @@ namespace Budget.WebApp
                     "~/Content/lib/jquery-ui.css",
                     "~/Content/lib/fullcalendar.css"));
 
+            bundles.Add(new StyleBundle("~/bundles/content/jqueryui").Include(
+                    "~/Content/lib/jquery-ui.css"));
+
             bundles.Add(new StyleBundle("~/bundles/content/app").Include(
                     "~/Content/app/app.css"));
         }

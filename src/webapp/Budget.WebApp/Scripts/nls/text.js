@@ -1,10 +1,12 @@
 ﻿define({
   "root": {
+    "AddNewProduct": "Add new product",
     "Amount": "Amount",
     "Cancel": "Cancel",
     "CollectionShouldHaveAtLeastOneElement": "Collection should have at least one element",
     "Date": "Date",
     "LogIntoApplication": "Log into application",
+    "Name": "Name",
     "New": "New",
     "NewExpense": "New expense",
     "OK": "OK",
