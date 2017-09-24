@@ -5,6 +5,7 @@
   "CollectionShouldHaveAtLeastOneElement": "Kolekcja powinna posiadać co najmniej jeden element",
   "Date": "Data",
   "LogIntoApplication": "Zaloguj się do aplikacji",
+  "ModifyProduct": "Modyfikuj produkt",
   "Name": "Nazwa",
   "New": "Nowy",
   "NewExpense": "Nowy wydatek",

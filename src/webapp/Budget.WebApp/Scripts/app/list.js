@@ -27,6 +27,14 @@
         });
     };
 
+    function updateObject(object, url) {
+        return $.ajax({
+            url: url,
+            method: "POST",
+            data: object
+        });
+    };
+
     function fillTemplate() {
         objects.forEach(function (item, index) {
             var element = $(template.fill(objectTemplate, item));
@@ -40,7 +48,14 @@
         var element = $(template.fill(objectTemplate, object));
         element.attr("index", objects.length);
         objectsContainer.append(element);
-    }
+    };
+
+    function replaceObject(object, index) {
+        objects[index] = object;
+        var element = $(template.fill(objectTemplate, object));
+        element.attr("index", index);
+        objectsContainer.find("[index={0}]".format(index)).replaceWith(element);
+    };
 
     function initDelete(config) {
         var removeConfig = config.remove;
@@ -61,13 +76,11 @@
     function initAdd(config) {
         var addConfig = config.add;
 
-        var addDialog = $('<div id="list-add-dialog" hidden="hidden"></div>')
+        var addDialog = $('<div hidden="hidden"></div>')
         var dialogForm = $('<form></form>');
         dialogForm.validate();
 
-        var properties = addConfig.properties;
-
-        properties.forEach(function (prop) {
+        addConfig.properties.forEach(function (prop) {
             dialogForm.append($("<label for='{0}'>{1}</label>".format(prop.name, prop.display)));
             var input = $("<input name='{0}' type='text'></input>".format(prop.name));
 
@@ -114,6 +127,76 @@
         });
     };
 
+    function initUpdate(config) {
+        var updateConfig = config.update;
+
+        var updateDialog = $('<div hidden="hidden"></div>')
+        var dialogForm = $('<form></form>');
+        dialogForm.validate();
+
+        updateConfig.properties.forEach(function (prop) {
+            var input;
+
+            if (prop.hidden) {
+                input = $("<input name='{0}' type='text' hidden='hidden'></input>".format(prop.name));
+            } else {
+                dialogForm.append($("<label for='{0}'>{1}</label>".format(prop.name, prop.display)));
+                input = $("<input name='{0}' type='text'></input>".format(prop.name));
+            }
+
+            dialogForm.append(input);
+
+            input.rules("add", {
+                required: true,
+                messages: {
+                    required: text.ThisFieldIsRequired
+                }
+            });
+        });
+
+        updateDialog.append(dialogForm);
+        updateDialog.dialog({
+            autoOpen: false,
+            title: updateConfig.title,
+            buttons: [{
+                text: text.OK,
+                click: function (event) {
+                    var window = $(this);
+                    var form = window.find("form");
+
+                    if (form.valid()) {
+                        var button = $(event.target);
+
+                        btnloader.loader(function () {
+                            return updateObject(form.serialize(), updateConfig.url);
+                        }, {
+                            after: function (object) {
+                                var index = form.attr("index");
+                                replaceObject(object, index);
+                                btnloader.after.apply(button);
+                                window.dialog("close");
+                            }
+                        }).apply(button);
+                    }
+                }
+            }]
+        });
+
+        objectsContainer.on("click", updateConfig.target, function (event) {
+            var index = $(event.target).closest(config.entry).attr("index");
+            var object = objects[index];
+
+            for (prop in object) {
+                if (object.hasOwnProperty(prop)) {
+                    dialogForm.find("input[name={0}]".format(prop)).val(object[prop]);
+                }
+            }
+
+            dialogForm.attr("index", index);
+            updateDialog.dialog("open");
+        });
+    };
+
     function createList(config) {
         loadObjects(config.load).done(function (result) {
             objects = result;
@@ -127,7 +210,11 @@
             }
 
             if (config.add) {
-                initAdd(config)
+                initAdd(config);
+            }
+
+            if (config.update) {
+                initUpdate(config);
             }
         });
     };

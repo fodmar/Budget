@@ -115,6 +115,15 @@ namespace Budget.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Modify product.
+        /// </summary>
+        public static string ModifyProduct {
+            get {
+                return ResourceManager.GetString("ModifyProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {

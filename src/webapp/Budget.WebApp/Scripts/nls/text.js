@@ -6,6 +6,7 @@
     "CollectionShouldHaveAtLeastOneElement": "Collection should have at least one element",
     "Date": "Date",
     "LogIntoApplication": "Log into application",
+    "ModifyProduct": "Modify product",
     "Name": "Name",
     "New": "New",
     "NewExpense": "New expense",

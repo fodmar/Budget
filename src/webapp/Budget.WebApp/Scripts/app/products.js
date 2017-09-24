@@ -20,6 +20,18 @@
                     name: "Name",
                     display: text.Name
                 }]
+            },
+            update: {
+                url: "/Product/Update",
+                target: ".update",
+                title: text.ModifyProduct,
+                properties: [{
+                    name: "Id",
+                    hidden: true
+                }, {
+                    name: "Name",
+                    display: text.Name
+                }]
             }
         };
 

@@ -135,6 +135,9 @@
   <data name="LogIntoApplication" xml:space="preserve">
     <value>Zaloguj się do aplikacji</value>
   </data>
+  <data name="ModifyProduct" xml:space="preserve">
+    <value>Modyfikuj produkt</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nazwa</value>
   </data>

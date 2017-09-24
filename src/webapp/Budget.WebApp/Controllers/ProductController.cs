@@ -45,5 +45,12 @@ namespace Budget.WebApp.Controllers
             await this.repository.Remove(product);
             return this.OkStatusCode();
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Update(Product product)
+        {
+            await this.repository.Update(product);
+            return this.Json(product);
+        }
     }
 }
