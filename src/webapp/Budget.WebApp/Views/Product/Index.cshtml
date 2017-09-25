@@ -13,13 +13,20 @@
 
 <script id="product-list" type="text/template">
     <div class="entry">
-        <div>{{ Id }}</div>
-        <div>{{ Name }}</div>
-        <div class="delete">DELETE {{ Name }}</div>
-        <div class="update">UPDATE {{ Name }}</div>
+        <span>{{ Name }}</span>
+        <div class="right icon delete"></div>
+        <div class="right icon update"></div>
     </div>
 </script>
 
-<div id="product-list-container">
+<div class="block-contaniner">
     <button id="add">@Text.AddNewProduct</button>
+    <fieldset>
+        <legend>
+            Products
+        </legend>
+        <div id="product-list-container">
+
+        </div>
+    </fieldset>
 </div>

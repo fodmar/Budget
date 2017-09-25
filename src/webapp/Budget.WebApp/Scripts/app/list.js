@@ -3,35 +3,11 @@
     var objectsContainer;
     var objectTemplate;
 
-    function loadObjects(load) {
-        return $.ajax({
-            url: load.url,
-            method: "GET",
-            data: load.params
-        });
-    };
-
-    function deleteObject(object, url) {
+    function callAjax(url, data, method) {
         return $.ajax({
             url: url,
-            method: "DELETE",
-            data: object
-        });
-    };
-
-    function addObject(object, url) {
-        return $.ajax({
-            url: url,
-            method: "PUT",
-            data: object
-        });
-    };
-
-    function updateObject(object, url) {
-        return $.ajax({
-            url: url,
-            method: "POST",
-            data: object
+            method: method || "GET",
+            data: data
         });
     };
 
@@ -41,6 +17,70 @@
             element.attr("index", index);
             objectsContainer.append(element);
         });
+    };
+
+    function createForm(properties) {
+        var form = $("<form></form>");
+        form.validate();
+
+        properties.forEach(function (prop) {
+            var input;
+
+            if (prop.hidden) {
+                input = $("<input name='{0}' type='hidden'></input>".format(prop.name));
+            } else {
+                form.append($("<label for='{0}'>{1}</label>".format(prop.name, prop.display)));
+                input = $("<input name='{0}' type='text'></input>".format(prop.name));
+            }
+
+            form.append(input);
+
+            input.rules("add", {
+                required: true,
+                messages: {
+                    required: text.ThisFieldIsRequired
+                }
+            });
+        });
+
+        return form;
+    };
+
+    function createDialog(title, actions) {
+        return {
+            autoOpen: false,
+            title: title,
+            buttons: [{
+                text: text.OK,
+                click: function (event) {
+                    var window = $(this);
+                    var form = window.find("form");
+
+                    if (form.valid()) {
+                        var button = $(event.target);
+
+                        btnloader.loader(function () {
+                            return actions.before(form);
+                        }, {
+                            after: function (object) {
+                                actions.after(object, form);
+
+                                btnloader.after.apply(button);
+                                window.dialog("close");
+                            }
+                        }).apply(button);
+                    }
+                }
+            }]
+        }
+    };
+
+    function fillForm(form, object) {
+        for (prop in object) {
+            if (object.hasOwnProperty(prop)) {
+                form.find("input[name={0}]".format(prop)).val(object[prop]);
+            }
+        }
     };
 
     function appendObject(object) {
@@ -57,7 +97,7 @@
         objectsContainer.find("[index={0}]".format(index)).replaceWith(element);
     };
 
-    function initDelete(config) {
+    function initRemove(config) {
         var removeConfig = config.remove;
 
         objectsContainer.on("click", removeConfig.target, function (event) {
@@ -66,7 +106,7 @@
 
             var toDelete = objects[entryIndex];
 
-            deleteObject(toDelete, removeConfig.url).done(function () {
+            callAjax(removeConfig.url, toDelete, "DELETE").done(function () {
                 entry.remove();
                 objects[entryIndex] = null;
             });
@@ -75,54 +115,20 @@
 
     function initAdd(config) {
         var addConfig = config.add;
-
         var addDialog = $('<div hidden="hidden"></div>')
-        var dialogForm = $('<form></form>');
-        dialogForm.validate();
-
-        addConfig.properties.forEach(function (prop) {
-            dialogForm.append($("<label for='{0}'>{1}</label>".format(prop.name, prop.display)));
-            var input = $("<input name='{0}' type='text'></input>".format(prop.name));
-
-            dialogForm.append(input);
-
-            input.rules("add", {
-                required: true,
-                messages: {
-                    required: text.ThisFieldIsRequired
-                }
-            });
-        });
+        var dialogForm = createForm(addConfig.properties);
 
         addDialog.append(dialogForm);
-        addDialog.dialog({
-            autoOpen: false,
-            title: addConfig.title,
-            buttons: [{
-                text: text.OK,
-                click: function (event) {
-                    var window = $(this);
-                    var form = window.find("form");
+        addDialog.dialog(createDialog(addConfig.title, {
+            before: function (form) {
+                return callAjax(config.add.url, form.serialize(), "PUT");
+            },
+            after: function (object) {
+                appendObject(object);
+            }
+        }));
 
-                    if (form.valid()) {
-                        var button = $(event.target);
-
-                        btnloader.loader(function () {
-                            return addObject(form.serialize(), config.add.url);
-                        }, {
-                            after: function (object) {
-                                appendObject(object);
-
-                                btnloader.after.apply(button);
-                                window.dialog("close");
-                            }
-                        }).apply(button);
-                    }
-                }
-            }]
-        });
-
-        objectsContainer.on("click", addConfig.target, function (event) {
+        $(addConfig.target).on("click", function (event) {
             addDialog.dialog("open");
         });
     };
@@ -131,91 +137,41 @@
         var updateConfig = config.update;
 
         var updateDialog = $('<div hidden="hidden"></div>')
-        var dialogForm = $('<form></form>');
-        dialogForm.validate();
-
-        updateConfig.properties.forEach(function (prop) {
-            var input;
-
-            if (prop.hidden) {
-                input = $("<input name='{0}' type='text' hidden='hidden'></input>".format(prop.name));
-            } else {
-                dialogForm.append($("<label for='{0}'>{1}</label>".format(prop.name, prop.display)));
-                input = $("<input name='{0}' type='text'></input>".format(prop.name));
-            }
-
-            dialogForm.append(input);
-
-            input.rules("add", {
-                required: true,
-                messages: {
-                    required: text.ThisFieldIsRequired
-                }
-            });
-        });
+        var dialogForm = createForm(updateConfig.properties);
 
         updateDialog.append(dialogForm);
-        updateDialog.dialog({
-            autoOpen: false,
-            title: updateConfig.title,
-            buttons: [{
-                text: text.OK,
-                click: function (event) {
-                    var window = $(this);
-                    var form = window.find("form");
-
-                    if (form.valid()) {
-                        var button = $(event.target);
-
-                        btnloader.loader(function () {
-                            return updateObject(form.serialize(), updateConfig.url);
-                        }, {
-                            after: function (object) {
-                                var index = form.attr("index");
-                                replaceObject(object, index);
-                                btnloader.after.apply(button);
-                                window.dialog("close");
-                            }
-                        }).apply(button);
-                    }
-                }
-            }]
-        });
+        updateDialog.dialog(createDialog(updateConfig.title, {
+            before: function (form) {
+                return callAjax(updateConfig.url, form.serialize(), "POST");
+            },
+            after: function (object, form) {
+                var index = form.attr("index");
+                replaceObject(object, index);
+            }
+        }));
 
         objectsContainer.on("click", updateConfig.target, function (event) {
             var index = $(event.target).closest(config.entry).attr("index");
             var object = objects[index];
 
-            for (prop in object) {
-                if (object.hasOwnProperty(prop)) {
-                    dialogForm.find("input[name={0}]".format(prop)).val(object[prop]);
-                }
-            }
-
+            fillForm(dialogForm, object);
             dialogForm.attr("index", index);
+
             updateDialog.dialog("open");
         });
     };
 
     function createList(config) {
-        loadObjects(config.load).done(function (result) {
+        callAjax(config.load.url).done(function (result) {
             objects = result;
             objectTemplate = $(config.template).html();
             objectsContainer = $(config.container);
 
             fillTemplate();
 
-            if (config.remove) {
-                initDelete(config);
-            }
-
-            if (config.add) {
-                initAdd(config);
-            }
-
-            if (config.update) {
-                initUpdate(config);
-            }
+            if (config.remove) initRemove(config);
+            if (config.add) initAdd(config);
+            if (config.update) initUpdate(config);
         });
     };
 

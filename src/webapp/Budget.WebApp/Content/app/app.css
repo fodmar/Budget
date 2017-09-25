@@ -1,10 +1,10 @@
 ﻿body {
-	background-color: rgb(231, 231, 231);
+	background-color: white;
 	font-family: "Trebuchet MS" !important;
     font-size: 16px;
 }
 
-input, select, textarea, button {
+input, select, textarea, button, legend {
     font-family: inherit;
     font-size: .875em;
 }
@@ -169,4 +169,46 @@ input.input-validation-error:focus, input.error:focus {
     width: 16px;
     cursor: pointer;
     background-image: url("../lib/images/ui-icons_cc0000_256x240.png");
+}
+
+.icon {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.icon.delete {
+    background-position: -96px -128px;
+    background-image: url("../lib/images/ui-icons_cc0000_256x240.png");
+}
+
+.icon.update {
+    background-position: -64px -112px;
+    background-image: url("../lib/images/ui-icons_777777_256x240.png");
+}
+
+fieldset {
+    border: 1px solid darkcyan;
+    border-radius: 2px;
+}
+
+fieldset legend {
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.block-contaniner {
+    float: left;
+    max-width: 40em;
+    min-width: 20em;
+    max-height: 50%;
+    overflow: auto;
+}
+
+.entry {
+    padding: 3px;
+}
+
+.right {
+    float: right;
 }

@@ -1,16 +1,28 @@
 ﻿define(["app/list", "app/text"], function (list, text) {
 
     function init() {
+        var containerSelector = "#product-list-container";
+        $(containerSelector).on("mouseenter mouseleave", ".icon", function (event) {
+            var div = $(event.target).closest(".entry");
+
+            if (event.type === "mouseenter") {
+                div.css("background-color", "silver");
+            } else {
+                div.css("background-color", "white");
+            }
+        });
+
+
         var config = {
             template: "#product-list",
-            container: "#product-list-container",
+            container: containerSelector,
             entry: ".entry",
             load: {
                 url: "/Product/GetProducts"
             },
             remove: {
                 url: "/Product/Delete",
-                target: ".delete",
+                target: ".icon.delete",
             },
             add: {
                 url: "/Product/Add",
@@ -23,7 +35,7 @@
             },
             update: {
                 url: "/Product/Update",
-                target: ".update",
+                target: ".icon.update",
                 title: text.ModifyProduct,
                 properties: [{
                     name: "Id",

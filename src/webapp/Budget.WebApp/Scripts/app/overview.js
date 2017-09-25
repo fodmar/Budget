@@ -62,7 +62,7 @@
             addRequiredRule($(value));
         });
 
-        form.on("click", ".delete-icon", deleteReceiptEntryClick);
+        form.on("click", ".icon.delete", deleteReceiptEntryClick);
         $("#next-receipt-entry").on("click", nextReceiptEntryClick)
 
         containter.dialog({
