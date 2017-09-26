@@ -14,19 +14,19 @@
 <script id="product-list" type="text/template">
     <div class="entry">
         <span>{{ Name }}</span>
-        <div class="right icon delete"></div>
-        <div class="right icon update"></div>
+        <div class="right material-icons icon delete"></div>
+        <div class="right material-icons icon update"></div>
     </div>
 </script>
 
 <div class="block-contaniner">
-    <button id="add">@Text.AddNewProduct</button>
-    <fieldset>
-        <legend>
+    <div class="group">
+        <div class="group-legend align-center space-between">
             Products
-        </legend>
-        <div id="product-list-container">
+            <div id="add-product" class="right material-icons icon add"></div>
+        </div>
+        <div class="group-content" id="product-list-container">
 
         </div>
-    </fieldset>
+    </div>
 </div>

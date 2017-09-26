@@ -26,7 +26,7 @@
             },
             add: {
                 url: "/Product/Add",
-                target: "#add",
+                target: "#add-product",
                 title: text.AddNewProduct,
                 properties: [{
                     name: "Name",

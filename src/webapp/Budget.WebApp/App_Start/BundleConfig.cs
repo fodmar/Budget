@@ -18,6 +18,7 @@ namespace Budget.WebApp
                     "~/Content/lib/jquery-ui.css"));
 
             bundles.Add(new StyleBundle("~/bundles/content/app").Include(
+                    "~/Content/material-icons/material-icons.css",
                     "~/Content/app/app.css"));
         }
     }
