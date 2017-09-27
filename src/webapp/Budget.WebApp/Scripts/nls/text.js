@@ -14,6 +14,7 @@
     "Password": "Password",
     "PleaseWait": "Please wait...",
     "Product": "Product",
+    "Products": "Products",
     "SignIn": "Sign in",
     "ThisFieldIsRequired": "This field is required",
     "UnexpectedError": "Unexpected error occured",

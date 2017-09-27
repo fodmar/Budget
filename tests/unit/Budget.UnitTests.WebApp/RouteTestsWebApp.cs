@@ -26,6 +26,11 @@ namespace Budget.UnitTests.WebApp
             TestRoute("~/Login/Login", "POST", MVC.Login.Name, MVC.Login.ActionNames.Login);
             TestRoute("~/Login/Logout", "GET", MVC.Login.Name, MVC.Login.ActionNames.Logout);
             TestRoute("~/Overview/SaveReceipt", "POST", MVC.Overview.Name, MVC.Overview.ActionNames.SaveReceipt);
+            TestRoute("~/Product/Index", "GET", MVC.Product.Name, MVC.Product.ActionNames.Index);
+            TestRoute("~/Product/GetAll", "GET", MVC.Product.Name, MVC.Product.ActionNames.GetAll);
+            TestRoute("~/Product/Add", "PUT", MVC.Product.Name, MVC.Product.ActionNames.Add);
+            TestRoute("~/Product/Delete", "DELETE", MVC.Product.Name, MVC.Product.ActionNames.Delete);
+            TestRoute("~/Product/Update", "POST", MVC.Product.Name, MVC.Product.ActionNames.Update);
         }
 
         private HttpContextBase CreateHttpContext(string url, string method)

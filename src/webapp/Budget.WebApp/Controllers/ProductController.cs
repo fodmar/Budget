@@ -9,48 +9,13 @@ using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers
 {
-    public class ProductController : BaseController
+    public partial class ProductController : ObjectController<Product>
     {
-        private readonly IRepository<Product> repository;
-
         public ProductController(
             ISessionHelper sessionHelper,
             IRepository<Product> repository)
-            : base(sessionHelper)
+            : base(sessionHelper, repository)
         {
-            this.repository = repository;
-        }
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public async Task<ActionResult> GetProducts()
-        {
-            IEnumerable<Product> products = await this.repository.ReadAll();
-            return this.Json(products, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPut]
-        public async Task<ActionResult> Add(Product product)
-        {
-            Product saved = await this.repository.Save(product);
-            return this.Json(saved);
-        }
-
-        [HttpDelete]
-        public async Task<ActionResult> Delete(Product product)
-        {
-            await this.repository.Remove(product);
-            return this.OkStatusCode();
-        }
-
-        [HttpPost]
-        public async Task<ActionResult> Update(Product product)
-        {
-            await this.repository.Update(product);
-            return this.Json(product);
         }
     }
 }

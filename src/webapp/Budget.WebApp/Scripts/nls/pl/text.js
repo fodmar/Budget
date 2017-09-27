@@ -13,6 +13,7 @@
   "Password": "Hasło",
   "PleaseWait": "Proszę czekać...",
   "Product": "Produkt",
+  "Products": "Produkty",
   "SignIn": "Zaloguj się",
   "ThisFieldIsRequired": "To pole jest wymagane",
   "UnexpectedError": "Wystąpił nieoczekiwany błąd",

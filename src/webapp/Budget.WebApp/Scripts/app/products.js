@@ -18,7 +18,7 @@
             container: containerSelector,
             entry: ".entry",
             load: {
-                url: "/Product/GetProducts"
+                url: "/Product/GetAll"
             },
             remove: {
                 url: "/Product/Delete",

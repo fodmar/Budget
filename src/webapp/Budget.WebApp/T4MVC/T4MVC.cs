@@ -30,6 +30,8 @@ public static partial class MVC
     public static Budget.WebApp.Controllers.ErrorController Error = new Budget.WebApp.Controllers.T4MVC_ErrorController();
     public static Budget.WebApp.Controllers.LoginController Login = new Budget.WebApp.Controllers.T4MVC_LoginController();
     public static Budget.WebApp.Controllers.OverviewController Overview = new Budget.WebApp.Controllers.T4MVC_OverviewController();
+    public static Budget.WebApp.Controllers.ProductController Product = new Budget.WebApp.Controllers.T4MVC_ProductController();
+    public static T4MVC.ObjectController Object = new T4MVC.ObjectController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -79,9 +81,11 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string btnloader_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/btnloader.min.js") ? Url("btnloader.min.js") : Url("btnloader.js");
             public static readonly string callwrapper_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/callwrapper.min.js") ? Url("callwrapper.min.js") : Url("callwrapper.js");
+            public static readonly string list_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/list.min.js") ? Url("list.min.js") : Url("list.js");
             public static readonly string login_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/login.min.js") ? Url("login.min.js") : Url("login.js");
             public static readonly string overview_calendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/overview-calendar.min.js") ? Url("overview-calendar.min.js") : Url("overview-calendar.js");
             public static readonly string overview_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/overview.min.js") ? Url("overview.min.js") : Url("overview.js");
+            public static readonly string products_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/products.min.js") ? Url("products.min.js") : Url("products.js");
             public static readonly string template_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/template.min.js") ? Url("template.min.js") : Url("template.js");
             public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/text.min.js") ? Url("text.min.js") : Url("text.js");
         }
@@ -191,6 +195,20 @@ namespace Links
             public static readonly string jquery_ui_min_css = Url("jquery-ui.min.css");
         }
     
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class material_icons {
+            public const string UrlPath = "~/Content/material-icons";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string material_icons_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/material-icons.min.css") ? Url("material-icons.min.css") : Url("material-icons.css");
+            public static readonly string MaterialIcons_Regular_eot = Url("MaterialIcons-Regular.eot");
+            public static readonly string MaterialIcons_Regular_ijmap = Url("MaterialIcons-Regular.ijmap");
+            public static readonly string MaterialIcons_Regular_svg = Url("MaterialIcons-Regular.svg");
+            public static readonly string MaterialIcons_Regular_ttf = Url("MaterialIcons-Regular.ttf");
+            public static readonly string MaterialIcons_Regular_woff = Url("MaterialIcons-Regular.woff");
+            public static readonly string MaterialIcons_Regular_woff2 = Url("MaterialIcons-Regular.woff2");
+        }
+    
     }
 
     
@@ -205,9 +223,11 @@ namespace Links
                 {
                     public const string btnloader_js = "~/Scripts/app/btnloader.js"; 
                     public const string callwrapper_js = "~/Scripts/app/callwrapper.js"; 
+                    public const string list_js = "~/Scripts/app/list.js"; 
                     public const string login_js = "~/Scripts/app/login.js"; 
                     public const string overview_calendar_js = "~/Scripts/app/overview-calendar.js"; 
                     public const string overview_js = "~/Scripts/app/overview.js"; 
+                    public const string products_js = "~/Scripts/app/products.js"; 
                     public const string template_js = "~/Scripts/app/template.js"; 
                     public const string text_js = "~/Scripts/app/text.js"; 
                 }
@@ -285,6 +305,13 @@ namespace Links
                     public const string fullcalendar_min_css = "~/Content/lib/fullcalendar.min.css";
                     public const string jquery_ui_css = "~/Content/lib/jquery-ui.css";
                     public const string jquery_ui_min_css = "~/Content/lib/jquery-ui.min.css";
+                }
+            }
+            public static partial class material_icons 
+            {
+                public static class Assets
+                {
+                    public const string material_icons_css = "~/Content/material-icons/material-icons.css";
                 }
             }
             public static class Assets
