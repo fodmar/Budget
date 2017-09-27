@@ -9,7 +9,7 @@ using Budget.ObjectModel;
 
 namespace Budget.DataAccess
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class, IIdentifiable
     {
         private readonly IDatabase database;
 
@@ -36,6 +36,11 @@ namespace Budget.DataAccess
         public Task Remove(T item)
         {
             return this.database.Delete(item);
+        }
+
+        public Task<T> GetById(int id)
+        {
+            return this.database.Table<T>().SingleAsync();
         }
     }
 }

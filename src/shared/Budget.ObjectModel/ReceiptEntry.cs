@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public class ReceiptEntry
+    public class ReceiptEntry : IIdentifiable
     {
         public int Id { get; set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public interface IRepository<T> : IReader<T>, ISaver<T>, IUpdater<T>, IRemover<T>
+    public interface IRepository<T> : IReader<T>, ISaver<T>, IUpdater<T>, IRemover<T>, IFinder<T> where T : IIdentifiable
     {
     }
 }

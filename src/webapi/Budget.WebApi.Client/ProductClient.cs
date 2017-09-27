@@ -56,6 +56,15 @@ namespace Budget.WebApi.Client
                     .Send();
         }
 
+        public async Task<Product> GetById(int id)
+        {
+            return await
+                this.CreateRequest()
+                    .AddUriParam(id)
+                    .AsGet()
+                    .Send<Product>();
+        }
+
         private dynamic ProductToJsonForInsert(Product product)
         {
             return new

@@ -23,7 +23,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
             For<IHeadersProvider>().Use<BudgetApiHeadersProvider>();
             For<IAuthenticator>().Use<Authenticator>();
 
-            For<IRepository<Product>>().Use<ProductRepositoryCache>().Ctor<IRepository<Product>>().Is<ProductClient>();
+            For<IRepository<Product>>().Use<RepositoryCache<Product>>().Ctor<IRepository<Product>>().Is<ProductClient>();
             For<ICache>().Use<CacheWrapper>();
             For<ObjectCache>().Use(new MemoryCache("BudgetWebAppMemoryCache"));
         }

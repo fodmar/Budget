@@ -11,7 +11,7 @@ using Budget.WebApp.Extensions;
 
 namespace Budget.WebApp.Controllers
 {
-    public abstract class ObjectController<T> : BaseController
+    public abstract class ObjectController<T> : BaseController where T : IIdentifiable
     {
         [Obsolete("This constructor is required by T4MVC lib, don't use it")]
         protected ObjectController()

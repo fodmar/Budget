@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public class Product : IIdentifiable
+    public interface IIdentifiable
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
+        int Id { get; }
     }
 }

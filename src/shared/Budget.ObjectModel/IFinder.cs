@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
-    public class Product : IIdentifiable
+    public interface IFinder<T> where T : IIdentifiable
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
+        Task<T> GetById(int id);
     }
 }

@@ -43,7 +43,7 @@
     <Compile Include="CacheKeyGenerator.cs" />
     <Compile Include="ICache.cs" />
     <Compile Include="CacheWrapper.cs" />
-    <Compile Include="ProductRepositoryCache.cs" />
+    <Compile Include="RepositoryCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
