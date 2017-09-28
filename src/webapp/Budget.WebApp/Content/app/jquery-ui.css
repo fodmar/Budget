@@ -1,0 +1,20 @@
+﻿.ui-widget *:not(.material-icons) {
+    font-family: "Trebuchet MS" !important;
+}
+
+.ui-dialog-titlebar {
+    background-color: var(--color3);
+    color: white;
+    border-radius: 0;
+}
+
+.ui-button {
+    border-width: 0;
+    border-radius: 0;
+}
+
+.ui-button:not(.ui-button-icon-only) {
+    background-color: var(--color1);
+    color: white;
+    font-weight: bold;
+}
