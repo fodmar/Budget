@@ -16,10 +16,6 @@ input, select, textarea, button, legend {
     font-size: .875em;
 }
 
-.ui-widget *:not(.material-icons) {
-    font-family: "Trebuchet MS" !important;
-}
-
 input, select {
     width: 100%;
     height: 1.75em;

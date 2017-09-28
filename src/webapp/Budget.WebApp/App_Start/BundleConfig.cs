@@ -12,10 +12,12 @@ namespace Budget.WebApp
         {
             bundles.Add(new StyleBundle("~/bundles/content/overview").Include(
                     "~/Content/lib/jquery-ui.css",
+                    "~/Content/app/jquery-ui.css",
                     "~/Content/lib/fullcalendar.css"));
 
             bundles.Add(new StyleBundle("~/bundles/content/jqueryui").Include(
-                    "~/Content/lib/jquery-ui.css"));
+                    "~/Content/lib/jquery-ui.css",
+                    "~/Content/app/jquery-ui.css"));
 
             bundles.Add(new StyleBundle("~/bundles/content/app").Include(
                     "~/Content/material-icons/material-icons.css",

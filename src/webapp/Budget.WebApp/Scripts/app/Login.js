@@ -1,15 +1,7 @@
 ﻿define(['app/btnloader', 'jqueryValidateUnobtrusive'], function (btnloader) {
     return {
         init: function () {
-            //$("button").on("click", btnloader.loader(function () {
-            //    var promise = $.Deferred();
-
-            //    setTimeout(function () {
-            //        promise.resolve();
-            //    }, 2000);
-
-            //    return promise;
-            //}));
+            $("#Login").focus();
 
             var form = $(".login-form").find("form");
             var submitButton = form.find("button");
