@@ -86,7 +86,7 @@
     function appendObject(object) {
         objects.push(object);
         var element = $(template.fill(objectTemplate, object));
-        element.attr("index", objects.length);
+        element.attr("index", objects.length - 1);
         objectsContainer.append(element);
     };
 

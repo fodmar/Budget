@@ -14,6 +14,7 @@ namespace Budget.Caching
         void Put<T>(string key, T item);
         void Put<T>(string key, T item, TimeSpan duration);
 
+        void Remove(string key);
         bool Contains(string key);
     }
 }

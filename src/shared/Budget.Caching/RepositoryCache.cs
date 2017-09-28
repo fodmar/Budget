@@ -47,6 +47,12 @@ namespace Budget.Caching
         {
             await this.repository.Update(obj);
 
+            string idkey = this.KeyWithObjId(obj.Id);
+            if (this.cache.Contains(idkey))
+            {
+                this.cache.Put(idkey, obj);
+            }
+
             if (!this.cache.Contains(key))
             {
                 return;
@@ -70,6 +76,8 @@ namespace Budget.Caching
         {
             await this.repository.Remove(obj);
 
+            this.cache.Remove(this.KeyWithObjId(obj.Id));
+
             if (!this.cache.Contains(key))
             {
                 return;
@@ -80,11 +88,21 @@ namespace Budget.Caching
             this.cache.Put(key, Task<IEnumerable<T>>.FromResult(objs.AsEnumerable()));
         }
 
-        public Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
+            if (this.cache.Contains(this.key))
+            {
+                return (await this.ReadAll()).FirstOrDefault(o => o.Id == id);
+            }
+
             Func<Task<T>> func = async () => await this.repository.GetById(id);
 
-            return this.cache.GetOrPut(key, func);
+            return await this.cache.GetOrPut(this.KeyWithObjId(id), func);
+        }
+
+        private string KeyWithObjId(int id)
+        {
+            return string.Format("{0}_{1}", key, id);
         }
     }
 }
