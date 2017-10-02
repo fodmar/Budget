@@ -2,10 +2,11 @@
     --color1: #008b8b;
     --color2: #364781;
     --color3: #175662;
+    --color-btn-hover: #3CAAAA;
 }
 
 body {
-	background-color: white;
+	background-color: #ebebec;
 	font-family: "Trebuchet MS" !important;
     font-size: 16px;
     margin: 0;
@@ -44,6 +45,10 @@ button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-btn-hover);
 }
 
 button::-moz-focus-inner {

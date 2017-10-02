@@ -18,3 +18,9 @@
     color: white;
     font-weight: bold;
 }
+
+.ui-button.ui-state-active:hover,
+.ui-button:hover {
+	border: none;
+    background-color: var(--color-btn-hover);
+}
