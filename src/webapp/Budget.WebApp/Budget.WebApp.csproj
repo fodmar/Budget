@@ -355,7 +355,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)\packages\ResxToJson.2.0\tools\ResxToJson.exe" -i  "$(SolutionDir)\src\shared\Budget.Resources"  -dir "$(SolutionDir)\src\webapp\Budget.WebApp\Scripts\nls"
-xcopy /Y /E "$(OutDir)*" "$(ProjectDir)\bin\"</PostBuildEvent>
+xcopy /Y /E "$(OutDir)*" "$(ProjectDir)\bin\"
+xcopy /Y /E "$(ProjectDir)Scripts" "$(SolutionDir)tests\unit\Budget.UnitTests.JavaScript.WebApp\Scripts\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

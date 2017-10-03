@@ -1,5 +1,5 @@
 ﻿requirejs.config({
-    baseUrl: '/Scripts',
+    baseUrl: 'Scripts',
     urlArgs: '',
     paths: {
         app: 'app',
@@ -10,7 +10,9 @@
         jqueryValidate: 'lib/jquery.validate',
         jqueryValidateUnobtrusive: 'lib/jquery.validate.unobtrusive',
         i18n: 'lib/i18n',
-        moment: 'lib/moment'
+        moment: 'lib/moment',
+        jasmine: 'jasmine-2.8.0',
+        spec: 'spec'
     },
     shim: {
         jqueryValidateUnobtrusive: {
@@ -18,6 +20,12 @@
         },
         'lib/locale-all': {
             deps: ['lib/fullcalendar']
+        },
+        'jasmine/jasmine-html': {
+            deps: ['jasmine/jasmine']
+        },
+        'jasmine/boot': {
+            deps: ['jasmine/jasmine', 'jasmine/jasmine-html']
         }
     }
 });

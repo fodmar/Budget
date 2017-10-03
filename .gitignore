@@ -301,3 +301,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Scripts copied to javascript jasmine tests
+tests/unit/Budget.UnitTests.JavaScript.WebApp/Scripts/*
+!tests/unit/Budget.UnitTests.JavaScript.WebApp/Scripts/jasmine-2.8.0
+!tests/unit/Budget.UnitTests.JavaScript.WebApp/Scripts/spec

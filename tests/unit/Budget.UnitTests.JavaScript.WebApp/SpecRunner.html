@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jasmine Spec Runner v2.8.0</title>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine_favicon.png">
+    <link rel="stylesheet" href="jasmine.css">
+
+    <!-- There is post build event in web app which copies Scripts dir, so we can access it from here -->
+    <script type="text/javascript" src="Scripts/lib/require.js"></script>
+    <script>
+        require(['Scripts/require.config.js'], function () {
+            require(['jasmine/boot'], function () {
+                require([
+                    //add files with specs here
+                    'spec/fail'
+                ], function () {
+                    //trigger Jasmine
+                    window.onload();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+</body>
+</html>
