@@ -1,5 +1,11 @@
-﻿requirejs.config({
-    baseUrl: 'Scripts',
+﻿if (!getBaseUrl) {
+    function getBaseUrl() {
+        return "/Scripts";
+    };
+}
+
+requirejs.config({
+    baseUrl: getBaseUrl(),
     urlArgs: '',
     paths: {
         app: 'app',
