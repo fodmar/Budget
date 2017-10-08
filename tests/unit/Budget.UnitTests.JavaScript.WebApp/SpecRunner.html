@@ -11,6 +11,31 @@
         function getBaseUrl() {
             return "Scripts";
         };
+
+        var cnt = 0;
+        function createContext(stubs) {
+            cnt++;
+            var map = {};
+
+            for (stub in stubs) {
+                if (stubs.hasOwnProperty(stub)) {
+                    var stubName = 'stub' + stub + cnt;
+                    map[stub] = stubName;
+
+                    define(stubName, function () {
+                        return stubs[stub];
+                    });
+                }
+            }
+
+            return require.config({
+                context: "context_" + cnt,
+                map: {
+                    "*": map
+                },
+                baseUrl: getBaseUrl()
+            });
+        }
     </script>
 
     <!-- There is post build event in web app which copies Scripts dir, so we can access it from here -->
@@ -20,7 +45,8 @@
             require(['jasmine/boot'], function () {
                 require([
                     //add files with specs here
-                    'spec/fail'
+                    'spec/pass',
+                    'spec/template'
                 ], function () {
                     //trigger Jasmine
                     window.onload();

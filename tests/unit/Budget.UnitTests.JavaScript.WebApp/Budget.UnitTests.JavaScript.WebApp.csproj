@@ -48,8 +48,9 @@
     <Content Include="jasmine.css" />
     <Content Include="Scripts\jasmine-2.8.0\jasmine.js" />
     <Content Include="jasmine_favicon.png" />
+    <Content Include="Scripts\spec\template.js" />
     <Content Include="SpecRunner.html" />
-    <Content Include="Scripts\spec\fail.js" />
+    <Content Include="Scripts\spec\pass.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿define([], function () {
     function fill(template, data) {
         return template.replace(/{{ (.*?) }}/g, function (fullmatch, group) {
-            return data[group];
+            return data[group] || "";
         });
     };
 
