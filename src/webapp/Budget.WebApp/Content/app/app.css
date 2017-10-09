@@ -3,10 +3,12 @@
     --color2: #364781;
     --color3: #175662;
     --color-btn-hover: #3CAAAA;
+    --color-body: #EBEBEC;
+    --color-body-contrast: white;
 }
 
 body {
-	background-color: #ebebec;
+	background-color: var(--color-body);
 	font-family: "Trebuchet MS" !important;
     font-size: 16px;
     margin: 0;
@@ -84,7 +86,7 @@ form, form div {
 }
 
 .body-content {
-    margin: 8px;
+    margin: 10px;
 }
 
 .navbar {
@@ -224,6 +226,7 @@ input.input-validation-error:focus, input.error:focus {
 
 .group {
     border: 1.2px solid var(--color2);
+    background-color: var(--color-body-contrast);
 }
 
 .group .group-legend {
