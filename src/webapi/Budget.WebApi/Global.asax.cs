@@ -15,6 +15,7 @@ namespace Budget.WebApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(ConfigureHttp);
+            Log4netSetup.Setup(Server.MapPath("~/bin/log4net.config"));
         }
 
         private void ConfigureHttp(HttpConfiguration config)
@@ -23,8 +24,7 @@ namespace Budget.WebApi
 
             RouteConfig.RegisterRoutes(config.Routes);
             DependencyResolutionConfig.InitializeDependencyResolution(config);
-
-            Log4netSetup.Setup(Server.MapPath("~/bin/log4net.config"));
+            SwaggerConfig.Register(config);
         }
     }
 }
