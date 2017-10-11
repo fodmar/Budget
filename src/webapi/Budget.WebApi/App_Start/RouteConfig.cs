@@ -8,41 +8,16 @@ namespace Budget.WebApi
 {
     public class RouteConfig
     {
-        public static void RegisterRoutes(HttpRouteCollection routes)
+        public static void RegisterRoutes(HttpConfiguration config)
         {
-            routes.MapHttpRoute(
-                name: "User",
-                routeTemplate: "api/user/{login}/{hash}",
-                defaults: new { controller = "User", action = "Find" }
-            );
+            config.MapHttpAttributeRoutes();
+            HttpRouteCollection routes = config.Routes;
 
-            routes.MapHttpRoute(
-                name: "ReceiptsByDateRange",
-                routeTemplate: "api/receipt/{userId}/{from}/{to}",
-                defaults: new { controller = "Receipt", action = "GetReceiptsFromDateRange" }
-            );
-
-            routes.MapHttpRoute(
-                name: "GetOne",
-                routeTemplate: "api/receipt/{userId}/{receiptId}",
-                defaults: new { controller = "Receipt", action = "GetReceipt" }
-            );
-
-            routes.MapHttpRoute(
-                name: "ListAll",
-                routeTemplate: "api/receipt/{userId}",
-                defaults: new { controller = "Receipt", action = "GetReceipts" }
-            );
-
-            routes.MapHttpRoute(
-                name: "DefaultWithId",
-                routeTemplate: "api/{controller}/{id}"
-            );
-
-            routes.MapHttpRoute(
-                name: "Default",
-                routeTemplate: "api/{controller}/"
-            );
+            //routes.MapHttpRoute(
+            //    name: "User",
+            //    routeTemplate: "api/user/{login}/{hash}",
+            //    defaults: new { controller = "User", action = "Find" }
+            //);
         }
     }
 }

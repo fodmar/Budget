@@ -10,6 +10,7 @@ using Budget.ObjectModel;
 
 namespace Budget.WebApi.Controllers
 {
+    [RoutePrefix("api/user")]
     public class UserController : BaseController
     {
         private readonly IUserProvider userProvider;
@@ -20,6 +21,7 @@ namespace Budget.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("{login}/{hash}")]
         public async Task<User> Find(
             [FromUri] string login,
             [FromUri] string hash)

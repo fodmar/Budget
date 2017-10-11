@@ -27,9 +27,10 @@ namespace Budget.UnitTests.WebApi
         public RouteTests()
         {
             this.routes = new HttpRouteCollection();
-            RouteConfig.RegisterRoutes(this.routes);
-
             this.configuration = new HttpConfiguration(this.routes);
+            RouteConfig.RegisterRoutes(this.configuration);
+            this.configuration.EnsureInitialized();
+
             this.controllerSelector = new DefaultHttpControllerSelector(this.configuration);
             this.actionSelector = new ApiControllerActionSelector();
         }
@@ -38,15 +39,26 @@ namespace Budget.UnitTests.WebApi
         [TestCaseSource("Generate")]
         public void UrlMatchControllerAndAction(Scenario scenario)
         {
-            HttpRequestMessage request = new HttpRequestMessage(scenario.HttpMethod, scenario.Url);
-            IHttpRouteData routeData = this.routes.GetRouteData(request);
-            request.Properties[HttpPropertyKeys.HttpRouteDataKey] = routeData;
+            Type selectedController;
+            string actionName;
 
-            HttpControllerContext controllerContext = new HttpControllerContext(this.configuration, routeData, request);
-            controllerContext.ControllerDescriptor = this.controllerSelector.SelectController(request);
+            try
+            {
+                HttpRequestMessage request = new HttpRequestMessage(scenario.HttpMethod, scenario.Url);
+                IHttpRouteData routeData = this.routes.GetRouteData(request);
+                request.Properties[HttpPropertyKeys.HttpRouteDataKey] = routeData;
 
-            Type selectedController = controllerContext.ControllerDescriptor.ControllerType;
-            string actionName = this.actionSelector.SelectAction(controllerContext).ActionName;
+                HttpControllerContext controllerContext = new HttpControllerContext(this.configuration, routeData, request);
+                controllerContext.ControllerDescriptor = this.controllerSelector.SelectController(request);
+
+                selectedController = controllerContext.ControllerDescriptor.ControllerType;
+                actionName = this.actionSelector.SelectAction(controllerContext).ActionName;
+            }
+            catch (Exception ex)
+            {
+                Exception exception = new Exception(string.Format("Fail for url {0}", scenario.Url), ex);
+                throw exception;
+            }
 
             Assert.AreEqual(scenario.ExpectedController, selectedController);
             Assert.AreEqual(scenario.ExpectedAction, actionName);

@@ -20,9 +20,7 @@ namespace Budget.WebApi
 
         private void ConfigureHttp(HttpConfiguration config)
         {
-            config.MapHttpAttributeRoutes();
-
-            RouteConfig.RegisterRoutes(config.Routes);
+            RouteConfig.RegisterRoutes(config);
             DependencyResolutionConfig.InitializeDependencyResolution(config);
             SwaggerConfig.Register(config);
         }

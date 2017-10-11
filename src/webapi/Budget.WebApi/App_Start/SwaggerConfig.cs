@@ -13,6 +13,7 @@ namespace Budget.WebApi
         {
             config.EnableSwagger(c =>
             {
+                c.SingleApiVersion("v1", "Budget.WebApi");
                 c.ResolveConflictingActions(apiDescriptions =>
                 {
                     return apiDescriptions.First();

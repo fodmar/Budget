@@ -14,6 +14,7 @@ using Budget.WebApi.ModelBinders;
 
 namespace Budget.WebApi.Controllers
 {
+    [RoutePrefix("api/receipt")]
     public class ReceiptController : BaseController
     {
         private readonly IReceiptProvider receiptProvider;
@@ -28,6 +29,7 @@ namespace Budget.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("{userId}/{receiptId}")]
         public async Task<Receipt> GetReceipt(
             [FromUri] int userId,
             [FromUri] int receiptId)
@@ -36,6 +38,7 @@ namespace Budget.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("{userId}")]
         public async Task<Receipt[]> GetReceipts(
             [FromUri] int userId)
         {
@@ -44,6 +47,7 @@ namespace Budget.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("{userId}/{from}/{to}")]
         public async Task<Receipt[]> GetReceiptsFromDateRange(
             [FromUri] int userId,
             [ModelBinder(typeof(DateTimeFromUnixTimeStampBinder))] DateTime? from,
@@ -54,6 +58,7 @@ namespace Budget.WebApi.Controllers
         }
 
         [HttpPut]
+        [Route("")]
         public async Task<Receipt> SaveReceipt(
             [FromBody] Receipt receipt)
         {
