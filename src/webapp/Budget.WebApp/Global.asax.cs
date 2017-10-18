@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -28,6 +29,7 @@ namespace Budget.WebApp
             DependencyResolutionConfig.InitializeDependencyResolution();
 
             Log4netSetup.Setup(Server.MapPath("~/bin/log4net.config"));
+            AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
         }
 
         protected void Application_Error()
@@ -35,6 +37,19 @@ namespace Budget.WebApp
             Exception ex = this.Server.GetLastError();
             DependencyResolver.Current.GetService<IErrorHandler>().HandleApplicationError(this.Context, ex);
             this.Server.ClearError();
+        }
+
+        protected void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
+        {
+#if DEBUG
+            try
+            {
+                DependencyResolver.Current.GetService<ILogger>().Debug("First chance exception", e.Exception);
+            }
+            catch (Exception)
+            {
+            }
+#endif
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Budget.ObjectModel
     public interface ILogger
     {
         void Error(string message, Exception ex);
+        void Debug(string message, Exception ex);
     }
 }

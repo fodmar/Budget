@@ -25,5 +25,10 @@ namespace Budget.Log4net
         {
             this.log4net.Error(message, ex);
         }
+
+        public void Debug(string message, Exception ex)
+        {
+            this.log4net.Debug(message, ex);
+        }
     }
 }
