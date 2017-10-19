@@ -24,7 +24,7 @@ namespace Budget.WebApp.Utils
 
         public int UserId
         {
-            get { return this.sessionHelper.UserId; }
+            get { return this.sessionHelper.User.Id; }
         }
 
         public Guid CorrelationId

@@ -46,7 +46,7 @@ namespace Budget.WebApp.Controllers
 
         public virtual async Task<ActionResult> GetReceipts(DateTime start, DateTime end)
         {
-            int userId = this.sessionHelper.UserId;
+            int userId = this.sessionHelper.User.Id;
             IEnumerable<Receipt> receipts = await this.receiptProvider.GetReceiptsByDates(userId, start, end);
             IEnumerable<FullcalendarEvent> json = receipts.Select(r => new FullcalendarEvent(r));
 
@@ -62,7 +62,7 @@ namespace Budget.WebApp.Controllers
                 return Json(ModelState.PropertiesErrors());
             }
 
-            Receipt receipt = saveModel.ToReceipt(this.sessionHelper.UserId);
+            Receipt receipt = saveModel.ToReceipt(this.sessionHelper.User.Id);
             Receipt saved = await this.receiptSaver.Save(receipt);
             return Json(new FullcalendarEvent(saved));
         }

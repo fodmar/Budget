@@ -177,4 +177,7 @@
   <data name="UsernameAndPasswordDontMatch" xml:space="preserve">
     <value>Username and password don't match</value>
   </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome {0}</value>
+  </data>
 </root>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget.ObjectModel
 {
+    [Serializable]
     public class User : IIdentifiable
     {
         public int Id { get; set; }

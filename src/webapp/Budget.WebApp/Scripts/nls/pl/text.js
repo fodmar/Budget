@@ -18,5 +18,6 @@
   "ThisFieldIsRequired": "To pole jest wymagane",
   "UnexpectedError": "Wystąpił nieoczekiwany błąd",
   "Username": "Nazwa użytkownika",
-  "UsernameAndPasswordDontMatch": "Nazwa użytkownika i hasło nie pasują"
+  "UsernameAndPasswordDontMatch": "Nazwa użytkownika i hasło nie pasują",
+  "Welcome": "Witaj {0}"
 });

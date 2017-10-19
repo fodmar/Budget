@@ -82,7 +82,8 @@ namespace Budget.WebApi.Client
             using (HttpResponseMessage response = await this.httpClient.SendAsync(this.request))
             {
                 response.EnsureSuccessStatusCode();
-                return await response.Content.ReadAsAsync<T>();
+                string content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(content);
             }
         }
 

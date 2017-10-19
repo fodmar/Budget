@@ -40,7 +40,7 @@ namespace Budget.UnitTests.WebApp
 
             Assert.IsTrue(result);
             service.AssertWasCalled(s => s.Login(model.Login, model.Password));
-            Assert.AreEqual(session.UserId, user.Id);
+            Assert.AreEqual(session.User.Id, user.Id);
             forms.AssertWasCalled(f => f.SetAuthCookie(model.Login, true));
         }
 
@@ -66,7 +66,7 @@ namespace Budget.UnitTests.WebApp
 
             Assert.IsFalse(result);
             service.AssertWasCalled(s => s.Login(model.Login, model.Password));
-            session.AssertWasNotCalled(s => s.UserId);
+            session.AssertWasNotCalled(s => s.User.Id);
             forms.AssertWasNotCalled(f => f.SetAuthCookie(Arg<string>.Is.Anything, Arg<bool>.Is.Anything));
         }
 

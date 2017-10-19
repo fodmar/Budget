@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Budget.ObjectModel;
 
 namespace Budget.WebApp.Utils
 {
@@ -12,11 +13,11 @@ namespace Budget.WebApp.Utils
             HttpContext.Current.Session.Clear();
         }
 
-        public int UserId
+        public User User
         {
             get
             {
-                return this.Get<int>(SessionKeys.UserId);
+                return this.Get<User>(SessionKeys.UserId);
             }
             set
             {

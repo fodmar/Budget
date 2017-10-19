@@ -32,13 +32,13 @@ namespace Budget.WebApp.Authentication
             LoginAttempt loginAttempt = await this.loginService.Login(model.Login, model.Password);
             User user = loginAttempt.User;
 
-            if (user == null)
+            if (user == null || user.Id == 0)
             {
                 return false;
             }
 
             this.formsAuthentication.SetAuthCookie(model.Login, true);
-            this.sessionHelper.UserId = user.Id;
+            this.sessionHelper.User = user;
             return true;
         }
 

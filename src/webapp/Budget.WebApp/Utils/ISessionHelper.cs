@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Budget.ObjectModel;
 
 namespace Budget.WebApp.Utils
 {
@@ -10,6 +11,6 @@ namespace Budget.WebApp.Utils
     {
         void Clear();
 
-        int UserId { get; set; }
+        User User { get; set; }
     }
 }

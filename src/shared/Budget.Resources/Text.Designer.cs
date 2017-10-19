@@ -239,5 +239,14 @@ namespace Budget.Resources {
                 return ResourceManager.GetString("UsernameAndPasswordDontMatch", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome {0}.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
     }
 }
