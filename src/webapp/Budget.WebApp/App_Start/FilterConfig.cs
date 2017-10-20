@@ -11,6 +11,7 @@ namespace Budget.WebApp
     {
         public static void RegisterFilters(GlobalFilterCollection filterCollection)
         {
+            
         }
     }
 }
