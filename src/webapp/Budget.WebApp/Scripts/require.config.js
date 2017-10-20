@@ -5,6 +5,11 @@
 }
 
 requirejs.config({
+    config: {
+        "i18n": {
+            locale: document.body.getAttribute("lang")
+        }
+    },
     baseUrl: getBaseUrl(),
     urlArgs: '',
     paths: {

@@ -6,6 +6,7 @@
 @using Budget.WebApp.Extensions;
 @using Budget.Resources;
 @using Budget.WebApp.Utils;
+@using System.Threading;
 @model Budget.WebApp.Models.LoginModel
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     @Styles.Render("~/bundles/content/app")
     @RequireJs.Require(@"app/login")
 </head>
-<body>
+<body lang="@Thread.CurrentThread.CurrentCulture">
     <div class="justify-center">
         <div class="login-form">
             <h2 class="login-title">@Text.LogIntoApplication</h2>

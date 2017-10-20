@@ -1,7 +1,7 @@
 ﻿define(['app/text', 'lib/locale-all'], function (text) {
     function init(config) {
         $("#calendar").fullCalendar({
-            locale: navigator.language, //todo only supported languages
+            locale: document.body.getAttribute("lang"),
             editable: false,
             droppable: false,
             firstDay: 1,

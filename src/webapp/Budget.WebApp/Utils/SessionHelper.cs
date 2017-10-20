@@ -27,12 +27,12 @@ namespace Budget.WebApp.Utils
 
         protected T Get<T>(SessionKeys sessionKey)
         {
-            return (T)HttpContext.Current.Session[(int)sessionKey];
+            return (T)HttpContext.Current.Session[sessionKey.ToString()];
         }
 
         protected void Put<T>(SessionKeys sessionKey, T item)
         {
-            HttpContext.Current.Session.Add(((int)sessionKey).ToString(), item);
+            HttpContext.Current.Session.Add(sessionKey.ToString(), item);
         }
     }
 }

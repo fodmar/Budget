@@ -1,5 +1,6 @@
 ﻿@using System.Web.Optimization;
 @using Budget.Resources;
+@using System.Threading;
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
     @RenderSection("styles", false)
     @RenderSection("scripts", false)
 </head>
-<body>
+<body lang="@Thread.CurrentThread.CurrentCulture">
     <div class="navbar">
         <div class="right">@string.Format(Text.Welcome, SessionHelper.User.Name)</div>
     </div>

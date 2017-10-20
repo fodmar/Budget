@@ -9,9 +9,10 @@ using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers
 {
+    [Language]
     [Authorize]
     [CorrelationId]
-    [LogErrorAttribute]
+    [LogError]
     public abstract partial class BaseController : Controller
     {
         protected ISessionHelper sessionHelper;

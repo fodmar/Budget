@@ -42,13 +42,13 @@ namespace Budget.WebApp
         protected void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
         {
 #if DEBUG
-            try
-            {
-                DependencyResolver.Current.GetService<ILogger>().Debug("First chance exception", e.Exception);
-            }
-            catch (Exception)
-            {
-            }
+            //try
+            //{
+            //    DependencyResolver.Current.GetService<ILogger>().Debug("First chance exception", e.Exception);
+            //}
+            //catch (Exception)
+            //{
+            //}
 #endif
         }
     }

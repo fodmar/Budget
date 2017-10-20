@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Budget.WebApp.Utils
 {
-    enum SessionKeys
+    public enum CookieKeys
     {
         None = 0,
-        UserId = 1,
+        Language = 1,
     }
 }

@@ -208,6 +208,7 @@
     <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ObjectController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Extensions\ModelStateExtensions.cs" />
     <Compile Include="Extensions\WebViewPage.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
+    <Compile Include="Filters\LanguageAttribute.cs" />
     <Compile Include="Filters\LogErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,8 +259,11 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
+    <Compile Include="Utils\CookieHelper.cs" />
+    <Compile Include="Utils\CookieKeys.cs" />
     <Compile Include="Utils\CorrelationIdProvider.cs" />
     <Compile Include="Utils\ErrorHandler.cs" />
+    <Compile Include="Utils\ICookieHelper.cs" />
     <Compile Include="Utils\IErrorHandler.cs" />
     <Compile Include="Utils\ISessionHelper.cs" />
     <Compile Include="Utils\RequireJs.cs" />
@@ -299,6 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Language\" />
     <Folder Include="Views\Object\" />
   </ItemGroup>
   <ItemGroup>

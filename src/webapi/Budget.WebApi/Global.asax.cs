@@ -23,6 +23,7 @@ namespace Budget.WebApi
             RouteConfig.RegisterRoutes(config);
             DependencyResolutionConfig.InitializeDependencyResolution(config);
             SwaggerConfig.Register(config);
+            FormattersConfig.Configure(config.Formatters);
         }
     }
 }
