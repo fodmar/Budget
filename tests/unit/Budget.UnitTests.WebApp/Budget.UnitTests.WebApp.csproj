@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticatorTests.cs" />
+    <Compile Include="Controllers\BaseControllerTests.cs" />
     <Compile Include="Controllers\LoginControllerTests.cs" />
     <Compile Include="DependencyResolutionTests.cs" />
     <Compile Include="ModelStateExtensionsTests.cs" />
