@@ -151,6 +151,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\btnloader.js" />
     <Content Include="Scripts\app\callwrapper.js" />
+    <Content Include="Scripts\app\layout.js" />
     <Content Include="Scripts\app\list.js" />
     <Content Include="Scripts\app\overview-calendar.js" />
     <Content Include="Scripts\app\products.js" />

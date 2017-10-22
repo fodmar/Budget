@@ -19,16 +19,26 @@
     </script>
 
     @Styles.Render("~/bundles/content/app")
+    
     @RenderSection("styles", false)
     @RenderSection("scripts", false)
 </head>
 <body lang="@Thread.CurrentThread.CurrentCulture">
     <div class="navbar">
-        <div class="right">@string.Format(Text.Welcome, SessionHelper.User.Name)</div>
+        <div class="right align-center">
+            @string.Format(Text.Welcome, SessionHelper.User.Name)
+            <span id="expand-menu" class="material-icons icon">expand_more</span>
+        </div>
     </div>
-
+    <div id="menu-container">
+        <ul id="menu">
+            <li>@Html.ActionLink("Log off", MVC.Login.ActionNames.Logout, MVC.Login.Name)</li>
+        </ul>
+    </div>
     <div class="body-content">
         @RenderBody()
     </div>
+
+    @Scripts.Render("~/Scripts/app/layout.js")
 </body>
 </html>
