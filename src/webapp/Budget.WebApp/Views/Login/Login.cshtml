@@ -24,10 +24,10 @@
 <body lang="@Thread.CurrentThread.CurrentCulture">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-6 login-form">
+            <div class="col-md-3 col-sm-5 login-form">
                 <h2>@Text.LogIntoApplication</h2>
 
-                @using (Html.BeginForm(MVC.Login.ActionNames.Login, MVC.Login.Name, FormMethod.Post))
+                @using (Html.BeginForm(MVC.Login.ActionNames.Login, MVC.Login.Name))
                 {
                     @Bootstrap.EditorForModel()
                     @Bootstrap.SubmitForm(Text.SignIn)
