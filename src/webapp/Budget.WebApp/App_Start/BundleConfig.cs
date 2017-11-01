@@ -8,20 +8,40 @@ namespace Budget.WebApp
 {
     public class BundleConfig
     {
+        private static BundleCollection bundleCollection;
+
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/bundles/content/overview").Include(
-                    "~/Content/lib/jquery-ui.css",
-                    "~/Content/app/jquery-ui.css",
-                    "~/Content/lib/fullcalendar.css"));
+            bundleCollection = bundles;
 
-            bundles.Add(new StyleBundle("~/bundles/content/jqueryui").Include(
-                    "~/Content/lib/jquery-ui.css",
-                    "~/Content/app/jquery-ui.css"));
+            Script("layout",
+                "~/Scripts/lib/jquery-{version}",
+                "~/Scripts/lib/bootstrap");
 
-            bundles.Add(new StyleBundle("~/bundles/content/app").Include(
-                    "~/Content/material-icons/material-icons.css",
-                    "~/Content/app/app.css"));
+            Style("layout",
+                "~/Content/material-icons/material-icons.css",
+                "~/Content/lib/bootstrap.css",
+                "~/Content/lib/bootstrap-theme.css",
+                "~/Content/app/app.css");
+
+            Style("overview",
+                "~/Content/lib/jquery-ui.css",
+                "~/Content/app/jquery-ui.css",
+                "~/Content/lib/fullcalendar.css");
+
+            Style("jqueryui",
+                "~/Content/lib/jquery-ui.css",
+                "~/Content/app/jquery-ui.css");
+        }
+
+        private static void Script(string name, params string[] paths)
+        {
+            bundleCollection.Add(new ScriptBundle(string.Format("~/bundles/scripts/{0}", name)).Include(paths));
+        }
+
+        private static void Style(string name, params string[] paths)
+        {
+            bundleCollection.Add(new StyleBundle(string.Format("~/bundles/content/{0}", name)).Include(paths));
         }
     }
 }

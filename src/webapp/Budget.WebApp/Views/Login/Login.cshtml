@@ -15,7 +15,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Text.LogIntoApplication</title>
-    @Styles.Render("~/bundles/content/app")
+
+    @Styles.Render("~/bundles/content/layout")
+    @Scripts.Render("~/bundles/scripts/layout")
+
     @RequireJs.Require(@"app/login")
 </head>
 <body lang="@Thread.CurrentThread.CurrentCulture">
@@ -24,7 +27,7 @@
             <h2 class="login-title">@Text.LogIntoApplication</h2>
             @using (Html.BeginForm(MVC.Login.ActionNames.Login, MVC.Login.Name, FormMethod.Post, new { @class = "vertical" }))
             {
-                @Html.EditorForModel()
+                @Bootstrap.EditorForModel()
                 @Html.SubmitForm(Text.SignIn)
                 @Html.ValidationSummary(true)
             }

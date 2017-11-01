@@ -22,12 +22,16 @@ requirejs.config({
         jqueryValidateUnobtrusive: 'lib/jquery.validate.unobtrusive',
         i18n: 'lib/i18n',
         moment: 'lib/moment',
+        bootstrap: 'lib/bootstrap',
         jasmine: 'jasmine-2.8.0',
         spec: 'spec'
     },
     shim: {
         jqueryValidateUnobtrusive: {
             deps: ['jqueryValidate']
+        },
+        bootstrap: {
+            deps: ['jquery']
         },
         'lib/locale-all': {
             deps: ['lib/fullcalendar']

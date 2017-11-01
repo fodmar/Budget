@@ -122,6 +122,10 @@
   <ItemGroup>
     <Content Include="Content\app\app.css" />
     <Content Include="Content\app\jquery-ui.css" />
+    <Content Include="Content\lib\bootstrap-theme.css" />
+    <Content Include="Content\lib\bootstrap-theme.min.css" />
+    <Content Include="Content\lib\bootstrap.css" />
+    <Content Include="Content\lib\bootstrap.min.css" />
     <Content Include="Content\lib\fullcalendar.css" />
     <Content Include="Content\lib\fullcalendar.min.css" />
     <Content Include="Content\gif\loading.gif" />
@@ -148,15 +152,17 @@
     <Content Include="Content\lib\jquery-ui.min.css" />
     <Content Include="Content\material-icons\material-icons.css" />
     <Content Include="Content\material-icons\MaterialIcons-Regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\btnloader.js" />
     <Content Include="Scripts\app\callwrapper.js" />
-    <Content Include="Scripts\app\layout.js" />
     <Content Include="Scripts\app\list.js" />
     <Content Include="Scripts\app\overview-calendar.js" />
     <Content Include="Scripts\app\products.js" />
     <Content Include="Scripts\app\template.js" />
     <Content Include="Scripts\app\text.js" />
+    <Content Include="Scripts\lib\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="Scripts\lib\i18n.js" />
     <Content Include="Scripts\app\overview.js" />
     <Content Include="Views\Overview\SaveReceipt.cshtml" />
@@ -169,6 +175,14 @@
     <Content Include="Content\material-icons\MaterialIcons-Regular.ttf" />
     <Content Include="Content\material-icons\MaterialIcons-Regular.woff" />
     <Content Include="Content\material-icons\MaterialIcons-Regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\lib\bootstrap-theme.min.css.map" />
+    <Content Include="Content\lib\bootstrap-theme.css.map" />
+    <Content Include="Content\lib\bootstrap.min.css.map" />
+    <Content Include="Content\lib\bootstrap.css.map" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\app\login.js" />
     <Content Include="Scripts\lib\jquery-ui-1.12.1.js" />
@@ -219,6 +233,7 @@
     <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
+    <Compile Include="Extensions\Bootstrap.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\ModelStateExtensions.cs" />
     <Compile Include="Extensions\WebViewPage.cs" />
@@ -235,6 +250,9 @@
     <Compile Include="Models\SaveReceiptEntryModel.cs" />
     <Compile Include="Models\SaveReceiptModel.cs" />
     <Compile Include="T4MVC\ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC\LanguageController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC\LoginController.generated.cs">
@@ -295,6 +313,7 @@
     <Content Include="Views\Error\BadRequest.cshtml" />
     <Content Include="Views\Error\_LayoutError.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\BootstrapEditorForModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

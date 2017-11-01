@@ -9,6 +9,21 @@ namespace Budget.WebApp.Extensions
 {
     public abstract class WebViewPage<T> : System.Web.Mvc.WebViewPage<T>
     {
+        private Bootstrap<T> bootstrap;
+
+        public Bootstrap<T> Bootstrap
+        {
+            get
+            {
+                if (bootstrap == null)
+                {
+                    bootstrap = new Bootstrap<T>(this.Html);
+                }
+
+                return bootstrap;
+            }
+        }
+
         public ISessionHelper SessionHelper
         {
             get

@@ -28,6 +28,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static Budget.WebApp.Controllers.ErrorController Error = new Budget.WebApp.Controllers.T4MVC_ErrorController();
+    public static Budget.WebApp.Controllers.LanguageController Language = new Budget.WebApp.Controllers.T4MVC_LanguageController();
     public static Budget.WebApp.Controllers.LoginController Login = new Budget.WebApp.Controllers.T4MVC_LoginController();
     public static Budget.WebApp.Controllers.OverviewController Overview = new Budget.WebApp.Controllers.T4MVC_OverviewController();
     public static Budget.WebApp.Controllers.ProductController Product = new Budget.WebApp.Controllers.T4MVC_ProductController();
@@ -81,6 +82,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string btnloader_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/btnloader.min.js") ? Url("btnloader.min.js") : Url("btnloader.js");
             public static readonly string callwrapper_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/callwrapper.min.js") ? Url("callwrapper.min.js") : Url("callwrapper.js");
+            public static readonly string layout_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/layout.min.js") ? Url("layout.min.js") : Url("layout.js");
             public static readonly string list_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/list.min.js") ? Url("list.min.js") : Url("list.js");
             public static readonly string login_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/login.min.js") ? Url("login.min.js") : Url("login.js");
             public static readonly string overview_calendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/overview-calendar.min.js") ? Url("overview-calendar.min.js") : Url("overview-calendar.js");
@@ -148,6 +150,7 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string app_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/app.min.css") ? Url("app.min.css") : Url("app.css");
+            public static readonly string jquery_ui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-ui.min.css") ? Url("jquery-ui.min.css") : Url("jquery-ui.css");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -223,6 +226,7 @@ namespace Links
                 {
                     public const string btnloader_js = "~/Scripts/app/btnloader.js"; 
                     public const string callwrapper_js = "~/Scripts/app/callwrapper.js"; 
+                    public const string layout_js = "~/Scripts/app/layout.js"; 
                     public const string list_js = "~/Scripts/app/list.js"; 
                     public const string login_js = "~/Scripts/app/login.js"; 
                     public const string overview_calendar_js = "~/Scripts/app/overview-calendar.js"; 
@@ -283,6 +287,7 @@ namespace Links
                 public static class Assets
                 {
                     public const string app_css = "~/Content/app/app.css";
+                    public const string jquery_ui_css = "~/Content/app/jquery-ui.css";
                 }
             }
             public static partial class gif 

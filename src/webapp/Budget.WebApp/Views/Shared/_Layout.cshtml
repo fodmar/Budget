@@ -18,8 +18,9 @@
         }
     </script>
 
-    @Styles.Render("~/bundles/content/app")
-    
+    @Styles.Render("~/bundles/content/layout")
+    @Scripts.Render("~/bundles/scripts/layout")
+
     @RenderSection("styles", false)
     @RenderSection("scripts", false)
 </head>
@@ -38,7 +39,5 @@
     <div class="body-content">
         @RenderBody()
     </div>
-
-    @Scripts.Render("~/Scripts/app/layout.js")
 </body>
 </html>

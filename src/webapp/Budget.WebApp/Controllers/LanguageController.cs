@@ -7,7 +7,7 @@ using Budget.WebApp.Utils;
 
 namespace Budget.WebApp.Controllers
 {
-    public class LanguageController : BaseController
+    public partial class LanguageController : BaseController
     {
         private readonly ICookieHelper cookieHelper;
 
@@ -17,7 +17,7 @@ namespace Budget.WebApp.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult Change(string id)
+        public virtual ActionResult Change(string id)
         {
             this.cookieHelper.Language = id;
 
