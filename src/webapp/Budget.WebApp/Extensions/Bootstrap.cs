@@ -23,7 +23,12 @@ namespace Budget.WebApp.Extensions
 
         public IHtmlString SubmitForm(string text)
         {
-            return new MvcHtmlString(string.Format("<button class='btn btn-block btn-default' type='submit'>{0}</button>", text));
+            return new MvcHtmlString(string.Format("<button class='btn btn-block btn-primary center-all' type='submit'>{0}</button>", text));
+        }
+
+        public IHtmlString ValidationSummary()
+        {
+            return this.htmlHelper.Partial(MVC.Shared.Views.BootstrapValidationSummary, this.htmlHelper.ViewData.ModelState);
         }
     }
 }

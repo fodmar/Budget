@@ -82,7 +82,6 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string btnloader_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/btnloader.min.js") ? Url("btnloader.min.js") : Url("btnloader.js");
             public static readonly string callwrapper_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/callwrapper.min.js") ? Url("callwrapper.min.js") : Url("callwrapper.js");
-            public static readonly string layout_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/layout.min.js") ? Url("layout.min.js") : Url("layout.js");
             public static readonly string list_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/list.min.js") ? Url("list.min.js") : Url("list.js");
             public static readonly string login_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/login.min.js") ? Url("login.min.js") : Url("login.js");
             public static readonly string overview_calendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/overview-calendar.min.js") ? Url("overview-calendar.min.js") : Url("overview-calendar.js");
@@ -97,6 +96,8 @@ namespace Links
             public const string UrlPath = "~/Scripts/lib";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+            public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
             public static readonly string fullcalendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fullcalendar.min.js") ? Url("fullcalendar.min.js") : Url("fullcalendar.js");
             public static readonly string fullcalendar_min_js = Url("fullcalendar.min.js");
             public static readonly string i18n_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/i18n.min.js") ? Url("i18n.min.js") : Url("i18n.js");
@@ -166,6 +167,14 @@ namespace Links
             public const string UrlPath = "~/Content/lib";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string bootstrap_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-theme.min.css") ? Url("bootstrap-theme.min.css") : Url("bootstrap-theme.css");
+            public static readonly string bootstrap_theme_css_map = Url("bootstrap-theme.css.map");
+            public static readonly string bootstrap_theme_min_css = Url("bootstrap-theme.min.css");
+            public static readonly string bootstrap_theme_min_css_map = Url("bootstrap-theme.min.css.map");
+            public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
+            public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
+            public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
+            public static readonly string bootstrap_min_css_map = Url("bootstrap.min.css.map");
             public static readonly string fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fullcalendar.min.css") ? Url("fullcalendar.min.css") : Url("fullcalendar.css");
             public static readonly string fullcalendar_min_css = Url("fullcalendar.min.css");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -226,7 +235,6 @@ namespace Links
                 {
                     public const string btnloader_js = "~/Scripts/app/btnloader.js"; 
                     public const string callwrapper_js = "~/Scripts/app/callwrapper.js"; 
-                    public const string layout_js = "~/Scripts/app/layout.js"; 
                     public const string list_js = "~/Scripts/app/list.js"; 
                     public const string login_js = "~/Scripts/app/login.js"; 
                     public const string overview_calendar_js = "~/Scripts/app/overview-calendar.js"; 
@@ -240,6 +248,8 @@ namespace Links
             {
                 public static class Assets
                 {
+                    public const string bootstrap_js = "~/Scripts/lib/bootstrap.js"; 
+                    public const string bootstrap_min_js = "~/Scripts/lib/bootstrap.min.js"; 
                     public const string fullcalendar_js = "~/Scripts/lib/fullcalendar.js"; 
                     public const string fullcalendar_min_js = "~/Scripts/lib/fullcalendar.min.js"; 
                     public const string i18n_js = "~/Scripts/lib/i18n.js"; 
@@ -306,6 +316,10 @@ namespace Links
                 }
                 public static class Assets
                 {
+                    public const string bootstrap_theme_css = "~/Content/lib/bootstrap-theme.css";
+                    public const string bootstrap_theme_min_css = "~/Content/lib/bootstrap-theme.min.css";
+                    public const string bootstrap_css = "~/Content/lib/bootstrap.css";
+                    public const string bootstrap_min_css = "~/Content/lib/bootstrap.min.css";
                     public const string fullcalendar_css = "~/Content/lib/fullcalendar.css";
                     public const string fullcalendar_min_css = "~/Content/lib/fullcalendar.min.css";
                     public const string jquery_ui_css = "~/Content/lib/jquery-ui.css";

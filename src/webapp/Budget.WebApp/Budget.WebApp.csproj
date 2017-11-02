@@ -314,6 +314,7 @@
     <Content Include="Views\Error\_LayoutError.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\BootstrapEditorForModel.cshtml" />
+    <Content Include="Views\Shared\BootstrapValidationSummary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

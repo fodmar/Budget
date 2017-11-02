@@ -39,8 +39,10 @@ namespace T4MVC
             public class _ViewNamesClass
             {
                 public readonly string _Layout = "_Layout";
+                public readonly string BootstrapValidationSummary = "BootstrapValidationSummary";
             }
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
+            public readonly string BootstrapValidationSummary = "~/Views/Shared/BootstrapValidationSummary.cshtml";
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
             public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
