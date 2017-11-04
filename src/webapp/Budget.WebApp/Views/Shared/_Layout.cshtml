@@ -25,18 +25,9 @@
     @RenderSection("scripts", false)
 </head>
 <body lang="@Thread.CurrentThread.CurrentCulture">
-    <div class="navbar">
-        <div class="right align-center">
-            @string.Format(Text.Welcome, SessionHelper.User.Name)
-            <span id="expand-menu" class="material-icons icon">expand_more</span>
-        </div>
-    </div>
-    <div id="menu-container">
-        <ul id="menu">
-            <li>@Html.ActionLink("Log off", MVC.Login.ActionNames.Logout, MVC.Login.Name)</li>
-        </ul>
-    </div>
-    <div class="body-content">
+    @Bootstrap.Navbar()
+
+    <div class="body-content container">
         @RenderBody()
     </div>
 </body>

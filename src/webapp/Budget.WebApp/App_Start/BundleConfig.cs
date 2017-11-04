@@ -15,8 +15,8 @@ namespace Budget.WebApp
             bundleCollection = bundles;
 
             Script("layout",
-                "~/Scripts/lib/jquery-{version}",
-                "~/Scripts/lib/bootstrap");
+                "~/Scripts/lib/jquery-{version}.js",
+                "~/Scripts/lib/bootstrap.js");
 
             Style("layout",
                 "~/Content/material-icons/material-icons.css",

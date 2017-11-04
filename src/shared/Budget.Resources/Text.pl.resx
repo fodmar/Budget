@@ -132,8 +132,14 @@
   <data name="Date" xml:space="preserve">
     <value>Data</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>Język</value>
+  </data>
   <data name="LogIntoApplication" xml:space="preserve">
     <value>Zaloguj się do aplikacji</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Wyloguj się</value>
   </data>
   <data name="ModifyProduct" xml:space="preserve">
     <value>Modyfikuj produkt</value>

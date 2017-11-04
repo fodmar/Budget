@@ -34,12 +34,7 @@ body {
 }
 
 .navbar {
-    position: relative;
-    background-color: var(--color3);
-    padding: .75em;
-    margin-bottom: .5em;
-    overflow: hidden;
-    color: white;
+    border-radius: 0;
 }
 
 .loading {
@@ -178,26 +173,6 @@ input.input-validation-error:focus, input.error:focus {
 }
 
 .group .group-content {
-    padding: 5px;
-}
-
-#menu-container {
-    position: relative;
-}
-
-#menu {
-    min-width: 170px;
-    list-style-type: none;
-    position: absolute;
-    background-color: white;
-    display: none;
-    right: 0;
-    top: -0.5em;
-    z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-#menu li {
     padding: 5px;
 }
 

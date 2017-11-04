@@ -50,8 +50,10 @@ namespace T4MVC
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string Navbar = "Navbar";
                     public readonly string ValidationSummary = "ValidationSummary";
                 }
+                public readonly string Navbar = "~/Views/Shared/Bootstrap/Navbar.cshtml";
                 public readonly string ValidationSummary = "~/Views/Shared/Bootstrap/ValidationSummary.cshtml";
             }
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();

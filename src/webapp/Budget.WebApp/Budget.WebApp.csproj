@@ -152,7 +152,7 @@
     <Content Include="Content\lib\jquery-ui.min.css" />
     <Content Include="Content\material-icons\material-icons.css" />
     <Content Include="Content\material-icons\MaterialIcons-Regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\btnloader.js" />
     <Content Include="Scripts\app\callwrapper.js" />
@@ -175,10 +175,10 @@
     <Content Include="Content\material-icons\MaterialIcons-Regular.ttf" />
     <Content Include="Content\material-icons\MaterialIcons-Regular.woff" />
     <Content Include="Content\material-icons\MaterialIcons-Regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\lib\bootstrap-theme.min.css.map" />
     <Content Include="Content\lib\bootstrap-theme.css.map" />
     <Content Include="Content\lib\bootstrap.min.css.map" />
@@ -237,6 +237,7 @@
     <Compile Include="Extensions\Bootstrap.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\ModelStateExtensions.cs" />
+    <Compile Include="Extensions\NavbarModel.cs" />
     <Compile Include="Extensions\ValidationSummaryModel.cs" />
     <Compile Include="Extensions\WebViewPage.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
@@ -317,6 +318,7 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\BootstrapEditorForModel.cshtml" />
     <Content Include="Views\Shared\Bootstrap\ValidationSummary.cshtml" />
+    <Content Include="Views\Shared\Bootstrap\Navbar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

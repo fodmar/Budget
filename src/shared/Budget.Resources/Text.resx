@@ -132,8 +132,14 @@
   <data name="Date" xml:space="preserve">
     <value>Date</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="LogIntoApplication" xml:space="preserve">
     <value>Log into application</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Log out</value>
   </data>
   <data name="ModifyProduct" xml:space="preserve">
     <value>Modify product</value>

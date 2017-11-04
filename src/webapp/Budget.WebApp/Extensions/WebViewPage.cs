@@ -17,7 +17,7 @@ namespace Budget.WebApp.Extensions
             {
                 if (bootstrap == null)
                 {
-                    bootstrap = new Bootstrap<T>(this.Html);
+                    bootstrap = new Bootstrap<T>(this.Html, this.SessionHelper);
                 }
 
                 return bootstrap;
