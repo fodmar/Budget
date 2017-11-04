@@ -39,10 +39,21 @@ namespace T4MVC
             public class _ViewNamesClass
             {
                 public readonly string _Layout = "_Layout";
-                public readonly string BootstrapValidationSummary = "BootstrapValidationSummary";
             }
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
-            public readonly string BootstrapValidationSummary = "~/Views/Shared/BootstrapValidationSummary.cshtml";
+            static readonly _BootstrapClass s_Bootstrap = new _BootstrapClass();
+            public _BootstrapClass Bootstrap { get { return s_Bootstrap; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _BootstrapClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string ValidationSummary = "ValidationSummary";
+                }
+                public readonly string ValidationSummary = "~/Views/Shared/Bootstrap/ValidationSummary.cshtml";
+            }
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
             public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

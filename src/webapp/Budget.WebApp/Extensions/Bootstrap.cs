@@ -26,9 +26,10 @@ namespace Budget.WebApp.Extensions
             return new MvcHtmlString(string.Format("<button class='btn btn-block btn-primary center-all' type='submit'>{0}</button>", text));
         }
 
-        public IHtmlString ValidationSummary()
+        public IHtmlString ValidationSummary(bool includePropertyErros = false)
         {
-            return this.htmlHelper.Partial(MVC.Shared.Views.BootstrapValidationSummary, this.htmlHelper.ViewData.ModelState);
+            var model = new ValidationSummaryModel(this.htmlHelper.ViewData.ModelState, includePropertyErros);
+            return this.htmlHelper.Partial(MVC.Shared.Views.Bootstrap.ValidationSummary, model);
         }
     }
 }

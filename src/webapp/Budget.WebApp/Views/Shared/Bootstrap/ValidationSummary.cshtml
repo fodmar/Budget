@@ -1,0 +1,17 @@
+﻿@using Budget.WebApp.Extensions
+@model ValidationSummaryModel
+
+<div class="@(Model.IsValid ? "validation-summary-valid" : "validation-summary-errors") panel panel-danger"
+     data-valmsg-summary="@Model.IncludePropertyErros.ToLowerString()">
+    <div class="panel-heading">
+        <ul>
+            @foreach (var propertyErrors in Model.PropertyErrors)
+            {
+                foreach (var error in propertyErrors.Value.Errors)
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            }
+        </ul>
+    </div>
+</div>

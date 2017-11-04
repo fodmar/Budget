@@ -233,9 +233,11 @@
     <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
+    <Compile Include="Extensions\BooleanExtensions.cs" />
     <Compile Include="Extensions\Bootstrap.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\ModelStateExtensions.cs" />
+    <Compile Include="Extensions\ValidationSummaryModel.cs" />
     <Compile Include="Extensions\WebViewPage.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
     <Compile Include="Filters\LanguageAttribute.cs" />
@@ -314,7 +316,7 @@
     <Content Include="Views\Error\_LayoutError.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\BootstrapEditorForModel.cshtml" />
-    <Content Include="Views\Shared\BootstrapValidationSummary.cshtml" />
+    <Content Include="Views\Shared\Bootstrap\ValidationSummary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
