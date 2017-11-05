@@ -1,6 +1,9 @@
 ﻿define({
   "AddNewProduct": "Dodaj nowy produkt",
+  "Administration": "Administracja",
   "Amount": "Kwota",
+  "BudgetAppName": "Budżet",
+  "Calendar": "Kalendarz",
   "Cancel": "Anuluj",
   "CollectionShouldHaveAtLeastOneElement": "Kolekcja powinna posiadać co najmniej jeden element",
   "Date": "Data",

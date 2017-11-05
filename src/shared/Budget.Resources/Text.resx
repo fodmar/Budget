@@ -120,8 +120,17 @@
   <data name="AddNewProduct" xml:space="preserve">
     <value>Add new product</value>
   </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Administration</value>
+  </data>
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
+  </data>
+  <data name="BudgetAppName" xml:space="preserve">
+    <value>Budget</value>
+  </data>
+  <data name="Calendar" xml:space="preserve">
+    <value>Calendar</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>

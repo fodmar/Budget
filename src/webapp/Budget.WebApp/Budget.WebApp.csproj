@@ -238,6 +238,7 @@
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\ModelStateExtensions.cs" />
     <Compile Include="Extensions\NavbarModel.cs" />
+    <Compile Include="Extensions\NavbarTabModel.cs" />
     <Compile Include="Extensions\ValidationSummaryModel.cs" />
     <Compile Include="Extensions\WebViewPage.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />

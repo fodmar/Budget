@@ -2,6 +2,12 @@
 @using Budget.Resources;
 @model NavbarModel
 
+<style>
+    body {
+        padding-top: 70px; /*for fixed bootstrap navbar*/
+    }
+</style>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
 
@@ -14,45 +20,65 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">@Text.BudgetAppName</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+                @foreach (var tab in Model.Tabs)
+                {
+                    <li @(tab.IsActive ? "class=active" : string.Empty)><a href="@tab.Url">@tab.Text</a></li>
+                }
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
+                @LanguageTab()
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-flag"></span>
-                        @Text.Language
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        @{ string url = Url.Action(MVC.Language.ActionNames.Change, MVC.Language.Name); }
-                        <li>
-                            <a href="@url/en-US">
-                                English
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@url/pl-PL">
-                                Polski
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-user"></span>
-                        @string.Format(Text.Welcome, Model.UserName)
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="@Url.Action(MVC.Login.ActionNames.Logout, MVC.Login.Name)">
-                                <span class="glyphicon glyphicon-log-out"></span>
-                                @Text.Logout
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                @UserTab()
             </ul>
         </div>
     </div>
 </nav>
+
+@helper LanguageTab()
+{
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="glyphicon glyphicon-flag"></span>
+            @Text.Language
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            @{ string url = Url.Action(MVC.Language.ActionNames.Change, MVC.Language.Name); }
+            <li>
+                <a href="@url/en-US">
+                    English
+                </a>
+            </li>
+            <li>
+                <a href="@url/pl-PL">
+                    Polski
+                </a>
+            </li>
+        </ul>
+    </li>
+}
+
+@helper UserTab()
+{
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="glyphicon glyphicon-user"></span>
+            @string.Format(Text.Welcome, Model.UserName)
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="@Url.Action(MVC.Login.ActionNames.Logout, MVC.Login.Name)">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    @Text.Logout
+                </a>
+            </li>
+        </ul>
+    </li>
+}

@@ -1,7 +1,10 @@
 ﻿define({
   "root": {
     "AddNewProduct": "Add new product",
+    "Administration": "Administration",
     "Amount": "Amount",
+    "BudgetAppName": "Budget",
+    "Calendar": "Calendar",
     "Cancel": "Cancel",
     "CollectionShouldHaveAtLeastOneElement": "Collection should have at least one element",
     "Date": "Date",

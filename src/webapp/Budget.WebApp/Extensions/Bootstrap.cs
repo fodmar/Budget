@@ -11,11 +11,13 @@ namespace Budget.WebApp.Extensions
     public class Bootstrap<T>
     {
         private readonly HtmlHelper htmlHelper;
+        private readonly UrlHelper urlHelper;
         private readonly ISessionHelper sessionHelper;
 
-        public Bootstrap(HtmlHelper htmlHelper, ISessionHelper sessionHelper)
+        public Bootstrap(HtmlHelper htmlHelper, UrlHelper urlHelper, ISessionHelper sessionHelper)
         {
             this.htmlHelper = htmlHelper;
+            this.urlHelper = urlHelper;
             this.sessionHelper = sessionHelper;
         }
 
@@ -37,7 +39,7 @@ namespace Budget.WebApp.Extensions
 
         public IHtmlString Navbar()
         {
-            NavbarModel model = new NavbarModel();
+            NavbarModel model = new NavbarModel(this.htmlHelper.ViewContext.RouteData.Values, this.urlHelper);
             model.UserName = this.sessionHelper.User.Name;
 
             return this.htmlHelper.Partial(MVC.Shared.Views.Bootstrap.Navbar, model);
