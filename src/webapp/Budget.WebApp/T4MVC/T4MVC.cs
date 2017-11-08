@@ -155,6 +155,18 @@ namespace Links
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class fonts {
+            public const string UrlPath = "~/Content/fonts";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string glyphicons_halflings_regular_eot = Url("glyphicons-halflings-regular.eot");
+            public static readonly string glyphicons_halflings_regular_svg = Url("glyphicons-halflings-regular.svg");
+            public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
+            public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
+            public static readonly string glyphicons_halflings_regular_woff2 = Url("glyphicons-halflings-regular.woff2");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class gif {
             public const string UrlPath = "~/Content/gif";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
@@ -298,6 +310,12 @@ namespace Links
                 {
                     public const string app_css = "~/Content/app/app.css";
                     public const string jquery_ui_css = "~/Content/app/jquery-ui.css";
+                }
+            }
+            public static partial class fonts 
+            {
+                public static class Assets
+                {
                 }
             }
             public static partial class gif 

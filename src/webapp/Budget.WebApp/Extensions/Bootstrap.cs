@@ -10,20 +10,24 @@ namespace Budget.WebApp.Extensions
 {
     public class Bootstrap<T>
     {
-        private readonly HtmlHelper htmlHelper;
+        private readonly HtmlHelper<T> htmlHelper;
         private readonly UrlHelper urlHelper;
         private readonly ISessionHelper sessionHelper;
 
-        public Bootstrap(HtmlHelper htmlHelper, UrlHelper urlHelper, ISessionHelper sessionHelper)
+        public Bootstrap(HtmlHelper<T> htmlHelper, UrlHelper urlHelper, ISessionHelper sessionHelper)
         {
             this.htmlHelper = htmlHelper;
             this.urlHelper = urlHelper;
             this.sessionHelper = sessionHelper;
         }
 
-        public IHtmlString EditorForModel()
+        public IHtmlString FormForModel(string submitText, string action = null, string controller = null)
         {
-            return this.htmlHelper.EditorForModel(MVC.Shared.Views.EditorTemplates.BootstrapEditorForModel);
+            ViewDataDictionary viewData = new ViewDataDictionary(this.htmlHelper.ViewData);
+            viewData.Add("action", action);
+            viewData.Add("controller", controller);
+            viewData.Add("submitText", submitText);
+            return this.htmlHelper.Partial(MVC.Shared.Views.Bootstrap.Form, viewData);
         }
 
         public IHtmlString SubmitForm(string text)

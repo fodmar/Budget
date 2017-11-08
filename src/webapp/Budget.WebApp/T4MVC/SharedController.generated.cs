@@ -50,9 +50,11 @@ namespace T4MVC
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string Form = "Form";
                     public readonly string Navbar = "Navbar";
                     public readonly string ValidationSummary = "ValidationSummary";
                 }
+                public readonly string Form = "~/Views/Shared/Bootstrap/Form.cshtml";
                 public readonly string Navbar = "~/Views/Shared/Bootstrap/Navbar.cshtml";
                 public readonly string ValidationSummary = "~/Views/Shared/Bootstrap/ValidationSummary.cshtml";
             }
@@ -61,7 +63,11 @@ namespace T4MVC
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public partial class _EditorTemplatesClass
             {
-                public readonly string BootstrapEditorForModel = "BootstrapEditorForModel";
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                }
             }
         }
     }

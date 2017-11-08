@@ -27,12 +27,7 @@
             <div class="col-md-3 col-sm-5 login-form">
                 <h2>@Text.LogIntoApplication</h2>
 
-                @using (Html.BeginForm(MVC.Login.ActionNames.Login, MVC.Login.Name))
-                {
-                    @Bootstrap.EditorForModel()
-                    @Bootstrap.SubmitForm(Text.SignIn)
-                    @Bootstrap.ValidationSummary()
-                }
+                @Bootstrap.FormForModel(Text.SignIn, MVC.Login.ActionNames.Login, MVC.Login.Name)
             </div>
         </div>
     </div>
