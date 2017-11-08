@@ -240,6 +240,7 @@
     <Compile Include="Extensions\NavbarModel.cs" />
     <Compile Include="Extensions\NavbarTabModel.cs" />
     <Compile Include="Extensions\ValidationSummaryModel.cs" />
+    <Compile Include="Extensions\ViewDataContainer.cs" />
     <Compile Include="Extensions\WebViewPage.cs" />
     <Compile Include="Filters\CorrelationIdAttribute.cs" />
     <Compile Include="Filters\LanguageAttribute.cs" />

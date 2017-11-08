@@ -30,6 +30,17 @@ namespace Budget.WebApp.Extensions
             return this.htmlHelper.Partial(MVC.Shared.Views.Bootstrap.Form, viewData);
         }
 
+        public IHtmlString FormFor<TModel>(string submitText, string action = null, string controller = null) where TModel : new()
+        {
+            var viewData = new ViewDataContainer<TModel>(new TModel());
+            viewData.Add("action", action);
+            viewData.Add("controller", controller);
+            viewData.Add("submitText", submitText);
+
+            HtmlHelper<TModel> helper = new HtmlHelper<TModel>(this.htmlHelper.ViewContext, viewData);
+            return helper.Partial(MVC.Shared.Views.Bootstrap.Form, viewData);
+        }
+
         public IHtmlString SubmitForm(string text)
         {
             return new MvcHtmlString(string.Format("<button class='btn btn-block btn-primary center-all' type='submit'>{0}</button>", text));
