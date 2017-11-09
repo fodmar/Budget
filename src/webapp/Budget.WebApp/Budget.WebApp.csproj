@@ -235,6 +235,7 @@
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="Extensions\BooleanExtensions.cs" />
     <Compile Include="Extensions\Bootstrap.cs" />
+    <Compile Include="Extensions\FormOptions.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\ModelStateExtensions.cs" />
     <Compile Include="Extensions\NavbarModel.cs" />

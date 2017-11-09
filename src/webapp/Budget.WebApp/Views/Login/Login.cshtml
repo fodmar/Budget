@@ -25,10 +25,10 @@
 <body lang="@Thread.CurrentThread.CurrentCulture">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-5 login-form">
+            <div class="col-md-4 col-sm-5 login-form">
                 <h2>@Text.LogIntoApplication</h2>
 
-                @Bootstrap.FormForModel(Text.SignIn, MVC.Login.ActionNames.Login, MVC.Login.Name)
+                @Bootstrap.FormForModel(FormOptions.Options(Text.SignIn, MVC.Login.ActionNames.Login, MVC.Login.Name))
             </div>
         </div>
     </div>

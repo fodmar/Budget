@@ -1,9 +1,14 @@
-﻿@using System.Web.Mvc.Html
+﻿@using Budget.WebApp.Extensions
+@using System.Web.Mvc.Html
 
-@using (FormExtensions.BeginForm(Html, ViewBag.Action, ViewBag.Controller))
+@{
+    FormOptions formOptions = ViewBag.FormOptions;
+}
+
+@using (FormExtensions.BeginForm(Html, formOptions.Action, formOptions.Controller, FormMethod.Post, formOptions.HtmlAttributes))
 {
     @Form();
-    @Bootstrap.SubmitForm(ViewBag.SubmitText)
+    @Bootstrap.SubmitForm(formOptions.SubmitText, formOptions.FullWidthSubmit)
     @Bootstrap.ValidationSummary();
 }
 

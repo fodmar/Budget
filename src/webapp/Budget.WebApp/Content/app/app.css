@@ -27,12 +27,6 @@ body {
     -webkit-margin-after: 0em;
 }
 
-.center-all {
-    display: flex;
-    align-items: center;
-    justify-content: center
-}
-
 .navbar {
     border-radius: 0;
 }
