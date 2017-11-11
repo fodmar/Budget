@@ -5,14 +5,14 @@
     FormOptions formOptions = ViewBag.FormOptions;
 }
 
-@using (FormExtensions.BeginForm(Html, formOptions.Action, formOptions.Controller, FormMethod.Post, formOptions.HtmlAttributes))
+@using (FormExtensions.BeginForm(Html, formOptions.Action, formOptions.Controller, FormMethod.Post, formOptions.FormAttributes))
 {
-    @Form();
+    @Form(formOptions);
     @Bootstrap.SubmitForm(formOptions.SubmitText, formOptions.FullWidthSubmit)
     @Bootstrap.ValidationSummary();
 }
 
-@helper Form()
+@helper Form(FormOptions formOptions)
 {
     Func<ModelMetadata, bool> shouldShow = metadata =>
        {
@@ -43,9 +43,23 @@
             }
             else
             {
-                <div class="form-group">
-                    @Html.Label(prop.PropertyName)
-                    @Html.Editor(prop.PropertyName, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="form-group @(string.IsNullOrEmpty(formOptions.InputWidth) ? string.Empty : "row")">
+                    @Html.Label(prop.PropertyName, formOptions.LabelAttributes)
+                    @{
+                        MvcHtmlString input = Html.Editor(prop.PropertyName, new { htmlAttributes = new { @class = "form-control input-sm" } });
+                     }
+
+                    @if (string.IsNullOrEmpty(formOptions.InputWidth))
+                    {
+                        @input
+                    }
+                    else
+                    {
+                        <div class="@formOptions.InputWidth">
+                            @input
+                        </div>
+                    }
+                    
                     @Html.ValidationMessage(prop.PropertyName)
                 </div>
             }

@@ -31,8 +31,16 @@ namespace Budget.WebApp.Extensions
 
         public IHtmlString FormInlineForModel(FormOptions formOptions)
         {
-            this.AddAttribute(formOptions.HtmlAttributes, "class", "form-inline");
+            this.AddAttribute(formOptions.FormAttributes, "class", "form-inline");
             formOptions.FullWidthSubmit = false;
+            return this.FormForModel(formOptions);
+        }
+
+        public IHtmlString FormHorizontalForModel(string labelWidth, string inputWidth, FormOptions formOptions)
+        {
+            formOptions.InputWidth = inputWidth;
+            this.AddAttribute(formOptions.FormAttributes, "class", "form-horizontal");
+            this.AddAttribute(formOptions.LabelAttributes, "class", "control-label " + labelWidth);
             return this.FormForModel(formOptions);
         }
 
@@ -47,8 +55,16 @@ namespace Budget.WebApp.Extensions
 
         public IHtmlString FormInlineFor<TModel>(FormOptions formOptions) where TModel : new()
         {
-            this.AddAttribute(formOptions.HtmlAttributes, "class", "form-inline");
+            this.AddAttribute(formOptions.FormAttributes, "class", "form-inline");
             formOptions.FullWidthSubmit = false;
+            return this.FormFor<TModel>(formOptions);
+        }
+
+        public IHtmlString FormHorizontalFor<TModel>(string labelWidth, string inputWidth, FormOptions formOptions) where TModel : new()
+        {
+            formOptions.InputWidth = inputWidth;
+            this.AddAttribute(formOptions.FormAttributes, "class", "form-horizontal");
+            this.AddAttribute(formOptions.LabelAttributes, "class", "control-label " + labelWidth);
             return this.FormFor<TModel>(formOptions);
         }
 
