@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <WebGreaseLibPath>..\..\..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <MvcBuildViews>true</MvcBuildViews>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -221,6 +222,7 @@
     <Compile Include="Authentication\IFormsAuthentication.cs" />
     <Compile Include="Authentication\IAuthenticator.cs" />
     <Compile Include="Configuration\BudgetApiConfigurationProvider.cs" />
+    <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
@@ -255,6 +257,9 @@
     <Compile Include="Models\ProductsDataListModel.cs" />
     <Compile Include="Models\SaveReceiptEntryModel.cs" />
     <Compile Include="Models\SaveReceiptModel.cs" />
+    <Compile Include="T4MVC\AdministrationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\ErrorController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -322,6 +327,7 @@
     <Content Include="Views\Shared\Bootstrap\Form.cshtml" />
     <Content Include="Views\Shared\Bootstrap\ValidationSummary.cshtml" />
     <Content Include="Views\Shared\Bootstrap\Navbar.cshtml" />
+    <Content Include="Views\Administration\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

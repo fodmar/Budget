@@ -30,7 +30,7 @@ namespace Budget.WebApp.Controllers
 
         public virtual ActionResult Index()
         {
-            return View();
+            return PartialView();
         }
 
         public virtual async Task<ActionResult> GetAll()

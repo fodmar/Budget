@@ -138,36 +138,8 @@ input.input-validation-error:focus, input.error:focus {
     content: "close";
 }
 
-.block-contaniner {
-    float: left;
-    max-width: 40em;
-    min-width: 20em;
-    max-height: 50%;
-    overflow: auto;
-}
-
 .entry {
     padding: 3px;
-}
-
-.right {
-    float: right;
-}
-
-.group {
-    border: 1.2px solid var(--color2);
-    background-color: var(--color-body-contrast);
-}
-
-.group .group-legend {
-    background-color: var(--color2);
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-}
-
-.group .group-content {
-    padding: 5px;
 }
 
 .show {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Budget.Resources;
@@ -22,7 +19,7 @@ namespace Budget.WebApp.Extensions
 
             var tabs = new List<NavbarTabModel>();
             tabs.Add(this.Tab(MVC.Overview.Name, MVC.Overview.ActionNames.Overview, Text.Calendar));
-            tabs.Add(this.Tab(MVC.Product.Name, MVC.Product.ActionNames.Index, Text.Administration));
+            tabs.Add(this.Tab(MVC.Administration.Name, MVC.Administration.ActionNames.Index, Text.Administration));
 
             this.Tabs = tabs;
         }

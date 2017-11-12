@@ -3,13 +3,9 @@
 @using Budget.Resources
 @model System.Collections.Generic.IEnumerable<Budget.ObjectModel.Product>
 
-@section styles {
-    @Styles.Render("~/bundles/content/jqueryui")
-}
+@Styles.Render("~/bundles/content/jqueryui")
+@RequireJs.Require("app/products")
 
-@section scripts {
-    @RequireJs.Require("app/products")
-}
 
 <script id="product-list" type="text/template">
     <div class="entry">
@@ -19,14 +15,12 @@
     </div>
 </script>
 
-<div class="block-contaniner">
-    <div class="group">
-        <div class="group-legend align-center space-between">
-            @Text.Products
-            <div id="add-product" class="right material-icons icon add"></div>
-        </div>
-        <div class="group-content" id="product-list-container">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @Text.Products
+        <div id="add-product" class="pull-right material-icons icon add"></div>
+    </div>
+    <div class="panel-body" id="product-list-container">
 
-        </div>
     </div>
 </div>
