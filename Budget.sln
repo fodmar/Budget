@@ -19,14 +19,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AD74B865
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.EntityFramework", "src\data\Budget.EntityFramework\Budget.EntityFramework.csproj", "{08966193-7E22-4566-8976-A6C72FECB375}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.EntityFramework", "tests\unit\Budget.UnitTests.DataAccess\Budget.UnitTests.EntityFramework.csproj", "{2C705686-DEB0-4C72-8A8F-7B5C0B245A62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.EntityFramework", "tests\unit\Budget.UnitTests.EntityFramework\Budget.UnitTests.EntityFramework.csproj", "{2C705686-DEB0-4C72-8A8F-7B5C0B245A62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{971F6ADB-3326-4695-8B3D-2837EEB016B7}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.IntegrationTests.EntityFramework", "tests\integration\Budget.IntegrationTests.DataAccess\Budget.IntegrationTests.EntityFramework.csproj", "{4DED8797-F4A9-4F5B-A42B-2E3BF608F8F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.IntegrationTests.EntityFramework", "tests\integration\Budget.IntegrationTests.EntityFramework\Budget.IntegrationTests.EntityFramework.csproj", "{4DED8797-F4A9-4F5B-A42B-2E3BF608F8F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{A084C5BD-D9B5-49CD-BC63-38ABBFBDE4B6}"
 EndProject
