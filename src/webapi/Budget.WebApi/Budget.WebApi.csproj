@@ -155,13 +155,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\data\Budget.DataAccess\Budget.DataAccess.csproj">
+    <ProjectReference Include="..\..\data\Budget.EntityFramework\Budget.EntityFramework.csproj">
       <Project>{08966193-7e22-4566-8976-a6c72fecb375}</Project>
-      <Name>Budget.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\data\Budget.Database\Budget.Database.csproj">
-      <Project>{d52605eb-ca5e-4fcd-8da5-a34dded21219}</Project>
-      <Name>Budget.Database</Name>
+      <Name>Budget.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.BusinessLogic\Budget.BusinessLogic.csproj">
       <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>

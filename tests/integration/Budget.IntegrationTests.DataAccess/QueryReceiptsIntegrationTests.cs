@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Budget.DataAccess;
-using Budget.DataAccess.Query;
-using Budget.Database;
+using Budget.EntityFramework;
+using Budget.EntityFramework.Query;
+using Budget.EntityFramework;
 using Budget.ObjectModel;
 using NUnit.Framework;
 

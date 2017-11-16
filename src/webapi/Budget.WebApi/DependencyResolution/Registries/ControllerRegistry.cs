@@ -1,6 +1,6 @@
 using Budget.BusinessLogic.UserManagement;
-using Budget.DataAccess;
-using Budget.Database;
+using Budget.EntityFramework;
+using Budget.EntityFramework;
 using Budget.ObjectModel;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;

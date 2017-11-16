@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Budget.ObjectModel;
-using Budget.DataAccess.Query;
+using Budget.EntityFramework.Query;
 using NUnit.Framework;
 
 namespace Budget.UnitTests.DataAccess

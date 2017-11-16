@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Budget.BusinessLogic.UserManagement;
-using Budget.DataAccess;
-using Budget.Database;
+using Budget.EntityFramework;
+using Budget.EntityFramework;
 using Budget.ObjectModel;
 using NUnit.Framework;
 

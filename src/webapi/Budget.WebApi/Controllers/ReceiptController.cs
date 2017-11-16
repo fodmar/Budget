@@ -7,8 +7,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using Budget.DataAccess;
-using Budget.Database;
+using Budget.EntityFramework;
+using Budget.EntityFramework;
 using Budget.ObjectModel;
 using Budget.WebApi.ModelBinders;
 
