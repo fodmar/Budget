@@ -54,8 +54,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Log4net", "src\share
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.IntegrationTests.Log4net", "tests\integration\Budget.IntegrationTests.Log4net\Budget.IntegrationTests.Log4net.csproj", "{5821FEC0-5ECE-4148-81F9-8A2A0E4C8162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Caching", "src\shared\Budget.Caching\Budget.Caching.csproj", "{159E211F-A836-440C-9660-8923A38979FE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.Caching", "tests\unit\Budget.UnitTests.Caching\Budget.UnitTests.Caching.csproj", "{A9E27D87-A612-4003-A9FE-26571BC258AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.UnitTests.JavaScript.WebApp", "tests\unit\Budget.UnitTests.JavaScript.WebApp\Budget.UnitTests.JavaScript.WebApp.csproj", "{D13C56BB-6A96-485F-A561-A5DB2C9F091A}"
@@ -65,6 +63,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.Utils", "src\shared\Budget.Utils\Budget.Utils.csproj", "{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,10 +132,6 @@ Global
 		{5821FEC0-5ECE-4148-81F9-8A2A0E4C8162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5821FEC0-5ECE-4148-81F9-8A2A0E4C8162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5821FEC0-5ECE-4148-81F9-8A2A0E4C8162}.Release|Any CPU.Build.0 = Release|Any CPU
-		{159E211F-A836-440C-9660-8923A38979FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{159E211F-A836-440C-9660-8923A38979FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{159E211F-A836-440C-9660-8923A38979FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{159E211F-A836-440C-9660-8923A38979FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9E27D87-A612-4003-A9FE-26571BC258AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9E27D87-A612-4003-A9FE-26571BC258AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9E27D87-A612-4003-A9FE-26571BC258AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -144,6 +140,10 @@ Global
 		{D13C56BB-6A96-485F-A561-A5DB2C9F091A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D13C56BB-6A96-485F-A561-A5DB2C9F091A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D13C56BB-6A96-485F-A561-A5DB2C9F091A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,8 +170,8 @@ Global
 		{678283C2-DAF7-4553-97DD-5AA95595DAB8} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 		{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 		{5821FEC0-5ECE-4148-81F9-8A2A0E4C8162} = {712B63F5-4F83-4D38-B1CC-8CBB760A5C4F}
-		{159E211F-A836-440C-9660-8923A38979FE} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 		{A9E27D87-A612-4003-A9FE-26571BC258AF} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
 		{D13C56BB-6A96-485F-A561-A5DB2C9F091A} = {4DB30233-E4AA-41D2-BA5B-2B4AF9CC1112}
+		{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9} = {D38C59E4-9C2E-478D-8EFE-EF86C8751B31}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
-using Budget.Caching;
+using Budget.Utils.Cache;
 using NUnit.Framework;
 using Rhino.Mocks;
 

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Budget.ObjectModel;
+using Budget.Utils;
+using Budget.Utils.Trace;
 using Budget.WebApi.Client;
 
 namespace Budget.WebApp.Utils

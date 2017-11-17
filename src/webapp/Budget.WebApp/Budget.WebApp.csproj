@@ -235,7 +235,6 @@
     <Compile Include="DependencyResolution\Registries\ControllerRegistry.cs" />
     <Compile Include="DependencyResolution\Registries\UtilsRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
-    <Compile Include="Extensions\BooleanExtensions.cs" />
     <Compile Include="Extensions\Bootstrap.cs" />
     <Compile Include="Extensions\FormOptions.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
@@ -291,7 +290,6 @@
     <Compile Include="Utils\BudgetApiHeadersProvider.cs" />
     <Compile Include="Utils\CookieHelper.cs" />
     <Compile Include="Utils\CookieKeys.cs" />
-    <Compile Include="Utils\CorrelationIdProvider.cs" />
     <Compile Include="Utils\ErrorHandler.cs" />
     <Compile Include="Utils\ICookieHelper.cs" />
     <Compile Include="Utils\IErrorHandler.cs" />
@@ -347,10 +345,6 @@
       <Project>{99b181f5-1573-475f-9fd0-c7376cddaa51}</Project>
       <Name>Budget.BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\shared\Budget.Caching\Budget.Caching.csproj">
-      <Project>{159e211f-a836-440c-9660-8923a38979fe}</Project>
-      <Name>Budget.Caching</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\shared\Budget.Log4net\Budget.Log4net.csproj">
       <Project>{3720ed30-a5e7-4bb1-ae0a-e197cf2061b9}</Project>
       <Name>Budget.Log4net</Name>
@@ -362,6 +356,10 @@
     <ProjectReference Include="..\..\shared\Budget.Resources\Budget.Resources.csproj">
       <Project>{678283c2-daf7-4553-97dd-5aa95595dab8}</Project>
       <Name>Budget.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\Budget.Utils\Budget.Utils.csproj">
+      <Project>{b815633b-b136-4c3c-bcfa-5e96e4f3e4e9}</Project>
+      <Name>Budget.Utils</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\webapi\Budget.WebApi.Client\Budget.WebApi.Client.csproj">
       <Project>{d5393114-bfb6-44e0-9c3d-af531aa0f252}</Project>

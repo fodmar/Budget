@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3720ED30-A5E7-4BB1-AE0A-E197CF2061B9}</ProjectGuid>
+    <ProjectGuid>{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Budget.Log4net</RootNamespace>
-    <AssemblyName>Budget.Log4net</AssemblyName>
+    <RootNamespace>Budget.Utils</RootNamespace>
+    <AssemblyName>Budget.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net.Ext.Json">
-      <HintPath>..\..\..\packages\log4net.Ext.Json.1.2.15.14586\lib\net45-full\log4net.Ext.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,26 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Log4netSetup.cs" />
-    <Compile Include="Log4netWrapper.cs" />
+    <Compile Include="Cache\CacheWrapper.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\RepositoryCache.cs" />
+    <Compile Include="Extensions\BoolExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Trace\CorrelationIdProvider.cs" />
+    <Compile Include="Trace\ICorrelationIdProvider.cs" />
+    <Compile Include="Log\ILogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Http\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
       <Name>Budget.ObjectModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Budget.Utils\Budget.Utils.csproj">
-      <Project>{b815633b-b136-4c3c-bcfa-5e96e4f3e4e9}</Project>
-      <Name>Budget.Utils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="log4net.config" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

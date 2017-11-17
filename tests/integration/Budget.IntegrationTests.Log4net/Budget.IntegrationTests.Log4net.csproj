@@ -60,6 +60,10 @@
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
       <Name>Budget.ObjectModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\shared\Budget.Utils\Budget.Utils.csproj">
+      <Project>{b815633b-b136-4c3c-bcfa-5e96e4f3e4e9}</Project>
+      <Name>Budget.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\src\shared\Budget.Log4net\log4net.config">

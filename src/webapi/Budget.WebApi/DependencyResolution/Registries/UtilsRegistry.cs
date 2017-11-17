@@ -1,5 +1,6 @@
 ﻿using Budget.Log4net;
 using Budget.ObjectModel;
+using Budget.Utils.Log;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 

@@ -1,15 +1,11 @@
 ﻿using System.Runtime.Caching;
-using System.Web.Configuration;
-using Budget.BusinessLogic.UserManagement;
-using Budget.Caching;
 using Budget.ObjectModel;
+using Budget.Utils.Cache;
 using Budget.WebApi.Client;
 using Budget.WebApp.Authentication;
 using Budget.WebApp.Configuration;
 using Budget.WebApp.Utils;
 using StructureMap.Configuration.DSL;
-using StructureMap.Graph;
-using StructureMap.Web.Pipeline;
 
 namespace Budget.WebApp.DependencyResolution.Registries
 {

@@ -1,12 +1,9 @@
-﻿using System.Web.Configuration;
-using Budget.Log4net;
-using Budget.ObjectModel;
-using Budget.WebApi.Client;
-using Budget.WebApp.Configuration;
+﻿using Budget.Log4net;
+using Budget.Utils;
+using Budget.Utils.Log;
+using Budget.Utils.Trace;
 using Budget.WebApp.Utils;
 using StructureMap.Configuration.DSL;
-using StructureMap.Graph;
-using StructureMap.Web.Pipeline;
 
 namespace Budget.WebApp.DependencyResolution.Registries
 {
