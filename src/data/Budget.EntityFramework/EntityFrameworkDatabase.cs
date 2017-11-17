@@ -69,12 +69,15 @@ namespace Budget.EntityFramework
             await SaveChangesAsync();
         }
 
+        public Task Delete<T>(Expression<Func<T, bool>> predicate) where T : class
+        {
+            var toDelete = this.Table<T>().Where(predicate);
+            return this.Delete(toDelete);
+        }
+
         public async Task Delete<T>(IEnumerable<T> entities) where T : class
         {
-            foreach (var entity in entities)
-            {
-                AttachAndSetState(entity, EntityState.Deleted);
-            }
+            this.Set<T>().RemoveRange(entities);
 
             await SaveChangesAsync();
         }

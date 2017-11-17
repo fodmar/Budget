@@ -19,6 +19,7 @@ namespace Budget.EntityFramework
         Task Update<T>(IEnumerable<T> entities) where T : class;
 
         Task Delete<T>(T entitity) where T : class;
+        Task Delete<T>(Expression<Func<T, bool>> predicate) where T : class;
         Task Delete<T>(IEnumerable<T> entities) where T : class;
     }
 }
