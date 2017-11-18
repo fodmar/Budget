@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B815633B-B136-4C3C-BCFA-5E96E4F3E4E9}</ProjectGuid>
+    <ProjectGuid>{8689E8AB-6827-4CA5-B527-151F08258FFA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Budget.Utils</RootNamespace>
-    <AssemblyName>Budget.Utils</AssemblyName>
+    <RootNamespace>Budget.UnitTests.Utils</RootNamespace>
+    <AssemblyName>Budget.UnitTests.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,28 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cache\CacheWrapper.cs" />
-    <Compile Include="Cache\ICache.cs" />
-    <Compile Include="Cache\RepositoryCache.cs" />
-    <Compile Include="Extensions\BoolExtensions.cs" />
-    <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Http\ApiClient.cs" />
-    <Compile Include="Http\ApiRequest.cs" />
-    <Compile Include="Http\ApiResponse.cs" />
-    <Compile Include="Http\IApiClient.cs" />
-    <Compile Include="Trace\CorrelationIdProvider.cs" />
-    <Compile Include="Trace\ICorrelationIdProvider.cs" />
-    <Compile Include="Log\ILogger.cs" />
+    <Compile Include="ExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Budget.ObjectModel\Budget.ObjectModel.csproj">
-      <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
-      <Name>Budget.ObjectModel</Name>
+    <ProjectReference Include="..\..\..\src\shared\Budget.Utils\Budget.Utils.csproj">
+      <Project>{b815633b-b136-4c3c-bcfa-5e96e4f3e4e9}</Project>
+      <Name>Budget.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

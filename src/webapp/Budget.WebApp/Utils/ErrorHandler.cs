@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Budget.Resources;
+using Budget.Utils.Extensions;
 using Budget.Utils.Log;
 using Budget.WebApp.Controllers;
 using Budget.WebApp.Models;
@@ -96,7 +97,7 @@ namespace Budget.WebApp.Utils
                 userName = httpContext.User.Identity.Name;
             }
 
-            return string.Format("{0} {1}", userName, httpContext.Request.RawUrl);
+            return "{0} {1}".FormatWith(userName, httpContext.Request.RawUrl);
         }
     }
 }

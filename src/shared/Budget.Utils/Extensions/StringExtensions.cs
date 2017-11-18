@@ -27,5 +27,10 @@ namespace Budget.Utils.Extensions
 
             return stringBuiler.ToString();
         }
+
+        public static string FormatWith(this string format, params object[] parameters)
+        {
+            return string.Format(format, parameters);
+        }
     }
 }
