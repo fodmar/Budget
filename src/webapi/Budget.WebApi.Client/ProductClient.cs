@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Budget.ObjectModel;
+using Budget.Utils.Http;
 
 namespace Budget.WebApi.Client
 {
@@ -11,58 +9,51 @@ namespace Budget.WebApi.Client
     {
         protected override string UriController
         {
-	        get { return "api/product/"; }
+	        get { return "product/"; }
         }
 
         public ProductClient(
+            IApiClient client,
             IConfigurationProvider configurationProvider,
             IHeadersProvider headersProvider)
-            : base(configurationProvider, headersProvider)
+            : base(client, configurationProvider, headersProvider)
         {
         }
 
         public async Task<IEnumerable<Product>> ReadAll()
         {
-            return await
-                this.CreateRequest()
-                    .AsGet()
-                    .Send<Product[]>();
+            ApiRequest request = this.CreateRequest().AsGet();
+            ApiResponse response = await this.apiClient.Send(request);
+
+            return await response.ReadAs<Product[]>();
         }
 
         public async Task<Product> Save(Product product)
         {
-            return await
-                this.CreateRequest()
-                    .AddBody(this.ProductToJsonForInsert(product))
-                    .AsPut()
-                    .Send<Product>();
+            ApiRequest request = this.CreateRequest().AsPut().WithBody(this.ProductToJsonForInsert(product));
+            ApiResponse response = await this.apiClient.Send(request);
+
+            return await response.ReadAs<Product>();
         }
 
-        public Task Update(Product product)
+        public async Task Update(Product product)
         {
-            return 
-                this.CreateRequest()
-                    .AddBody(product)
-                    .AsPost()
-                    .Send();
+            ApiRequest request = this.CreateRequest().AsPost().WithBody(product);
+            await this.apiClient.Send(request);
         }
 
-        public Task Remove(Product product)
+        public async Task Remove(Product product)
         {
-            return 
-                this.CreateRequest()
-                    .AddUriParam(product.Id)
-                    .AsDelete()
-                    .Send();
+            ApiRequest request = this.CreateRequest().AsDelete().WithBody(product);
+            await this.apiClient.Send(request);
         }
 
         public async Task<Product> GetById(int id)
         {
-            return await
-                this.CreateRequest()
-                    .AddUriParam(id)
-                    .AsGet()
-                    .Send<Product>();
+            ApiRequest request = this.CreateRequest().AddUriParam(id);
+            ApiResponse response = await this.apiClient.Send(request);
+
+            return await response.ReadAs<Product>();
         }
 
         private dynamic ProductToJsonForInsert(Product product)

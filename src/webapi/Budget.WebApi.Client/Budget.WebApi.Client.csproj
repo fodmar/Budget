@@ -49,9 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiRequest.cs" />
     <Compile Include="ClientBase.cs" />
-    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="IConfigurationProvider.cs" />
     <Compile Include="IHeadersProvider.cs" />
     <Compile Include="ProductClient.cs" />
@@ -71,6 +69,10 @@
     <ProjectReference Include="..\..\shared\Budget.ObjectModel\Budget.ObjectModel.csproj">
       <Project>{43e28dbf-db27-4ba8-afa2-d2cfd2fd60b3}</Project>
       <Name>Budget.ObjectModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\Budget.Utils\Budget.Utils.csproj">
+      <Project>{b815633b-b136-4c3c-bcfa-5e96e4f3e4e9}</Project>
+      <Name>Budget.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Caching;
 using Budget.ObjectModel;
 using Budget.Utils.Cache;
+using Budget.Utils.Http;
 using Budget.WebApi.Client;
 using Budget.WebApp.Authentication;
 using Budget.WebApp.Configuration;
@@ -18,6 +19,7 @@ namespace Budget.WebApp.DependencyResolution.Registries
             For<IConfigurationProvider>().Use<BudgetApiConfigurationProvider>();
             For<IHeadersProvider>().Use<BudgetApiHeadersProvider>();
             For<IAuthenticator>().Use<Authenticator>();
+            For<IApiClient>().Use<ApiClient>();
 
             For<IRepository<Product>>().Use<RepositoryCache<Product>>().Ctor<IRepository<Product>>().Is<ProductClient>();
             For<ICache>().Use<CacheWrapper>();

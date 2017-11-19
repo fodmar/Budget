@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Budget.BusinessLogic.UserManagement;
 using Budget.ObjectModel;
+using Budget.Utils.Http;
 
 namespace Budget.WebApi.Client
 {
@@ -12,23 +9,23 @@ namespace Budget.WebApi.Client
     {
         protected override string UriController
         {
-            get { return "api/user/"; }
+            get { return "user/"; }
         }
 
         public UserClient(
+            IApiClient client,
             IConfigurationProvider configurationProvider,
             IHeadersProvider headersProvider) 
-            : base(configurationProvider, headersProvider)
+            : base(client, configurationProvider, headersProvider)
         {
         }
     
         public async Task<User> FindUser(UserPassword password)
         {
- 	        return await
-                this.CreateRequest()
-                    .AddUriParam(password.UserLogin)
-                    .AddUriParam(password.Hash)
-                    .Send<User>();
+            ApiRequest request = this.CreateRequest().AddUriParam(password.UserLogin).AddUriParam(password.Hash);
+            ApiResponse response = await this.apiClient.Send(request);
+
+            return await response.ReadAs<User>();
         }
     }
 }

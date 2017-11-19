@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Budget.ObjectModel;
+using Budget.Utils.Http;
 using Budget.WebApi.Client;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -30,7 +27,9 @@ namespace Budget.IntegrationTests.WebApi.Client
             var headersProvider = MockRepository.GenerateStub<IHeadersProvider>();
             headersProvider.Stub(s => s.CorrelationId).Return(Guid.Parse("AAAAFFFF-0000-0000-0000-000000000000"));
 
-            return new UserClient(configurationProvider, headersProvider);
+            IApiClient client = new ApiClient();
+
+            return new UserClient(client, configurationProvider, headersProvider);
         }
     }
 }

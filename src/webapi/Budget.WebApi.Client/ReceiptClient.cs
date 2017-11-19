@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Budget.ObjectModel;
+using Budget.Utils.Extensions;
+using Budget.Utils.Http;
 
 namespace Budget.WebApi.Client
 {
@@ -12,53 +11,50 @@ namespace Budget.WebApi.Client
     {
         protected override string UriController
         {
-            get { return "api/receipt/"; }
+            get { return "receipt/"; }
         }
 
         public ReceiptClient(
+            IApiClient client,
             IConfigurationProvider configurationProvider,
             IHeadersProvider headersProvider) 
-            : base(configurationProvider, headersProvider)
+            : base(client, configurationProvider, headersProvider)
         {
         }
 
-        public Task<Receipt> GetReceipt(int userId, int receiptId)
+        public async Task<Receipt> GetReceipt(int userId, int receiptId)
         {
-            return
-                this.CreateRequest()
-                    .AddUriParam(userId)
-                    .AddUriParam(receiptId)
-                    .AsGet()
-                    .Send<Receipt>();
+            ApiRequest request = this.CreateRequest().AddUriParam(userId).AddUriParam(receiptId);
+            ApiResponse response = await this.apiClient.Send(request);
+
+            return await response.ReadAs<Receipt>();
         }
 
         public async Task<IEnumerable<Receipt>> GetReceipts(int userId)
         {
-            return await
-                this.CreateRequest()
-                    .AddUriParam(userId)
-                    .AsGet()
-                    .Send<Receipt[]>();
+            ApiRequest request = this.CreateRequest().AddUriParam(userId);
+            ApiResponse response = await this.apiClient.Send(request);
+
+            return await response.ReadAs<Receipt[]>();
         }
 
         public async Task<IEnumerable<Receipt>> GetReceiptsByDates(int userId, DateTime? from, DateTime? to)
         {
-            return await
-                this.CreateRequest()
+            ApiRequest request = this.CreateRequest()
                     .AddUriParam(userId)
                     .AddUriParam(from.ToUriParamString())
-                    .AddUriParam(to.ToUriParamString())
-                    .AsGet()
-                    .Send<Receipt[]>();
+                    .AddUriParam(to.ToUriParamString());
+
+            ApiResponse response = await this.apiClient.Send(request);
+            return await response.ReadAs<Receipt[]>();
         }
 
         public async Task<Receipt> Save(Receipt receipt)
         {
-            return await
-                this.CreateRequest()
-                    .AddBody(receipt)
-                    .AsPut()
-                    .Send<Receipt>();
+            ApiRequest request = this.CreateRequest().WithBody(receipt).AsPut();
+
+            ApiResponse response = await this.apiClient.Send(request);
+            return await response.ReadAs<Receipt>();
         }
     }
 }

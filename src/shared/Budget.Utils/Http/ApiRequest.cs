@@ -16,7 +16,6 @@ namespace Budget.Utils.Http
             this.Request = new HttpRequestMessage();
             this.Request.RequestUri = new Uri(url);
             this.Request.Headers.Clear();
-            this.Request.Content.Headers.Clear();
 
             AsGet().WithAcceptType("application/json");
         }
@@ -30,15 +29,16 @@ namespace Budget.Utils.Http
 
         public ApiRequest AddUriParam<T>(T param)
         {
-            Uri newUri = new Uri(this.Request.RequestUri.AbsolutePath + "/" + param);
+            Uri newUri = new Uri(this.Request.RequestUri.AbsoluteUri + "/" + param);
             this.Request.RequestUri = newUri;
             return this;
         }
 
-        public ApiRequest AddBody<T>(T body)
+        public ApiRequest WithBody<T>(T body)
         {
             string content = JsonConvert.SerializeObject(body);
             this.Request.Content = new StringContent(content);
+            this.Request.Content.Headers.Clear();
             this.Request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
             return this;
         }

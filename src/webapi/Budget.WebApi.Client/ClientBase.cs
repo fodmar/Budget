@@ -1,43 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Budget.Utils.Http;
 
 namespace Budget.WebApi.Client
 {
     public abstract class ClientBase
     {
-        protected IHeadersProvider headersProvider;
-
-        private HttpClient httpClient;
+        protected readonly IHeadersProvider headersProvider;
+        protected readonly IApiClient apiClient;
         private string budgetApiUrl;
         
         public ClientBase(
+            IApiClient apiClient,
             IConfigurationProvider configurationProvider,
             IHeadersProvider headersProvider)
         {
+            this.apiClient = apiClient;
             this.budgetApiUrl = configurationProvider.BudgetApiUrl;
             this.headersProvider = headersProvider;
         }
 
         protected abstract string UriController { get; }
-
-        protected HttpClient HttpClient
-        {
-            get
-            {
-                if (this.httpClient == null)
-                {
-                    this.httpClient = new HttpClient();
-                }
-
-                return this.httpClient;
-            }
-        }
 
         protected virtual void AddHeaders(ApiRequest request)
         {
@@ -46,7 +27,7 @@ namespace Budget.WebApi.Client
 
         protected ApiRequest CreateRequest()
         {
-            ApiRequest request = new ApiRequest(this.budgetApiUrl + this.UriController, this.HttpClient);
+            ApiRequest request = new ApiRequest(this.budgetApiUrl + this.UriController);
 
             this.AddHeaders(request);
 

@@ -49,6 +49,7 @@
     <Compile Include="Cache\ICache.cs" />
     <Compile Include="Cache\RepositoryCache.cs" />
     <Compile Include="Extensions\BoolExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Http\ApiClient.cs" />
